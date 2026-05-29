@@ -30,3 +30,10 @@ D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net1
 D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\Sistem-Data-Penduduk-Desa.genruntimeconfig.cache
 D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\ref\Sistem-Data-Penduduk-Desa.dll
 D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\Sistem_Data_Penduduk_Desa.FormDashboard.resources
+D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\Sistem_Data_Penduduk_Desa.FormKK.resources
+D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\Sistem_Data_Penduduk_Desa.FormLaporan.resources
+D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\Sistem_Data_Penduduk_Desa.FormPekerjaan.resources
+D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\Sistem_Data_Penduduk_Desa.FormPendidikan.resources
+D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\Sistem_Data_Penduduk_Desa.FormPenduduk.resources
+D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\Sistem_Data_Penduduk_Desa.FormStatistik.resources
+D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\Sistem_Data_Penduduk_Desa.FormUser.resources

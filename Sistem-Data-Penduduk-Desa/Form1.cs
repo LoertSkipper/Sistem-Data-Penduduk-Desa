@@ -9,9 +9,20 @@ namespace Sistem_Data_Penduduk_Desa
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            CenterPanel();
             password_txt.PasswordChar = '*';
         }
 
+        private void CenterPanel()
+        {
+            login_panel.Left = (this.ClientSize.Width - login_panel.Width) / 2;
+            login_panel.Top = (this.ClientSize.Height - login_panel.Height) / 2;
+        }
+
+        private void FormLogin_Resize(object sender, EventArgs e)
+        {
+            CenterPanel();
+        }
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
