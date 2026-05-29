@@ -13,6 +13,62 @@ namespace Sistem_Data_Penduduk_Desa
         public FormDashboard()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void FormDashboard_Load(object sender, EventArgs e)
+        {
+            if (Session.role == "admin")
+            {
+                user_btn.Visible = true;
+                laporan_btn.Visible = true;
+            }
+            else if (Session.role == "petugas")
+            {
+                user_btn.Visible = false;
+                laporan_btn.Visible = false;
+            }
+            else if (Session.role == "kepala_desa")
+            {
+                penduduk_btn.Visible = false;
+                kk_btn.Visible = false;
+                pekerjaan_btn.Visible = false;
+                pendidikan_btn.Visible = false;
+
+                laporan_btn.Visible = true;
+                statistik_btn.Visible = true;
+            }
+        }
+        private Form activeForm = null;
+
+        private void openForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = childForm;
+
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            panelContent.Controls.Clear();
+            panelContent.Controls.Add(childForm);
+
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void logout_btn_Click(object sender, EventArgs e)
+        {
+            FormLogin login = new FormLogin();
+            login.Show();
+            this.Hide();
+        }
+
+        private void user_btn_Click(object sender, EventArgs e)
+        {
+            openForm(new FormUser());
         }
     }
 }

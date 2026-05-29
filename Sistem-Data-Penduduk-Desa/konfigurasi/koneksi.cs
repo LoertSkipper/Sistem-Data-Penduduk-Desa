@@ -13,7 +13,6 @@ namespace Sistem_Data_Penduduk_Desa.konfigurasi
         MySqlConnection _conn;
         MySqlCommand _com;
         MySqlDataAdapter _adapter;
-        //string _link = "server=localhost;port=3306;database=siremba;uid=root;pwd=;";
         static string[] data = Setting.ambilSetting("setting.txt");
         string _link = data[0] + ";" + data[1] + ";" + data[2] + ";" + data[3] + ";" + data[4];
         public Koneksi()

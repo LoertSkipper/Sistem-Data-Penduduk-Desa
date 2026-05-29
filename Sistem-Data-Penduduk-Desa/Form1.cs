@@ -44,19 +44,15 @@ namespace Sistem_Data_Penduduk_Desa
 
             if (dt.Rows.Count > 0)
             {
-                string role =
-                    dt.Rows[0]["role"].ToString();
+                Session.id_user = Convert.ToInt32(dt.Rows[0]["id_user"]);
+                Session.username = dt.Rows[0]["username"].ToString();
+                Session.role = dt.Rows[0]["role"].ToString();
 
-                MessageBox.Show(
-                    "Login berhasil sebagai " + role
-                );
-
-                FormDashboard dashboard =
-                    new FormDashboard();
-
+                FormDashboard dashboard = new FormDashboard();
                 dashboard.Show();
 
                 this.Hide();
+
             }
             else
             {
