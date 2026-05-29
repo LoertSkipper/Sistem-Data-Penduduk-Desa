@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sistem-Data-Penduduk-Desa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0ebe01164a1c78018f42b76de797404a6c9e5da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e76ced86567a8b7d375330bf76359dfee797bf9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sistem-Data-Penduduk-Desa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sistem-Data-Penduduk-Desa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

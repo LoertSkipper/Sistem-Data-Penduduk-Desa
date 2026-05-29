@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sistem_Data_Penduduk_Desa.konfigurasi
 {
-    abstract class konfigurasi
+    abstract class Konfigurasi
     {
         public abstract int eksekusiNonQuery(string query);
 
