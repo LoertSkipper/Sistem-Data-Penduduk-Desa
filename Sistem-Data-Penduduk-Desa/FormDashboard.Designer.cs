@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDashboard));
             panelSidebar = new Panel();
             logout_btn = new Button();
             user_btn = new Button();
@@ -39,7 +40,9 @@
             penduduk_btn = new Button();
             dashboard_btn = new Button();
             panelContent = new Panel();
+            pictureBox1 = new PictureBox();
             panelSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panelSidebar
@@ -54,6 +57,7 @@
             panelSidebar.Controls.Add(kk_btn);
             panelSidebar.Controls.Add(penduduk_btn);
             panelSidebar.Controls.Add(dashboard_btn);
+            panelSidebar.Controls.Add(pictureBox1);
             panelSidebar.Dock = DockStyle.Left;
             panelSidebar.Location = new Point(0, 0);
             panelSidebar.Name = "panelSidebar";
@@ -68,7 +72,7 @@
             logout_btn.FlatStyle = FlatStyle.Flat;
             logout_btn.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             logout_btn.ForeColor = SystemColors.HighlightText;
-            logout_btn.Location = new Point(0, 400);
+            logout_btn.Location = new Point(0, 520);
             logout_btn.Name = "logout_btn";
             logout_btn.Size = new Size(250, 50);
             logout_btn.TabIndex = 8;
@@ -84,7 +88,7 @@
             user_btn.FlatStyle = FlatStyle.Flat;
             user_btn.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             user_btn.ForeColor = SystemColors.HighlightText;
-            user_btn.Location = new Point(0, 350);
+            user_btn.Location = new Point(0, 470);
             user_btn.Name = "user_btn";
             user_btn.Size = new Size(250, 50);
             user_btn.TabIndex = 7;
@@ -100,7 +104,7 @@
             laporan_btn.FlatStyle = FlatStyle.Flat;
             laporan_btn.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             laporan_btn.ForeColor = SystemColors.HighlightText;
-            laporan_btn.Location = new Point(0, 300);
+            laporan_btn.Location = new Point(0, 420);
             laporan_btn.Name = "laporan_btn";
             laporan_btn.Size = new Size(250, 50);
             laporan_btn.TabIndex = 6;
@@ -115,7 +119,7 @@
             statistik_btn.FlatStyle = FlatStyle.Flat;
             statistik_btn.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             statistik_btn.ForeColor = SystemColors.HighlightText;
-            statistik_btn.Location = new Point(0, 250);
+            statistik_btn.Location = new Point(0, 370);
             statistik_btn.Name = "statistik_btn";
             statistik_btn.Size = new Size(250, 50);
             statistik_btn.TabIndex = 5;
@@ -130,7 +134,7 @@
             pendidikan_btn.FlatStyle = FlatStyle.Flat;
             pendidikan_btn.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             pendidikan_btn.ForeColor = SystemColors.HighlightText;
-            pendidikan_btn.Location = new Point(0, 200);
+            pendidikan_btn.Location = new Point(0, 320);
             pendidikan_btn.Name = "pendidikan_btn";
             pendidikan_btn.Size = new Size(250, 50);
             pendidikan_btn.TabIndex = 4;
@@ -145,7 +149,7 @@
             pekerjaan_btn.FlatStyle = FlatStyle.Flat;
             pekerjaan_btn.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             pekerjaan_btn.ForeColor = SystemColors.HighlightText;
-            pekerjaan_btn.Location = new Point(0, 150);
+            pekerjaan_btn.Location = new Point(0, 270);
             pekerjaan_btn.Name = "pekerjaan_btn";
             pekerjaan_btn.Size = new Size(250, 50);
             pekerjaan_btn.TabIndex = 3;
@@ -160,7 +164,7 @@
             kk_btn.FlatStyle = FlatStyle.Flat;
             kk_btn.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             kk_btn.ForeColor = SystemColors.HighlightText;
-            kk_btn.Location = new Point(0, 100);
+            kk_btn.Location = new Point(0, 220);
             kk_btn.Name = "kk_btn";
             kk_btn.Size = new Size(250, 50);
             kk_btn.TabIndex = 2;
@@ -175,7 +179,7 @@
             penduduk_btn.FlatStyle = FlatStyle.Flat;
             penduduk_btn.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             penduduk_btn.ForeColor = SystemColors.HighlightText;
-            penduduk_btn.Location = new Point(0, 50);
+            penduduk_btn.Location = new Point(0, 170);
             penduduk_btn.Name = "penduduk_btn";
             penduduk_btn.Size = new Size(250, 50);
             penduduk_btn.TabIndex = 1;
@@ -190,7 +194,7 @@
             dashboard_btn.FlatStyle = FlatStyle.Flat;
             dashboard_btn.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dashboard_btn.ForeColor = SystemColors.HighlightText;
-            dashboard_btn.Location = new Point(0, 0);
+            dashboard_btn.Location = new Point(0, 120);
             dashboard_btn.Name = "dashboard_btn";
             dashboard_btn.Size = new Size(250, 50);
             dashboard_btn.TabIndex = 0;
@@ -206,6 +210,18 @@
             panelContent.Size = new Size(1008, 664);
             panelContent.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Top;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(250, 120);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
             // FormDashboard
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -217,6 +233,7 @@
             Text = "Form Dashboard";
             Load += FormDashboard_Load;
             panelSidebar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -233,5 +250,6 @@
         private Button user_btn;
         private Button laporan_btn;
         private Button statistik_btn;
+        private PictureBox pictureBox1;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             username_txt = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -35,12 +36,14 @@
             login_btn = new Button();
             keluar_btn = new Button();
             login_panel = new Panel();
+            pictureBox1 = new PictureBox();
             login_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // username_txt
             // 
-            username_txt.Location = new Point(200, 150);
+            username_txt.Location = new Point(287, 202);
             username_txt.Name = "username_txt";
             username_txt.Size = new Size(345, 31);
             username_txt.TabIndex = 0;
@@ -49,7 +52,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(200, 113);
+            label1.Location = new Point(287, 165);
             label1.Name = "label1";
             label1.Size = new Size(114, 25);
             label1.TabIndex = 1;
@@ -59,7 +62,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(200, 203);
+            label2.Location = new Point(287, 255);
             label2.Name = "label2";
             label2.Size = new Size(105, 25);
             label2.TabIndex = 3;
@@ -67,14 +70,14 @@
             // 
             // password_txt
             // 
-            password_txt.Location = new Point(200, 240);
+            password_txt.Location = new Point(287, 292);
             password_txt.Name = "password_txt";
             password_txt.Size = new Size(345, 31);
             password_txt.TabIndex = 2;
             // 
             // login_btn
             // 
-            login_btn.Location = new Point(655, 357);
+            login_btn.Location = new Point(520, 391);
             login_btn.Name = "login_btn";
             login_btn.Size = new Size(112, 34);
             login_btn.TabIndex = 4;
@@ -84,7 +87,7 @@
             // 
             // keluar_btn
             // 
-            keluar_btn.Location = new Point(515, 357);
+            keluar_btn.Location = new Point(380, 391);
             keluar_btn.Name = "keluar_btn";
             keluar_btn.Size = new Size(112, 34);
             keluar_btn.TabIndex = 5;
@@ -94,6 +97,7 @@
             // 
             // login_panel
             // 
+            login_panel.Controls.Add(pictureBox1);
             login_panel.Controls.Add(keluar_btn);
             login_panel.Controls.Add(password_txt);
             login_panel.Controls.Add(login_btn);
@@ -104,6 +108,16 @@
             login_panel.Name = "login_panel";
             login_panel.Size = new Size(885, 493);
             login_panel.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(378, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(150, 121);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
             // 
             // FormLogin
             // 
@@ -117,6 +131,7 @@
             Resize += FormLogin_Resize;
             login_panel.ResumeLayout(false);
             login_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -129,5 +144,6 @@
         private Button login_btn;
         private Button keluar_btn;
         private Panel login_panel;
+        private PictureBox pictureBox1;
     }
 }

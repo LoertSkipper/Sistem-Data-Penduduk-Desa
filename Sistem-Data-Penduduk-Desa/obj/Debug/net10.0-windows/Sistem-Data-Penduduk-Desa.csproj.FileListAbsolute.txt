@@ -37,3 +37,4 @@ D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net1
 D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\Sistem_Data_Penduduk_Desa.FormPenduduk.resources
 D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\Sistem_Data_Penduduk_Desa.FormStatistik.resources
 D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\Sistem_Data_Penduduk_Desa.FormUser.resources
+D:\Projek\PBO\Sistem-Data-Penduduk-Desa\Sistem-Data-Penduduk-Desa\obj\Debug\net10.0-windows\Sistem_Data_Penduduk_Desa.Properties.Resources.resources
