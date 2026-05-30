@@ -70,5 +70,35 @@ namespace Sistem_Data_Penduduk_Desa
         {
             openForm(new FormUser());
         }
+
+        private void penduduk_btn_Click(object sender, EventArgs e)
+        {
+            openForm(new FormPenduduk());
+        }
+
+        private void kk_btn_Click(object sender, EventArgs e)
+        {
+            openForm(new FormKK());
+        }
+
+        private void pekerjaan_btn_Click(object sender, EventArgs e)
+        {
+            openForm(new FormPekerjaan());
+        }
+
+        private void pendidikan_btn_Click(object sender, EventArgs e)
+        {
+            openForm(new FormPendidikan());
+        }
+
+        private void statistik_btn_Click(object sender, EventArgs e)
+        {
+            openForm(new FormStatistik());
+        }
+
+        private void laporan_btn_Click(object sender, EventArgs e)
+        {
+            openForm(new FormLaporan());
+        }
     }
 }

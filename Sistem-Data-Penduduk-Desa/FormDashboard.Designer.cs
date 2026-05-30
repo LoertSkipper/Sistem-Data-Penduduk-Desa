@@ -39,8 +39,8 @@
             kk_btn = new Button();
             penduduk_btn = new Button();
             dashboard_btn = new Button();
-            panelContent = new Panel();
             pictureBox1 = new PictureBox();
+            panelContent = new Panel();
             panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -110,6 +110,7 @@
             laporan_btn.TabIndex = 6;
             laporan_btn.Text = "Laporan";
             laporan_btn.UseVisualStyleBackColor = false;
+            laporan_btn.Click += laporan_btn_Click;
             // 
             // statistik_btn
             // 
@@ -125,6 +126,7 @@
             statistik_btn.TabIndex = 5;
             statistik_btn.Text = "Statistik";
             statistik_btn.UseVisualStyleBackColor = false;
+            statistik_btn.Click += statistik_btn_Click;
             // 
             // pendidikan_btn
             // 
@@ -140,6 +142,7 @@
             pendidikan_btn.TabIndex = 4;
             pendidikan_btn.Text = "Pendidikan";
             pendidikan_btn.UseVisualStyleBackColor = false;
+            pendidikan_btn.Click += pendidikan_btn_Click;
             // 
             // pekerjaan_btn
             // 
@@ -155,6 +158,7 @@
             pekerjaan_btn.TabIndex = 3;
             pekerjaan_btn.Text = "Pekerjaan";
             pekerjaan_btn.UseVisualStyleBackColor = false;
+            pekerjaan_btn.Click += pekerjaan_btn_Click;
             // 
             // kk_btn
             // 
@@ -170,6 +174,7 @@
             kk_btn.TabIndex = 2;
             kk_btn.Text = "Kartu Keluarga";
             kk_btn.UseVisualStyleBackColor = false;
+            kk_btn.Click += kk_btn_Click;
             // 
             // penduduk_btn
             // 
@@ -185,6 +190,7 @@
             penduduk_btn.TabIndex = 1;
             penduduk_btn.Text = "Penduduk";
             penduduk_btn.UseVisualStyleBackColor = false;
+            penduduk_btn.Click += penduduk_btn_Click;
             // 
             // dashboard_btn
             // 
@@ -201,15 +207,6 @@
             dashboard_btn.Text = "Dashboard";
             dashboard_btn.UseVisualStyleBackColor = false;
             // 
-            // panelContent
-            // 
-            panelContent.BackColor = SystemColors.Control;
-            panelContent.Dock = DockStyle.Fill;
-            panelContent.Location = new Point(250, 0);
-            panelContent.Name = "panelContent";
-            panelContent.Size = new Size(1008, 664);
-            panelContent.TabIndex = 1;
-            // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Top;
@@ -221,6 +218,15 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
+            // 
+            // panelContent
+            // 
+            panelContent.BackColor = SystemColors.Control;
+            panelContent.Dock = DockStyle.Fill;
+            panelContent.Location = new Point(250, 0);
+            panelContent.Name = "panelContent";
+            panelContent.Size = new Size(1008, 664);
+            panelContent.TabIndex = 1;
             // 
             // FormDashboard
             // 
