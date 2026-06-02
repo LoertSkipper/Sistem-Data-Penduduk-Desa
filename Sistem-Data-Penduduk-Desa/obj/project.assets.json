@@ -291,24 +291,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rizal\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projek\\PBO\\Sistem-Data-Penduduk-Desa\\Sistem-Data-Penduduk-Desa\\Sistem-Data-Penduduk-Desa.csproj",
+      "projectUniqueName": "D:\\pbo_2d\\Sistem-Data-Penduduk-Desa\\Sistem-Data-Penduduk-Desa\\Sistem-Data-Penduduk-Desa.csproj",
       "projectName": "Sistem-Data-Penduduk-Desa",
-      "projectPath": "D:\\Projek\\PBO\\Sistem-Data-Penduduk-Desa\\Sistem-Data-Penduduk-Desa\\Sistem-Data-Penduduk-Desa.csproj",
-      "packagesPath": "C:\\Users\\Rizal\\.nuget\\packages\\",
-      "outputPath": "D:\\Projek\\PBO\\Sistem-Data-Penduduk-Desa\\Sistem-Data-Penduduk-Desa\\obj\\",
+      "projectPath": "D:\\pbo_2d\\Sistem-Data-Penduduk-Desa\\Sistem-Data-Penduduk-Desa\\Sistem-Data-Penduduk-Desa.csproj",
+      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+      "outputPath": "D:\\pbo_2d\\Sistem-Data-Penduduk-Desa\\Sistem-Data-Penduduk-Desa\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Rizal\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -334,7 +329,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net10.0-windows7.0": {
@@ -364,7 +359,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

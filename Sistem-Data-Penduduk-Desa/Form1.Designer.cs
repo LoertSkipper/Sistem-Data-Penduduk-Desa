@@ -87,7 +87,7 @@
             // 
             // keluar_btn
             // 
-            keluar_btn.Location = new Point(380, 391);
+            keluar_btn.Location = new Point(348, 391);
             keluar_btn.Name = "keluar_btn";
             keluar_btn.Size = new Size(112, 34);
             keluar_btn.TabIndex = 5;
