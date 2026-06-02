@@ -229,7 +229,7 @@
             // Hapus_btn
             // 
             Hapus_btn.BackColor = SystemColors.ActiveCaption;
-            Hapus_btn.Location = new Point(265, 569);
+            Hapus_btn.Location = new Point(269, 569);
             Hapus_btn.Name = "Hapus_btn";
             Hapus_btn.Size = new Size(121, 45);
             Hapus_btn.TabIndex = 18;
@@ -239,7 +239,7 @@
             // edit_btn
             // 
             edit_btn.BackColor = SystemColors.ActiveCaption;
-            edit_btn.Location = new Point(490, 569);
+            edit_btn.Location = new Point(488, 569);
             edit_btn.Name = "edit_btn";
             edit_btn.Size = new Size(121, 45);
             edit_btn.TabIndex = 19;
