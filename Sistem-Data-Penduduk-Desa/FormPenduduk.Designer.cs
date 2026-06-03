@@ -87,10 +87,8 @@
             label3.AutoSize = true;
             label3.Location = new Point(53, 172);
             label3.Name = "label3";
-            label3.Size = new Size(44, 25);
+            label3.Size = new Size(0, 25);
             label3.TabIndex = 2;
-            label3.Text = "NIK:";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -118,7 +116,6 @@
             label6.Size = new Size(119, 25);
             label6.TabIndex = 5;
             label6.Text = "Tanggal Lahir:";
-            label6.Click += label6_Click;
             // 
             // label7
             // 
@@ -171,7 +168,6 @@
             nik_txt.Name = "nik_txt";
             nik_txt.Size = new Size(1004, 31);
             nik_txt.TabIndex = 11;
-            nik_txt.TextChanged += nik_txt_TextChanged;
             // 
             // lk_ck
             // 
@@ -208,7 +204,6 @@
             id_pekerjaan_txt.Name = "id_pekerjaan_txt";
             id_pekerjaan_txt.Size = new Size(1004, 31);
             id_pekerjaan_txt.TabIndex = 15;
-            id_pekerjaan_txt.TextChanged += id_pekerjaan_txt_TextChanged;
             // 
             // id_pendidikan_txt
             // 
@@ -247,7 +242,6 @@
             edit_btn.TabIndex = 19;
             edit_btn.Text = "Edit";
             edit_btn.UseVisualStyleBackColor = false;
-            edit_btn.Click += edit_btn_Click;
             // 
             // reset_btn
             // 

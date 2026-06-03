@@ -14,5 +14,10 @@ namespace Sistem_Data_Penduduk_Desa
         {
             InitializeComponent();
         }
+
+        private void id_penduduk_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
