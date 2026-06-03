@@ -1,2 +1,33 @@
+# Build folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio cache
 .vs/
-*.vsidx
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# NuGet
+packages/
+*.nupkg
+
+# Publish output
+publish/
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS files
+Thumbs.db
+.DS_Store
