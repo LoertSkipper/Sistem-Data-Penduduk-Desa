@@ -34,21 +34,21 @@
             txtKabupaten_kota = new TextBox();
             txtDesa_kelurahan = new TextBox();
             txtKecamatan = new TextBox();
-            tambah = new Button();
+            btnTambah = new Button();
             txtRW = new TextBox();
             txtRT = new TextBox();
             txtAlamat = new TextBox();
             txtNama_kepala_keluarga = new TextBox();
             txtNo_kk = new TextBox();
-            Provinsi = new Label();
-            Kabupaten_kota = new Label();
-            Desa_kelurahan = new Label();
-            Kecamatan = new Label();
-            RW = new Label();
-            RT = new Label();
-            Alamat = new Label();
-            Nama_kepala_keluarga = new Label();
-            No_kk = new Label();
+            lblProvinsi = new Label();
+            lblKabupaten_kota = new Label();
+            lblDesa_kelurahan = new Label();
+            lblKecamatan = new Label();
+            lblRW = new Label();
+            lblRT = new Label();
+            lblAlamat = new Label();
+            lblNama_kepala_keluarga = new Label();
+            lblNo_kk = new Label();
             paneloutput = new Panel();
             dateTimePicker1 = new DateTimePicker();
             dgvDataKK = new DataGridView();
@@ -62,10 +62,10 @@
             colDesa_kelurahan = new DataGridViewTextBoxColumn();
             colKabupaten = new DataGridViewTextBoxColumn();
             colProvinsi = new DataGridViewTextBoxColumn();
-            reset = new Button();
-            hapus = new Button();
-            ubah = new Button();
-            label1 = new Label();
+            btnReset = new Button();
+            btnHapus = new Button();
+            btnUbah = new Button();
+            lblJudul = new Label();
             panelstatistikringkaskk = new Panel();
             pictureDataBaru = new PictureBox();
             pictureTotalKK = new PictureBox();
@@ -89,21 +89,21 @@
             panelinput.Controls.Add(txtKabupaten_kota);
             panelinput.Controls.Add(txtDesa_kelurahan);
             panelinput.Controls.Add(txtKecamatan);
-            panelinput.Controls.Add(tambah);
+            panelinput.Controls.Add(btnTambah);
             panelinput.Controls.Add(txtRW);
             panelinput.Controls.Add(txtRT);
             panelinput.Controls.Add(txtAlamat);
             panelinput.Controls.Add(txtNama_kepala_keluarga);
             panelinput.Controls.Add(txtNo_kk);
-            panelinput.Controls.Add(Provinsi);
-            panelinput.Controls.Add(Kabupaten_kota);
-            panelinput.Controls.Add(Desa_kelurahan);
-            panelinput.Controls.Add(Kecamatan);
-            panelinput.Controls.Add(RW);
-            panelinput.Controls.Add(RT);
-            panelinput.Controls.Add(Alamat);
-            panelinput.Controls.Add(Nama_kepala_keluarga);
-            panelinput.Controls.Add(No_kk);
+            panelinput.Controls.Add(lblProvinsi);
+            panelinput.Controls.Add(lblKabupaten_kota);
+            panelinput.Controls.Add(lblDesa_kelurahan);
+            panelinput.Controls.Add(lblKecamatan);
+            panelinput.Controls.Add(lblRW);
+            panelinput.Controls.Add(lblRT);
+            panelinput.Controls.Add(lblAlamat);
+            panelinput.Controls.Add(lblNama_kepala_keluarga);
+            panelinput.Controls.Add(lblNo_kk);
             panelinput.Location = new Point(13, 91);
             panelinput.Name = "panelinput";
             panelinput.Size = new Size(1110, 355);
@@ -138,15 +138,15 @@
             txtKecamatan.Size = new Size(239, 31);
             txtKecamatan.TabIndex = 14;
             // 
-            // tambah
+            // btnTambah
             // 
-            tambah.Location = new Point(952, 292);
-            tambah.Name = "tambah";
-            tambah.Size = new Size(112, 34);
-            tambah.TabIndex = 2;
-            tambah.Text = "tambah";
-            tambah.UseVisualStyleBackColor = true;
-            tambah.Click += button1_Click;
+            btnTambah.Location = new Point(952, 292);
+            btnTambah.Name = "btnTambah";
+            btnTambah.Size = new Size(112, 34);
+            btnTambah.TabIndex = 2;
+            btnTambah.Text = "tambah";
+            btnTambah.UseVisualStyleBackColor = true;
+            btnTambah.Click += button1_Click;
             // 
             // txtRW
             // 
@@ -183,96 +183,96 @@
             txtNo_kk.Size = new Size(239, 31);
             txtNo_kk.TabIndex = 9;
             // 
-            // Provinsi
+            // lblProvinsi
             // 
-            Provinsi.AutoSize = true;
-            Provinsi.Location = new Point(573, 189);
-            Provinsi.Name = "Provinsi";
-            Provinsi.Size = new Size(74, 25);
-            Provinsi.TabIndex = 8;
-            Provinsi.Text = "Provinsi";
+            lblProvinsi.AutoSize = true;
+            lblProvinsi.Location = new Point(573, 189);
+            lblProvinsi.Name = "lblProvinsi";
+            lblProvinsi.Size = new Size(74, 25);
+            lblProvinsi.TabIndex = 8;
+            lblProvinsi.Text = "Provinsi";
             // 
-            // Kabupaten_kota
+            // lblKabupaten_kota
             // 
-            Kabupaten_kota.AutoSize = true;
-            Kabupaten_kota.Location = new Point(573, 134);
-            Kabupaten_kota.Name = "Kabupaten_kota";
-            Kabupaten_kota.Size = new Size(140, 25);
-            Kabupaten_kota.TabIndex = 7;
-            Kabupaten_kota.Text = "Kabupaten/Kota";
+            lblKabupaten_kota.AutoSize = true;
+            lblKabupaten_kota.Location = new Point(573, 134);
+            lblKabupaten_kota.Name = "lblKabupaten_kota";
+            lblKabupaten_kota.Size = new Size(140, 25);
+            lblKabupaten_kota.TabIndex = 7;
+            lblKabupaten_kota.Text = "Kabupaten/Kota";
             // 
-            // Desa_kelurahan
+            // lblDesa_kelurahan
             // 
-            Desa_kelurahan.AutoSize = true;
-            Desa_kelurahan.Location = new Point(573, 84);
-            Desa_kelurahan.Name = "Desa_kelurahan";
-            Desa_kelurahan.Size = new Size(135, 25);
-            Desa_kelurahan.TabIndex = 6;
-            Desa_kelurahan.Text = "Desa/Kelurahan";
+            lblDesa_kelurahan.AutoSize = true;
+            lblDesa_kelurahan.Location = new Point(573, 84);
+            lblDesa_kelurahan.Name = "lblDesa_kelurahan";
+            lblDesa_kelurahan.Size = new Size(135, 25);
+            lblDesa_kelurahan.TabIndex = 6;
+            lblDesa_kelurahan.Text = "Desa/Kelurahan";
             // 
-            // Kecamatan
+            // lblKecamatan
             // 
-            Kecamatan.AutoSize = true;
-            Kecamatan.Location = new Point(573, 28);
-            Kecamatan.Name = "Kecamatan";
-            Kecamatan.Size = new Size(98, 25);
-            Kecamatan.TabIndex = 5;
-            Kecamatan.Text = "Kecamatan";
+            lblKecamatan.AutoSize = true;
+            lblKecamatan.Location = new Point(573, 28);
+            lblKecamatan.Name = "lblKecamatan";
+            lblKecamatan.Size = new Size(98, 25);
+            lblKecamatan.TabIndex = 5;
+            lblKecamatan.Text = "Kecamatan";
             // 
-            // RW
+            // lblRW
             // 
-            RW.AutoSize = true;
-            RW.Location = new Point(35, 240);
-            RW.Name = "RW";
-            RW.Size = new Size(40, 25);
-            RW.TabIndex = 4;
-            RW.Text = "RW";
+            lblRW.AutoSize = true;
+            lblRW.Location = new Point(35, 240);
+            lblRW.Name = "lblRW";
+            lblRW.Size = new Size(40, 25);
+            lblRW.TabIndex = 4;
+            lblRW.Text = "RW";
             // 
-            // RT
+            // lblRT
             // 
-            RT.AutoSize = true;
-            RT.Location = new Point(35, 181);
-            RT.Name = "RT";
-            RT.Size = new Size(31, 25);
-            RT.TabIndex = 3;
-            RT.Text = "RT";
-            RT.Click += label2_Click_1;
+            lblRT.AutoSize = true;
+            lblRT.Location = new Point(35, 181);
+            lblRT.Name = "lblRT";
+            lblRT.Size = new Size(31, 25);
+            lblRT.TabIndex = 3;
+            lblRT.Text = "RT";
+            lblRT.Click += label2_Click_1;
             // 
-            // Alamat
+            // lblAlamat
             // 
-            Alamat.AutoSize = true;
-            Alamat.Location = new Point(35, 131);
-            Alamat.Name = "Alamat";
-            Alamat.Size = new Size(68, 25);
-            Alamat.TabIndex = 2;
-            Alamat.Text = "Alamat";
+            lblAlamat.AutoSize = true;
+            lblAlamat.Location = new Point(35, 131);
+            lblAlamat.Name = "lblAlamat";
+            lblAlamat.Size = new Size(68, 25);
+            lblAlamat.TabIndex = 2;
+            lblAlamat.Text = "Alamat";
             // 
-            // Nama_kepala_keluarga
+            // lblNama_kepala_keluarga
             // 
-            Nama_kepala_keluarga.AutoSize = true;
-            Nama_kepala_keluarga.Location = new Point(35, 78);
-            Nama_kepala_keluarga.Name = "Nama_kepala_keluarga";
-            Nama_kepala_keluarga.Size = new Size(189, 25);
-            Nama_kepala_keluarga.TabIndex = 1;
-            Nama_kepala_keluarga.Text = "Nama Kepala Keluarga";
+            lblNama_kepala_keluarga.AutoSize = true;
+            lblNama_kepala_keluarga.Location = new Point(35, 78);
+            lblNama_kepala_keluarga.Name = "lblNama_kepala_keluarga";
+            lblNama_kepala_keluarga.Size = new Size(189, 25);
+            lblNama_kepala_keluarga.TabIndex = 1;
+            lblNama_kepala_keluarga.Text = "Nama Kepala Keluarga";
             // 
-            // No_kk
+            // lblNo_kk
             // 
-            No_kk.AutoSize = true;
-            No_kk.Location = new Point(35, 28);
-            No_kk.Name = "No_kk";
-            No_kk.Size = new Size(159, 25);
-            No_kk.TabIndex = 0;
-            No_kk.Text = "No. Kartu Keluarga";
+            lblNo_kk.AutoSize = true;
+            lblNo_kk.Location = new Point(35, 28);
+            lblNo_kk.Name = "lblNo_kk";
+            lblNo_kk.Size = new Size(159, 25);
+            lblNo_kk.TabIndex = 0;
+            lblNo_kk.Text = "No. Kartu Keluarga";
             // 
             // paneloutput
             // 
             paneloutput.BorderStyle = BorderStyle.FixedSingle;
             paneloutput.Controls.Add(dateTimePicker1);
             paneloutput.Controls.Add(dgvDataKK);
-            paneloutput.Controls.Add(reset);
-            paneloutput.Controls.Add(hapus);
-            paneloutput.Controls.Add(ubah);
+            paneloutput.Controls.Add(btnReset);
+            paneloutput.Controls.Add(btnHapus);
+            paneloutput.Controls.Add(btnUbah);
             paneloutput.Location = new Point(12, 484);
             paneloutput.Name = "paneloutput";
             paneloutput.Size = new Size(1900, 544);
@@ -366,43 +366,43 @@
             colProvinsi.Name = "colProvinsi";
             colProvinsi.Width = 200;
             // 
-            // reset
+            // btnReset
             // 
-            reset.Location = new Point(954, 482);
-            reset.Name = "reset";
-            reset.Size = new Size(112, 34);
-            reset.TabIndex = 20;
-            reset.Text = "reset";
-            reset.UseVisualStyleBackColor = true;
+            btnReset.Location = new Point(954, 482);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(112, 34);
+            btnReset.TabIndex = 20;
+            btnReset.Text = "reset";
+            btnReset.UseVisualStyleBackColor = true;
             // 
-            // hapus
+            // btnHapus
             // 
-            hapus.Location = new Point(826, 482);
-            hapus.Name = "hapus";
-            hapus.Size = new Size(112, 34);
-            hapus.TabIndex = 19;
-            hapus.Text = "hapus";
-            hapus.UseVisualStyleBackColor = true;
+            btnHapus.Location = new Point(826, 482);
+            btnHapus.Name = "btnHapus";
+            btnHapus.Size = new Size(112, 34);
+            btnHapus.TabIndex = 19;
+            btnHapus.Text = "hapus";
+            btnHapus.UseVisualStyleBackColor = true;
             // 
-            // ubah
+            // btnUbah
             // 
-            ubah.Location = new Point(699, 482);
-            ubah.Name = "ubah";
-            ubah.Size = new Size(112, 34);
-            ubah.TabIndex = 18;
-            ubah.Text = "ubah";
-            ubah.UseVisualStyleBackColor = true;
+            btnUbah.Location = new Point(699, 482);
+            btnUbah.Name = "btnUbah";
+            btnUbah.Size = new Size(112, 34);
+            btnUbah.TabIndex = 18;
+            btnUbah.Text = "ubah";
+            btnUbah.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblJudul
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label1.Location = new Point(839, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(487, 48);
-            label1.TabIndex = 0;
-            label1.Text = "Pendaftaran Kartu Keluarga";
-            label1.Click += label1_Click;
+            lblJudul.AutoSize = true;
+            lblJudul.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblJudul.Location = new Point(839, 21);
+            lblJudul.Name = "lblJudul";
+            lblJudul.Size = new Size(487, 48);
+            lblJudul.TabIndex = 0;
+            lblJudul.Text = "Pendaftaran Kartu Keluarga";
+            lblJudul.Click += label1_Click;
             // 
             // panelstatistikringkaskk
             // 
@@ -499,7 +499,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1050);
             Controls.Add(panelstatistikringkaskk);
-            Controls.Add(label1);
+            Controls.Add(lblJudul);
             Controls.Add(paneloutput);
             Controls.Add(panelinput);
             Name = "FormKK";
@@ -521,16 +521,16 @@
 
         private Panel panelinput;
         private Panel paneloutput;
-        private Label label1;
-        private Label Nama_kepala_keluarga;
-        private Label No_kk;
-        private Label RT;
-        private Label Alamat;
-        private Label Kabupaten_kota;
-        private Label Desa_kelurahan;
-        private Label Kecamatan;
-        private Label RW;
-        private Label Provinsi;
+        private Label lblJudul;
+        private Label lblNama_kepala_keluarga;
+        private Label lblNo_kk;
+        private Label lblRT;
+        private Label lblAlamat;
+        private Label lblKabupaten_kota;
+        private Label lblDesa_kelurahan;
+        private Label lblKecamatan;
+        private Label lblRW;
+        private Label lblProvinsi;
         private TextBox txtKecamatan;
         private TextBox txtRW;
         private TextBox txtRT;
@@ -540,10 +540,10 @@
         private TextBox txtProvinsi;
         private TextBox txtKabupaten_kota;
         private TextBox txtDesa_kelurahan;
-        private Button tambah;
-        private Button reset;
-        private Button hapus;
-        private Button ubah;
+        private Button btnTambah;
+        private Button btnReset;
+        private Button btnHapus;
+        private Button btnUbah;
         private DataGridView dgvDataKK;
         private DataGridViewTextBoxColumn colId_kk;
         private DataGridViewTextBoxColumn colNo_kk;

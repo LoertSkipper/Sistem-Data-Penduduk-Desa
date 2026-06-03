@@ -14,5 +14,15 @@ namespace Sistem_Data_Penduduk_Desa
         {
             InitializeComponent();
         }
+
+        private void FormPekerjaan_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelinputPekerjaan_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
