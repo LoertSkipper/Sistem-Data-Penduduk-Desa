@@ -45,6 +45,7 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
             panel2 = new Panel();
+            id_user_lbl = new Label();
             ((System.ComponentModel.ISupportInitialize)user_dgv).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
@@ -61,6 +62,7 @@
             user_dgv.RowHeadersWidth = 62;
             user_dgv.Size = new Size(1255, 437);
             user_dgv.TabIndex = 0;
+            user_dgv.CellClick += user_dgv_CellClick;
             user_dgv.CellFormatting += user_dgv_CellFormatting;
             // 
             // username
@@ -141,6 +143,7 @@
             tambah_btn.TabIndex = 7;
             tambah_btn.Text = "Tambah";
             tambah_btn.UseVisualStyleBackColor = true;
+            tambah_btn.Click += tambah_btn_Click;
             // 
             // edit_btn
             // 
@@ -150,6 +153,7 @@
             edit_btn.TabIndex = 8;
             edit_btn.Text = "Edit";
             edit_btn.UseVisualStyleBackColor = true;
+            edit_btn.Click += edit_btn_Click;
             // 
             // hapus_btn
             // 
@@ -159,6 +163,7 @@
             hapus_btn.TabIndex = 9;
             hapus_btn.Text = "Hapus";
             hapus_btn.UseVisualStyleBackColor = true;
+            hapus_btn.Click += hapus_btn_Click;
             // 
             // reset_btn
             // 
@@ -168,6 +173,7 @@
             reset_btn.TabIndex = 10;
             reset_btn.Text = "Reset";
             reset_btn.UseVisualStyleBackColor = true;
+            reset_btn.Click += reset_btn_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -194,6 +200,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(id_user_lbl);
             panel2.Controls.Add(hapus_btn);
             panel2.Controls.Add(tambah_btn);
             panel2.Controls.Add(reset_btn);
@@ -203,6 +210,15 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1258, 664);
             panel2.TabIndex = 13;
+            // 
+            // id_user_lbl
+            // 
+            id_user_lbl.AutoSize = true;
+            id_user_lbl.Location = new Point(72, 592);
+            id_user_lbl.Name = "id_user_lbl";
+            id_user_lbl.Size = new Size(0, 25);
+            id_user_lbl.TabIndex = 11;
+            id_user_lbl.Visible = false;
             // 
             // FormUser
             // 
@@ -220,6 +236,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -242,5 +259,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel1;
         private Panel panel2;
+        private Label id_user_lbl;
     }
 }
