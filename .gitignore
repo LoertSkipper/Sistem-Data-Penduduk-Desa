@@ -2,28 +2,24 @@
 bin/
 obj/
 
-# Visual Studio
-.vs/
+# User-specific files
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
 
-# Rider / ReSharper
-_ReSharper*/
-*.DotSettings.user
+# Visual Studio cache
+.vs/
 
-# NuGet
-packages/
-*.nupkg
+# Rider
+.idea/
 
 # Logs
 *.log
 
-# Database local
-*.db
-*.sqlite
-*.sqlite3
+# NuGet
+packages/
+*.nupkg
 
 # Publish output
 publish/
@@ -32,9 +28,6 @@ publish/
 *.tmp
 *.temp
 
-# Generated files
-Generated_Code/
-
 # OS files
 Thumbs.db
-Desktop.ini
+.DS_Store
