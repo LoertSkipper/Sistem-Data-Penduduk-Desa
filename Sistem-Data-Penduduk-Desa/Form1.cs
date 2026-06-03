@@ -67,5 +67,10 @@ namespace Sistem_Data_Penduduk_Desa
             Application.Exit();
         }
 
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.ExitThread();
+            Environment.Exit(0);
+        }
     }
 }

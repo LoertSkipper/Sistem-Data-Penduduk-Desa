@@ -237,6 +237,7 @@
             Controls.Add(panelSidebar);
             Name = "FormDashboard";
             Text = "Form Dashboard";
+            FormClosing += FormDashboard_FormClosing;
             Load += FormDashboard_Load;
             panelSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

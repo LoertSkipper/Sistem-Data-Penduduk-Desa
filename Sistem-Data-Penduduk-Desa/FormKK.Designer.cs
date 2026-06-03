@@ -66,7 +66,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(149, 283);
+            label1.Location = new Point(111, 285);
             label1.Name = "label1";
             label1.Size = new Size(150, 25);
             label1.TabIndex = 0;
@@ -76,25 +76,27 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(149, 317);
+            label2.Location = new Point(111, 324);
             label2.Name = "label2";
             label2.Size = new Size(184, 25);
             label2.TabIndex = 1;
             label2.Text = "nama kepala keluarga";
+            label2.Click += this.label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(149, 357);
+            label3.Location = new Point(111, 378);
             label3.Name = "label3";
             label3.Size = new Size(65, 25);
             label3.TabIndex = 2;
             label3.Text = "alamat";
+            label3.Click += this.label3_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(149, 391);
+            label4.Location = new Point(111, 432);
             label4.Name = "label4";
             label4.Size = new Size(24, 25);
             label4.TabIndex = 3;
@@ -103,7 +105,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(149, 447);
+            label5.Location = new Point(111, 495);
             label5.Name = "label5";
             label5.Size = new Size(31, 25);
             label5.TabIndex = 4;
@@ -112,7 +114,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(547, 276);
+            label6.Location = new Point(547, 285);
             label6.Name = "label6";
             label6.Size = new Size(97, 25);
             label6.TabIndex = 5;
@@ -147,35 +149,38 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(302, 277);
+            textBox1.Location = new Point(315, 279);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(150, 31);
             textBox1.TabIndex = 9;
+            textBox1.TextChanged += this.textBox1_TextChanged;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(302, 314);
+            textBox2.Location = new Point(315, 326);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(150, 31);
             textBox2.TabIndex = 10;
+            textBox2.TextChanged += this.textBox2_TextChanged;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(302, 351);
+            textBox3.Location = new Point(315, 380);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(150, 31);
             textBox3.TabIndex = 11;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(302, 391);
+            textBox4.Location = new Point(315, 434);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(150, 31);
             textBox4.TabIndex = 12;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(302, 447);
+            textBox5.Location = new Point(315, 495);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(150, 31);
             textBox5.TabIndex = 13;
