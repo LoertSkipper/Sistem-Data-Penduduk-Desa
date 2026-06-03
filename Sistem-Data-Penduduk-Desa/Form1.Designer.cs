@@ -87,7 +87,7 @@
             // 
             // keluar_btn
             // 
-            keluar_btn.Location = new Point(382, 391);
+            keluar_btn.Location = new Point(348, 391);
             keluar_btn.Name = "keluar_btn";
             keluar_btn.Size = new Size(112, 34);
             keluar_btn.TabIndex = 5;
@@ -127,7 +127,6 @@
             Controls.Add(login_panel);
             Name = "FormLogin";
             Text = "Form Login";
-            FormClosing += FormLogin_FormClosing;
             Load += FormLogin_Load;
             Resize += FormLogin_Resize;
             login_panel.ResumeLayout(false);

@@ -100,11 +100,5 @@ namespace Sistem_Data_Penduduk_Desa
         {
             openForm(new FormLaporan());
         }
-
-        private void FormDashboard_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.ExitThread();
-            Environment.Exit(0);
-        }
     }
 }
