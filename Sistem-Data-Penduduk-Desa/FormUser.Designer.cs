@@ -46,10 +46,13 @@
             panel1 = new Panel();
             panel2 = new Panel();
             id_user_lbl = new Label();
+            panel3 = new Panel();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)user_dgv).BeginInit();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // user_dgv
@@ -57,7 +60,7 @@
             user_dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             user_dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             user_dgv.Columns.AddRange(new DataGridViewColumn[] { username, password, role });
-            user_dgv.Location = new Point(3, 3);
+            user_dgv.Location = new Point(3, 113);
             user_dgv.Name = "user_dgv";
             user_dgv.RowHeadersWidth = 62;
             user_dgv.Size = new Size(1255, 437);
@@ -177,6 +180,7 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.Controls.Add(panel3);
             flowLayoutPanel1.Controls.Add(user_dgv);
             flowLayoutPanel1.Dock = DockStyle.Top;
             flowLayoutPanel1.Location = new Point(0, 0);
@@ -220,6 +224,27 @@
             id_user_lbl.TabIndex = 11;
             id_user_lbl.Visible = false;
             // 
+            // panel3
+            // 
+            panel3.BackColor = SystemColors.ActiveCaption;
+            panel3.Controls.Add(label4);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(3, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1255, 104);
+            panel3.TabIndex = 7;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial Narrow", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(501, 20);
+            label4.Name = "label4";
+            label4.Size = new Size(229, 57);
+            label4.TabIndex = 0;
+            label4.Text = "Kelola User";
+            // 
             // FormUser
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -237,6 +262,8 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -260,5 +287,7 @@
         private Panel panel1;
         private Panel panel2;
         private Label id_user_lbl;
+        private Panel panel3;
+        private Label label4;
     }
 }
