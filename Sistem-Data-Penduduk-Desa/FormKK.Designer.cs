@@ -30,30 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKK));
             panelinput = new Panel();
-            paneloutput = new Panel();
-            label1 = new Label();
-            No_kk = new Label();
-            Nama_kepala_keluarga = new Label();
-            RT = new Label();
-            Alamat = new Label();
-            Kecamatan = new Label();
-            RW = new Label();
+            txtProvinsi = new TextBox();
+            txtKabupaten_kota = new TextBox();
+            txtDesa_kelurahan = new TextBox();
+            txtKecamatan = new TextBox();
+            tambah = new Button();
+            txtRW = new TextBox();
+            txtRT = new TextBox();
+            txtAlamat = new TextBox();
+            txtNama_kepala_keluarga = new TextBox();
+            txtNo_kk = new TextBox();
+            Provinsi = new Label();
             Kabupaten_kota = new Label();
             Desa_kelurahan = new Label();
-            Provinsi = new Label();
-            txtNo_kk = new TextBox();
-            txtNama_kepala_keluarga = new TextBox();
-            txtAlamat = new TextBox();
-            txtRT = new TextBox();
-            txtRW = new TextBox();
-            txtKecamatan = new TextBox();
-            txtDesa_kelurahan = new TextBox();
-            txtKabupaten_kota = new TextBox();
-            txtProvinsi = new TextBox();
-            tambah = new Button();
-            ubah = new Button();
-            hapus = new Button();
-            reset = new Button();
+            Kecamatan = new Label();
+            RW = new Label();
+            RT = new Label();
+            Alamat = new Label();
+            Nama_kepala_keluarga = new Label();
+            No_kk = new Label();
+            paneloutput = new Panel();
+            dateTimePicker1 = new DateTimePicker();
             dgvDataKK = new DataGridView();
             colId_kk = new DataGridViewTextBoxColumn();
             colNo_kk = new DataGridViewTextBoxColumn();
@@ -65,21 +62,24 @@
             colDesa_kelurahan = new DataGridViewTextBoxColumn();
             colKabupaten = new DataGridViewTextBoxColumn();
             colProvinsi = new DataGridViewTextBoxColumn();
-            dateTimePicker1 = new DateTimePicker();
-            panel1 = new Panel();
-            statistik_ringkas = new Label();
-            TotalKK = new Label();
-            data_baru = new Label();
-            angkatotal = new Label();
+            reset = new Button();
+            hapus = new Button();
+            ubah = new Button();
+            label1 = new Label();
+            panelstatistikringkaskk = new Panel();
+            pictureDataBaru = new PictureBox();
+            pictureTotalKK = new PictureBox();
             angkadata = new Label();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            angkatotal = new Label();
+            data_baru = new Label();
+            TotalKK = new Label();
+            statistik_ringkas = new Label();
             panelinput.SuspendLayout();
             paneloutput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDataKK).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panelstatistikringkaskk.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureDataBaru).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureTotalKK).BeginInit();
             SuspendLayout();
             // 
             // panelinput
@@ -110,47 +110,123 @@
             panelinput.TabIndex = 0;
             panelinput.Paint += panel1_Paint;
             // 
-            // paneloutput
+            // txtProvinsi
             // 
-            paneloutput.BorderStyle = BorderStyle.FixedSingle;
-            paneloutput.Controls.Add(dateTimePicker1);
-            paneloutput.Controls.Add(dgvDataKK);
-            paneloutput.Controls.Add(reset);
-            paneloutput.Controls.Add(hapus);
-            paneloutput.Controls.Add(ubah);
-            paneloutput.Location = new Point(12, 484);
-            paneloutput.Name = "paneloutput";
-            paneloutput.Size = new Size(1900, 544);
-            paneloutput.TabIndex = 1;
+            txtProvinsi.Location = new Point(825, 189);
+            txtProvinsi.Name = "txtProvinsi";
+            txtProvinsi.Size = new Size(239, 31);
+            txtProvinsi.TabIndex = 17;
             // 
-            // label1
+            // txtKabupaten_kota
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label1.Location = new Point(377, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(487, 48);
-            label1.TabIndex = 0;
-            label1.Text = "Pendaftaran Kartu Keluarga";
-            label1.Click += label1_Click;
+            txtKabupaten_kota.Location = new Point(825, 134);
+            txtKabupaten_kota.Name = "txtKabupaten_kota";
+            txtKabupaten_kota.Size = new Size(239, 31);
+            txtKabupaten_kota.TabIndex = 16;
             // 
-            // No_kk
+            // txtDesa_kelurahan
             // 
-            No_kk.AutoSize = true;
-            No_kk.Location = new Point(35, 28);
-            No_kk.Name = "No_kk";
-            No_kk.Size = new Size(159, 25);
-            No_kk.TabIndex = 0;
-            No_kk.Text = "No. Kartu Keluarga";
+            txtDesa_kelurahan.Location = new Point(825, 84);
+            txtDesa_kelurahan.Name = "txtDesa_kelurahan";
+            txtDesa_kelurahan.Size = new Size(239, 31);
+            txtDesa_kelurahan.TabIndex = 15;
             // 
-            // Nama_kepala_keluarga
+            // txtKecamatan
             // 
-            Nama_kepala_keluarga.AutoSize = true;
-            Nama_kepala_keluarga.Location = new Point(35, 78);
-            Nama_kepala_keluarga.Name = "Nama_kepala_keluarga";
-            Nama_kepala_keluarga.Size = new Size(189, 25);
-            Nama_kepala_keluarga.TabIndex = 1;
-            Nama_kepala_keluarga.Text = "Nama Kepala Keluarga";
+            txtKecamatan.Location = new Point(825, 28);
+            txtKecamatan.Name = "txtKecamatan";
+            txtKecamatan.Size = new Size(239, 31);
+            txtKecamatan.TabIndex = 14;
+            // 
+            // tambah
+            // 
+            tambah.Location = new Point(952, 292);
+            tambah.Name = "tambah";
+            tambah.Size = new Size(112, 34);
+            tambah.TabIndex = 2;
+            tambah.Text = "tambah";
+            tambah.UseVisualStyleBackColor = true;
+            tambah.Click += button1_Click;
+            // 
+            // txtRW
+            // 
+            txtRW.Location = new Point(287, 240);
+            txtRW.Name = "txtRW";
+            txtRW.Size = new Size(94, 31);
+            txtRW.TabIndex = 13;
+            // 
+            // txtRT
+            // 
+            txtRT.Location = new Point(287, 181);
+            txtRT.Name = "txtRT";
+            txtRT.Size = new Size(94, 31);
+            txtRT.TabIndex = 12;
+            // 
+            // txtAlamat
+            // 
+            txtAlamat.Location = new Point(287, 131);
+            txtAlamat.Name = "txtAlamat";
+            txtAlamat.Size = new Size(239, 31);
+            txtAlamat.TabIndex = 11;
+            // 
+            // txtNama_kepala_keluarga
+            // 
+            txtNama_kepala_keluarga.Location = new Point(287, 78);
+            txtNama_kepala_keluarga.Name = "txtNama_kepala_keluarga";
+            txtNama_kepala_keluarga.Size = new Size(239, 31);
+            txtNama_kepala_keluarga.TabIndex = 10;
+            // 
+            // txtNo_kk
+            // 
+            txtNo_kk.Location = new Point(287, 28);
+            txtNo_kk.Name = "txtNo_kk";
+            txtNo_kk.Size = new Size(239, 31);
+            txtNo_kk.TabIndex = 9;
+            // 
+            // Provinsi
+            // 
+            Provinsi.AutoSize = true;
+            Provinsi.Location = new Point(573, 189);
+            Provinsi.Name = "Provinsi";
+            Provinsi.Size = new Size(74, 25);
+            Provinsi.TabIndex = 8;
+            Provinsi.Text = "Provinsi";
+            // 
+            // Kabupaten_kota
+            // 
+            Kabupaten_kota.AutoSize = true;
+            Kabupaten_kota.Location = new Point(573, 134);
+            Kabupaten_kota.Name = "Kabupaten_kota";
+            Kabupaten_kota.Size = new Size(140, 25);
+            Kabupaten_kota.TabIndex = 7;
+            Kabupaten_kota.Text = "Kabupaten/Kota";
+            // 
+            // Desa_kelurahan
+            // 
+            Desa_kelurahan.AutoSize = true;
+            Desa_kelurahan.Location = new Point(573, 84);
+            Desa_kelurahan.Name = "Desa_kelurahan";
+            Desa_kelurahan.Size = new Size(135, 25);
+            Desa_kelurahan.TabIndex = 6;
+            Desa_kelurahan.Text = "Desa/Kelurahan";
+            // 
+            // Kecamatan
+            // 
+            Kecamatan.AutoSize = true;
+            Kecamatan.Location = new Point(573, 28);
+            Kecamatan.Name = "Kecamatan";
+            Kecamatan.Size = new Size(98, 25);
+            Kecamatan.TabIndex = 5;
+            Kecamatan.Text = "Kecamatan";
+            // 
+            // RW
+            // 
+            RW.AutoSize = true;
+            RW.Location = new Point(35, 240);
+            RW.Name = "RW";
+            RW.Size = new Size(40, 25);
+            RW.TabIndex = 4;
+            RW.Text = "RW";
             // 
             // RT
             // 
@@ -171,150 +247,43 @@
             Alamat.TabIndex = 2;
             Alamat.Text = "Alamat";
             // 
-            // Kecamatan
+            // Nama_kepala_keluarga
             // 
-            Kecamatan.AutoSize = true;
-            Kecamatan.Location = new Point(573, 28);
-            Kecamatan.Name = "Kecamatan";
-            Kecamatan.Size = new Size(98, 25);
-            Kecamatan.TabIndex = 5;
-            Kecamatan.Text = "Kecamatan";
+            Nama_kepala_keluarga.AutoSize = true;
+            Nama_kepala_keluarga.Location = new Point(35, 78);
+            Nama_kepala_keluarga.Name = "Nama_kepala_keluarga";
+            Nama_kepala_keluarga.Size = new Size(189, 25);
+            Nama_kepala_keluarga.TabIndex = 1;
+            Nama_kepala_keluarga.Text = "Nama Kepala Keluarga";
             // 
-            // RW
+            // No_kk
             // 
-            RW.AutoSize = true;
-            RW.Location = new Point(35, 240);
-            RW.Name = "RW";
-            RW.Size = new Size(40, 25);
-            RW.TabIndex = 4;
-            RW.Text = "RW";
+            No_kk.AutoSize = true;
+            No_kk.Location = new Point(35, 28);
+            No_kk.Name = "No_kk";
+            No_kk.Size = new Size(159, 25);
+            No_kk.TabIndex = 0;
+            No_kk.Text = "No. Kartu Keluarga";
             // 
-            // Kabupaten_kota
+            // paneloutput
             // 
-            Kabupaten_kota.AutoSize = true;
-            Kabupaten_kota.Location = new Point(573, 134);
-            Kabupaten_kota.Name = "Kabupaten_kota";
-            Kabupaten_kota.Size = new Size(140, 25);
-            Kabupaten_kota.TabIndex = 7;
-            Kabupaten_kota.Text = "Kabupaten/Kota";
+            paneloutput.BorderStyle = BorderStyle.FixedSingle;
+            paneloutput.Controls.Add(dateTimePicker1);
+            paneloutput.Controls.Add(dgvDataKK);
+            paneloutput.Controls.Add(reset);
+            paneloutput.Controls.Add(hapus);
+            paneloutput.Controls.Add(ubah);
+            paneloutput.Location = new Point(12, 484);
+            paneloutput.Name = "paneloutput";
+            paneloutput.Size = new Size(1900, 544);
+            paneloutput.TabIndex = 1;
             // 
-            // Desa_kelurahan
+            // dateTimePicker1
             // 
-            Desa_kelurahan.AutoSize = true;
-            Desa_kelurahan.Location = new Point(573, 84);
-            Desa_kelurahan.Name = "Desa_kelurahan";
-            Desa_kelurahan.Size = new Size(135, 25);
-            Desa_kelurahan.TabIndex = 6;
-            Desa_kelurahan.Text = "Desa/Kelurahan";
-            // 
-            // Provinsi
-            // 
-            Provinsi.AutoSize = true;
-            Provinsi.Location = new Point(573, 189);
-            Provinsi.Name = "Provinsi";
-            Provinsi.Size = new Size(74, 25);
-            Provinsi.TabIndex = 8;
-            Provinsi.Text = "Provinsi";
-            // 
-            // txtNo_kk
-            // 
-            txtNo_kk.Location = new Point(287, 28);
-            txtNo_kk.Name = "txtNo_kk";
-            txtNo_kk.Size = new Size(239, 31);
-            txtNo_kk.TabIndex = 9;
-            // 
-            // txtNama_kepala_keluarga
-            // 
-            txtNama_kepala_keluarga.Location = new Point(287, 78);
-            txtNama_kepala_keluarga.Name = "txtNama_kepala_keluarga";
-            txtNama_kepala_keluarga.Size = new Size(239, 31);
-            txtNama_kepala_keluarga.TabIndex = 10;
-            // 
-            // txtAlamat
-            // 
-            txtAlamat.Location = new Point(287, 131);
-            txtAlamat.Name = "txtAlamat";
-            txtAlamat.Size = new Size(239, 31);
-            txtAlamat.TabIndex = 11;
-            // 
-            // txtRT
-            // 
-            txtRT.Location = new Point(287, 181);
-            txtRT.Name = "txtRT";
-            txtRT.Size = new Size(94, 31);
-            txtRT.TabIndex = 12;
-            // 
-            // txtRW
-            // 
-            txtRW.Location = new Point(287, 240);
-            txtRW.Name = "txtRW";
-            txtRW.Size = new Size(94, 31);
-            txtRW.TabIndex = 13;
-            // 
-            // txtKecamatan
-            // 
-            txtKecamatan.Location = new Point(825, 28);
-            txtKecamatan.Name = "txtKecamatan";
-            txtKecamatan.Size = new Size(239, 31);
-            txtKecamatan.TabIndex = 14;
-            // 
-            // txtDesa_kelurahan
-            // 
-            txtDesa_kelurahan.Location = new Point(825, 84);
-            txtDesa_kelurahan.Name = "txtDesa_kelurahan";
-            txtDesa_kelurahan.Size = new Size(239, 31);
-            txtDesa_kelurahan.TabIndex = 15;
-            // 
-            // txtKabupaten_kota
-            // 
-            txtKabupaten_kota.Location = new Point(825, 134);
-            txtKabupaten_kota.Name = "txtKabupaten_kota";
-            txtKabupaten_kota.Size = new Size(239, 31);
-            txtKabupaten_kota.TabIndex = 16;
-            // 
-            // txtProvinsi
-            // 
-            txtProvinsi.Location = new Point(825, 189);
-            txtProvinsi.Name = "txtProvinsi";
-            txtProvinsi.Size = new Size(239, 31);
-            txtProvinsi.TabIndex = 17;
-            // 
-            // tambah
-            // 
-            tambah.Location = new Point(952, 292);
-            tambah.Name = "tambah";
-            tambah.Size = new Size(112, 34);
-            tambah.TabIndex = 2;
-            tambah.Text = "tambah";
-            tambah.UseVisualStyleBackColor = true;
-            tambah.Click += button1_Click;
-            // 
-            // ubah
-            // 
-            ubah.Location = new Point(699, 482);
-            ubah.Name = "ubah";
-            ubah.Size = new Size(112, 34);
-            ubah.TabIndex = 18;
-            ubah.Text = "ubah";
-            ubah.UseVisualStyleBackColor = true;
-            // 
-            // hapus
-            // 
-            hapus.Location = new Point(826, 482);
-            hapus.Name = "hapus";
-            hapus.Size = new Size(112, 34);
-            hapus.TabIndex = 19;
-            hapus.Text = "hapus";
-            hapus.UseVisualStyleBackColor = true;
-            // 
-            // reset
-            // 
-            reset.Location = new Point(954, 482);
-            reset.Name = "reset";
-            reset.Size = new Size(112, 34);
-            reset.TabIndex = 20;
-            reset.Text = "reset";
-            reset.UseVisualStyleBackColor = true;
+            dateTimePicker1.Location = new Point(1557, 32);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(300, 31);
+            dateTimePicker1.TabIndex = 2;
             // 
             // dgvDataKK
             // 
@@ -332,6 +301,7 @@
             colId_kk.HeaderText = "ID KK";
             colId_kk.MinimumWidth = 12;
             colId_kk.Name = "colId_kk";
+            colId_kk.Width = 150;
             // 
             // colNo_kk
             // 
@@ -396,68 +366,79 @@
             colProvinsi.Name = "colProvinsi";
             colProvinsi.Width = 200;
             // 
-            // dateTimePicker1
+            // reset
             // 
-            dateTimePicker1.Location = new Point(1557, 32);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(300, 31);
-            dateTimePicker1.TabIndex = 2;
+            reset.Location = new Point(954, 482);
+            reset.Name = "reset";
+            reset.Size = new Size(112, 34);
+            reset.TabIndex = 20;
+            reset.Text = "reset";
+            reset.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // hapus
             // 
-            panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(angkadata);
-            panel1.Controls.Add(angkatotal);
-            panel1.Controls.Add(data_baru);
-            panel1.Controls.Add(TotalKK);
-            panel1.Controls.Add(statistik_ringkas);
-            panel1.Location = new Point(1236, 91);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(676, 355);
-            panel1.TabIndex = 2;
-            panel1.Paint += panel1_Paint_1;
+            hapus.Location = new Point(826, 482);
+            hapus.Name = "hapus";
+            hapus.Size = new Size(112, 34);
+            hapus.TabIndex = 19;
+            hapus.Text = "hapus";
+            hapus.UseVisualStyleBackColor = true;
             // 
-            // statistik_ringkas
+            // ubah
             // 
-            statistik_ringkas.AutoSize = true;
-            statistik_ringkas.Font = new Font("Segoe UI", 12F, FontStyle.Italic);
-            statistik_ringkas.Location = new Point(30, 29);
-            statistik_ringkas.Name = "statistik_ringkas";
-            statistik_ringkas.Size = new Size(175, 32);
-            statistik_ringkas.TabIndex = 0;
-            statistik_ringkas.Text = "statistik ringkas";
+            ubah.Location = new Point(699, 482);
+            ubah.Name = "ubah";
+            ubah.Size = new Size(112, 34);
+            ubah.TabIndex = 18;
+            ubah.Text = "ubah";
+            ubah.UseVisualStyleBackColor = true;
             // 
-            // TotalKK
+            // label1
             // 
-            TotalKK.AutoSize = true;
-            TotalKK.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
-            TotalKK.Location = new Point(205, 122);
-            TotalKK.Name = "TotalKK";
-            TotalKK.Size = new Size(86, 25);
-            TotalKK.TabIndex = 1;
-            TotalKK.Text = "TOTAL KK";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            label1.Location = new Point(839, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(487, 48);
+            label1.TabIndex = 0;
+            label1.Text = "Pendaftaran Kartu Keluarga";
+            label1.Click += label1_Click;
             // 
-            // data_baru
+            // panelstatistikringkaskk
             // 
-            data_baru.AutoSize = true;
-            data_baru.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
-            data_baru.Location = new Point(527, 110);
-            data_baru.Name = "data_baru";
-            data_baru.Size = new Size(106, 25);
-            data_baru.TabIndex = 2;
-            data_baru.Text = "DATA BARU";
+            panelstatistikringkaskk.Controls.Add(pictureDataBaru);
+            panelstatistikringkaskk.Controls.Add(pictureTotalKK);
+            panelstatistikringkaskk.Controls.Add(angkadata);
+            panelstatistikringkaskk.Controls.Add(angkatotal);
+            panelstatistikringkaskk.Controls.Add(data_baru);
+            panelstatistikringkaskk.Controls.Add(TotalKK);
+            panelstatistikringkaskk.Controls.Add(statistik_ringkas);
+            panelstatistikringkaskk.Location = new Point(1236, 91);
+            panelstatistikringkaskk.Name = "panelstatistikringkaskk";
+            panelstatistikringkaskk.Size = new Size(676, 355);
+            panelstatistikringkaskk.TabIndex = 2;
+            panelstatistikringkaskk.Paint += panel1_Paint_1;
             // 
-            // angkatotal
+            // pictureDataBaru
             // 
-            angkatotal.AutoSize = true;
-            angkatotal.Font = new Font("Segoe UI", 20F);
-            angkatotal.Location = new Point(223, 170);
-            angkatotal.Name = "angkatotal";
-            angkatotal.Size = new Size(45, 54);
-            angkatotal.TabIndex = 3;
-            angkatotal.Text = "1";
-            angkatotal.TextAlign = ContentAlignment.TopCenter;
+            pictureDataBaru.Image = (Image)resources.GetObject("pictureDataBaru.Image");
+            pictureDataBaru.Location = new Point(410, 121);
+            pictureDataBaru.Name = "pictureDataBaru";
+            pictureDataBaru.Size = new Size(100, 100);
+            pictureDataBaru.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureDataBaru.TabIndex = 6;
+            pictureDataBaru.TabStop = false;
+            // 
+            // pictureTotalKK
+            // 
+            pictureTotalKK.Image = (Image)resources.GetObject("pictureTotalKK.Image");
+            pictureTotalKK.Location = new Point(71, 121);
+            pictureTotalKK.Name = "pictureTotalKK";
+            pictureTotalKK.Size = new Size(100, 100);
+            pictureTotalKK.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureTotalKK.TabIndex = 5;
+            pictureTotalKK.TabStop = false;
+            pictureTotalKK.Click += pictureBox1_Click;
             // 
             // angkadata
             // 
@@ -471,32 +452,53 @@
             angkadata.TextAlign = ContentAlignment.BottomCenter;
             angkadata.Click += label3_Click_1;
             // 
-            // pictureBox1
+            // angkatotal
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(71, 121);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 100);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
+            angkatotal.AutoSize = true;
+            angkatotal.Font = new Font("Segoe UI", 20F);
+            angkatotal.Location = new Point(223, 170);
+            angkatotal.Name = "angkatotal";
+            angkatotal.Size = new Size(45, 54);
+            angkatotal.TabIndex = 3;
+            angkatotal.Text = "1";
+            angkatotal.TextAlign = ContentAlignment.TopCenter;
             // 
-            // pictureBox2
+            // data_baru
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(410, 121);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(100, 100);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 6;
-            pictureBox2.TabStop = false;
+            data_baru.AutoSize = true;
+            data_baru.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            data_baru.Location = new Point(527, 110);
+            data_baru.Name = "data_baru";
+            data_baru.Size = new Size(106, 25);
+            data_baru.TabIndex = 2;
+            data_baru.Text = "DATA BARU";
+            // 
+            // TotalKK
+            // 
+            TotalKK.AutoSize = true;
+            TotalKK.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            TotalKK.Location = new Point(205, 122);
+            TotalKK.Name = "TotalKK";
+            TotalKK.Size = new Size(86, 25);
+            TotalKK.TabIndex = 1;
+            TotalKK.Text = "TOTAL KK";
+            // 
+            // statistik_ringkas
+            // 
+            statistik_ringkas.AutoSize = true;
+            statistik_ringkas.Font = new Font("Segoe UI", 12F, FontStyle.Italic);
+            statistik_ringkas.Location = new Point(30, 29);
+            statistik_ringkas.Name = "statistik_ringkas";
+            statistik_ringkas.Size = new Size(175, 32);
+            statistik_ringkas.TabIndex = 0;
+            statistik_ringkas.Text = "statistik ringkas";
             // 
             // FormKK
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1050);
-            Controls.Add(panel1);
+            Controls.Add(panelstatistikringkaskk);
             Controls.Add(label1);
             Controls.Add(paneloutput);
             Controls.Add(panelinput);
@@ -507,10 +509,10 @@
             panelinput.PerformLayout();
             paneloutput.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvDataKK).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panelstatistikringkaskk.ResumeLayout(false);
+            panelstatistikringkaskk.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureDataBaru).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureTotalKK).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -554,13 +556,13 @@
         private DataGridViewTextBoxColumn colKabupaten;
         private DataGridViewTextBoxColumn colProvinsi;
         private DateTimePicker dateTimePicker1;
-        private Panel panel1;
+        private Panel panelstatistikringkaskk;
         private Label statistik_ringkas;
         private Label TotalKK;
         private Label angkatotal;
         private Label data_baru;
         private Label angkadata;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private PictureBox pictureTotalKK;
+        private PictureBox pictureDataBaru;
     }
 }
