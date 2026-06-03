@@ -59,13 +59,15 @@
             id_pekerjaan = new DataGridViewTextBoxColumn();
             id_pendidikan = new DataGridViewTextBoxColumn();
             cari_txt = new TextBox();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(53, 40);
+            label1.Location = new Point(58, 39);
             label1.Name = "label1";
             label1.Size = new Size(159, 25);
             label1.TabIndex = 0;
@@ -147,27 +149,27 @@
             // 
             // id_penduduk_txt
             // 
-            id_penduduk_txt.BackColor = SystemColors.InactiveCaption;
+            id_penduduk_txt.BackColor = SystemColors.ControlLight;
             id_penduduk_txt.Location = new Point(317, 118);
             id_penduduk_txt.Name = "id_penduduk_txt";
-            id_penduduk_txt.Size = new Size(517, 31);
+            id_penduduk_txt.Size = new Size(1004, 31);
             id_penduduk_txt.TabIndex = 9;
             id_penduduk_txt.TextChanged += id_penduduk_txt_TextChanged;
             // 
             // nama_txt
             // 
-            nama_txt.BackColor = SystemColors.InactiveCaption;
+            nama_txt.BackColor = SystemColors.ControlLight;
             nama_txt.Location = new Point(317, 215);
             nama_txt.Name = "nama_txt";
-            nama_txt.Size = new Size(517, 31);
+            nama_txt.Size = new Size(1004, 31);
             nama_txt.TabIndex = 10;
             // 
             // nik_txt
             // 
-            nik_txt.BackColor = SystemColors.InactiveCaption;
+            nik_txt.BackColor = SystemColors.ControlLight;
             nik_txt.Location = new Point(317, 166);
             nik_txt.Name = "nik_txt";
-            nik_txt.Size = new Size(517, 31);
+            nik_txt.Size = new Size(1004, 31);
             nik_txt.TabIndex = 11;
             nik_txt.TextChanged += nik_txt_TextChanged;
             // 
@@ -193,27 +195,27 @@
             // 
             // id_keluarga_txt
             // 
-            id_keluarga_txt.BackColor = SystemColors.InactiveCaption;
+            id_keluarga_txt.BackColor = SystemColors.ControlLight;
             id_keluarga_txt.Location = new Point(317, 383);
             id_keluarga_txt.Name = "id_keluarga_txt";
-            id_keluarga_txt.Size = new Size(517, 31);
+            id_keluarga_txt.Size = new Size(1004, 31);
             id_keluarga_txt.TabIndex = 14;
             // 
             // id_pekerjaan_txt
             // 
-            id_pekerjaan_txt.BackColor = SystemColors.InactiveCaption;
+            id_pekerjaan_txt.BackColor = SystemColors.ControlLight;
             id_pekerjaan_txt.Location = new Point(317, 433);
             id_pekerjaan_txt.Name = "id_pekerjaan_txt";
-            id_pekerjaan_txt.Size = new Size(517, 31);
+            id_pekerjaan_txt.Size = new Size(1004, 31);
             id_pekerjaan_txt.TabIndex = 15;
             id_pekerjaan_txt.TextChanged += id_pekerjaan_txt_TextChanged;
             // 
             // id_pendidikan_txt
             // 
-            id_pendidikan_txt.BackColor = SystemColors.InactiveCaption;
+            id_pendidikan_txt.BackColor = SystemColors.ControlLight;
             id_pendidikan_txt.Location = new Point(317, 487);
             id_pendidikan_txt.Name = "id_pendidikan_txt";
-            id_pendidikan_txt.Size = new Size(517, 31);
+            id_pendidikan_txt.Size = new Size(1004, 31);
             id_pendidikan_txt.TabIndex = 16;
             // 
             // tambah_btn
@@ -325,12 +327,21 @@
             // 
             // cari_txt
             // 
-            cari_txt.BackColor = SystemColors.InactiveCaption;
+            cari_txt.BackColor = SystemColors.ControlLight;
             cari_txt.Location = new Point(53, 648);
             cari_txt.Name = "cari_txt";
             cari_txt.Size = new Size(252, 31);
             cari_txt.TabIndex = 22;
             cari_txt.Text = "Cari";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(53, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1268, 112);
+            panel1.TabIndex = 23;
             // 
             // FormPenduduk
             // 
@@ -359,10 +370,12 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(panel1);
             Name = "FormPenduduk";
             Text = "FormPenduduk";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -400,5 +413,6 @@
         private DataGridViewTextBoxColumn id_pekerjaan;
         private DataGridViewTextBoxColumn id_pendidikan;
         private TextBox cari_txt;
+        private Panel panel1;
     }
 }
