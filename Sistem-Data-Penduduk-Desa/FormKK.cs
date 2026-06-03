@@ -34,5 +34,15 @@ namespace Sistem_Data_Penduduk_Desa
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDataKK_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
