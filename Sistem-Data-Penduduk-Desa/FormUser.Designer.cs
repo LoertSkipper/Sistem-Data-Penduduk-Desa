@@ -43,16 +43,18 @@
             hapus_btn = new Button();
             reset_btn = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            panel1 = new Panel();
-            panel2 = new Panel();
-            id_user_lbl = new Label();
             panel3 = new Panel();
             label4 = new Label();
+            panel1 = new Panel();
+            cari_btn = new Button();
+            cari_txt = new TextBox();
+            panel2 = new Panel();
+            id_user_lbl = new Label();
             ((System.ComponentModel.ISupportInitialize)user_dgv).BeginInit();
             flowLayoutPanel1.SuspendLayout();
+            panel3.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // user_dgv
@@ -63,7 +65,7 @@
             user_dgv.Location = new Point(3, 113);
             user_dgv.Name = "user_dgv";
             user_dgv.RowHeadersWidth = 62;
-            user_dgv.Size = new Size(1255, 437);
+            user_dgv.Size = new Size(1255, 263);
             user_dgv.TabIndex = 0;
             user_dgv.CellClick += user_dgv_CellClick;
             user_dgv.CellFormatting += user_dgv_CellFormatting;
@@ -91,14 +93,14 @@
             // 
             // username_txt
             // 
-            username_txt.Location = new Point(145, 49);
+            username_txt.Location = new Point(145, 121);
             username_txt.Name = "username_txt";
             username_txt.Size = new Size(200, 31);
             username_txt.TabIndex = 1;
             // 
             // password_txt
             // 
-            password_txt.Location = new Point(445, 49);
+            password_txt.Location = new Point(445, 121);
             password_txt.Name = "password_txt";
             password_txt.Size = new Size(200, 31);
             password_txt.TabIndex = 2;
@@ -106,7 +108,7 @@
             // role_cmb
             // 
             role_cmb.FormattingEnabled = true;
-            role_cmb.Location = new Point(745, 49);
+            role_cmb.Location = new Point(745, 121);
             role_cmb.Name = "role_cmb";
             role_cmb.Size = new Size(200, 33);
             role_cmb.TabIndex = 3;
@@ -114,7 +116,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(145, 21);
+            label1.Location = new Point(145, 93);
             label1.Name = "label1";
             label1.Size = new Size(91, 25);
             label1.TabIndex = 4;
@@ -123,7 +125,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(445, 21);
+            label2.Location = new Point(445, 93);
             label2.Name = "label2";
             label2.Size = new Size(87, 25);
             label2.TabIndex = 5;
@@ -132,7 +134,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(745, 21);
+            label3.Location = new Point(745, 93);
             label3.Name = "label3";
             label3.Size = new Size(46, 25);
             label3.TabIndex = 6;
@@ -185,22 +187,62 @@
             flowLayoutPanel1.Dock = DockStyle.Top;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1258, 446);
+            flowLayoutPanel1.Size = new Size(1258, 396);
             flowLayoutPanel1.TabIndex = 11;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = SystemColors.ActiveCaption;
+            panel3.Controls.Add(label4);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(3, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1255, 104);
+            panel3.TabIndex = 7;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial Narrow", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(501, 20);
+            label4.Name = "label4";
+            label4.Size = new Size(229, 57);
+            label4.TabIndex = 0;
+            label4.Text = "Kelola User";
             // 
             // panel1
             // 
+            panel1.Controls.Add(cari_btn);
             panel1.Controls.Add(role_cmb);
             panel1.Controls.Add(username_txt);
+            panel1.Controls.Add(cari_txt);
             panel1.Controls.Add(password_txt);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label3);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 446);
+            panel1.Location = new Point(0, 396);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1258, 100);
+            panel1.Size = new Size(1258, 187);
             panel1.TabIndex = 12;
+            // 
+            // cari_btn
+            // 
+            cari_btn.Location = new Point(872, 34);
+            cari_btn.Name = "cari_btn";
+            cari_btn.Size = new Size(112, 34);
+            cari_btn.TabIndex = 9;
+            cari_btn.Text = "Cari";
+            cari_btn.UseVisualStyleBackColor = true;
+            cari_btn.Click += cari_btn_Click;
+            // 
+            // cari_txt
+            // 
+            cari_txt.Location = new Point(145, 34);
+            cari_txt.Name = "cari_txt";
+            cari_txt.Size = new Size(700, 31);
+            cari_txt.TabIndex = 8;
             // 
             // panel2
             // 
@@ -224,27 +266,6 @@
             id_user_lbl.TabIndex = 11;
             id_user_lbl.Visible = false;
             // 
-            // panel3
-            // 
-            panel3.BackColor = SystemColors.ActiveCaption;
-            panel3.Controls.Add(label4);
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(3, 3);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1255, 104);
-            panel3.TabIndex = 7;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Arial Narrow", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(501, 20);
-            label4.Name = "label4";
-            label4.Size = new Size(229, 57);
-            label4.TabIndex = 0;
-            label4.Text = "Kelola User";
-            // 
             // FormUser
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -258,12 +279,12 @@
             Load += FormUser_Load;
             ((System.ComponentModel.ISupportInitialize)user_dgv).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -289,5 +310,7 @@
         private Label id_user_lbl;
         private Panel panel3;
         private Label label4;
+        private TextBox cari_txt;
+        private Button cari_btn;
     }
 }

@@ -40,6 +40,20 @@ namespace Sistem_Data_Penduduk_Desa
         private void FormUser_Load(object sender, EventArgs e)
         {
             tampilUser();
+            user_dgv.EnableHeadersVisualStyles = false;
+            user_dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(44, 62, 80);
+            user_dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            user_dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            user_dgv.RowsDefaultCellStyle.BackColor = Color.White;
+            user_dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.Gainsboro;
+            user_dgv.BorderStyle = BorderStyle.None;
+            user_dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            user_dgv.GridColor = Color.LightGray;
+            user_dgv.DefaultCellStyle.SelectionBackColor = Color.SteelBlue;
+            user_dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+            user_dgv.RowHeadersVisible = false;
+            user_dgv.AllowUserToAddRows = false;
+            user_dgv.ReadOnly = true;
         }
 
         private void user_dgv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -145,6 +159,29 @@ namespace Sistem_Data_Penduduk_Desa
         {
             clearForm();
             id_user_lbl.Text = "";
+            cari_txt.Clear();
+            tampilUser();
+        }
+
+        void cariUser()
+        {
+            string keyword = cari_txt.Text;
+            string query = $"SELECT * FROM users " +
+                           $"WHERE username LIKE '%{keyword}%' " +
+                           $"OR role LIKE '%{keyword}%'";
+
+            DataTable dt = Koneksi.eksekusiQuery(query);
+            user_dgv.DataSource = dt;
+
+            if (user_dgv.Columns.Contains("id_user"))
+            {
+                user_dgv.Columns["id_user"].Visible = false;
+            }
+        }
+
+        private void cari_btn_Click(object sender, EventArgs e)
+        {
+            cariUser();
         }
     }
 }
