@@ -29,109 +29,44 @@
         private void InitializeComponent()
         {
             statistika = new Panel();
-            panel1 = new Panel();
-            label1 = new Label();
-            lblTotalPenduduk = new Label();
-            panel2 = new Panel();
-            label2 = new Label();
-            label3 = new Label();
             panel3 = new Panel();
             label4 = new Label();
             label5 = new Label();
+            panel2 = new Panel();
+            label2 = new Label();
+            label3 = new Label();
+            panel1 = new Panel();
+            lblTotalPenduduk = new Label();
+            label1 = new Label();
             panel4 = new Panel();
-            dgvWilayah = new DataGridView();
-            panel5 = new Panel();
-            label6 = new Label();
-            panel6 = new Panel();
-            dgvUmur = new DataGridView();
-            label7 = new Label();
+            label8 = new Label();
+            tbxcari = new TextBox();
+            btncari = new Button();
             statistika.SuspendLayout();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
             panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            panel1.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvWilayah).BeginInit();
-            panel5.SuspendLayout();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvUmur).BeginInit();
             SuspendLayout();
             // 
             // statistika
             // 
-            statistika.BackColor = SystemColors.ControlLight;
-            statistika.Controls.Add(panel3);
-            statistika.Controls.Add(panel2);
-            statistika.Controls.Add(panel1);
+            statistika.BackColor = SystemColors.ActiveCaption;
+            statistika.Controls.Add(btncari);
+            statistika.Controls.Add(tbxcari);
+            statistika.Controls.Add(label8);
             statistika.Dock = DockStyle.Top;
             statistika.Location = new Point(0, 0);
             statistika.Name = "statistika";
-            statistika.Size = new Size(977, 120);
+            statistika.Size = new Size(1174, 130);
             statistika.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(lblTotalPenduduk);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(146, 22);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(143, 80);
-            panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(3, 3);
-            label1.Name = "label1";
-            label1.Size = new Size(135, 25);
-            label1.TabIndex = 1;
-            label1.Text = "Total penduduk";
-            // 
-            // lblTotalPenduduk
-            // 
-            lblTotalPenduduk.AutoSize = true;
-            lblTotalPenduduk.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalPenduduk.Location = new Point(54, 35);
-            lblTotalPenduduk.Name = "lblTotalPenduduk";
-            lblTotalPenduduk.Size = new Size(33, 38);
-            lblTotalPenduduk.TabIndex = 2;
-            lblTotalPenduduk.Text = "0";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(label3);
-            panel2.Location = new Point(410, 22);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(143, 80);
-            panel2.TabIndex = 3;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(54, 35);
-            label2.Name = "label2";
-            label2.Size = new Size(33, 38);
-            label2.TabIndex = 2;
-            label2.Text = "0";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(24, 6);
-            label3.Name = "label3";
-            label3.Size = new Size(89, 25);
-            label3.TabIndex = 1;
-            label3.Text = "Laki - Laki";
             // 
             // panel3
             // 
             panel3.BackColor = Color.White;
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label5);
-            panel3.Location = new Point(668, 22);
+            panel3.Location = new Point(736, 34);
             panel3.Name = "panel3";
             panel3.Size = new Size(143, 80);
             panel3.TabIndex = 3;
@@ -155,101 +90,120 @@
             label5.TabIndex = 1;
             label5.Text = "Perempuan";
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(label3);
+            panel2.Location = new Point(477, 34);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(143, 80);
+            panel2.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(54, 35);
+            label2.Name = "label2";
+            label2.Size = new Size(33, 38);
+            label2.TabIndex = 2;
+            label2.Text = "0";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(24, 6);
+            label3.Name = "label3";
+            label3.Size = new Size(89, 25);
+            label3.TabIndex = 1;
+            label3.Text = "Laki - Laki";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(lblTotalPenduduk);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(222, 34);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(143, 80);
+            panel1.TabIndex = 0;
+            // 
+            // lblTotalPenduduk
+            // 
+            lblTotalPenduduk.AutoSize = true;
+            lblTotalPenduduk.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalPenduduk.Location = new Point(54, 35);
+            lblTotalPenduduk.Name = "lblTotalPenduduk";
+            lblTotalPenduduk.Size = new Size(33, 38);
+            lblTotalPenduduk.TabIndex = 2;
+            lblTotalPenduduk.Text = "0";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 3);
+            label1.Name = "label1";
+            label1.Size = new Size(135, 25);
+            label1.TabIndex = 1;
+            label1.Text = "Total penduduk";
+            // 
             // panel4
             // 
             panel4.BackColor = Color.White;
-            panel4.Controls.Add(panel6);
-            panel4.Controls.Add(panel5);
+            panel4.Controls.Add(panel1);
+            panel4.Controls.Add(panel3);
+            panel4.Controls.Add(panel2);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(0, 120);
+            panel4.Location = new Point(0, 130);
             panel4.Name = "panel4";
-            panel4.Size = new Size(977, 460);
+            panel4.Size = new Size(1174, 653);
             panel4.TabIndex = 2;
             // 
-            // dgvWilayah
+            // label8
             // 
-            dgvWilayah.BackgroundColor = Color.LightGray;
-            dgvWilayah.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvWilayah.Location = new Point(30, 114);
-            dgvWilayah.Name = "dgvWilayah";
-            dgvWilayah.RowHeadersWidth = 62;
-            dgvWilayah.Size = new Size(424, 314);
-            dgvWilayah.TabIndex = 0;
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(50, 41);
+            label8.Name = "label8";
+            label8.Size = new Size(420, 38);
+            label8.TabIndex = 4;
+            label8.Text = "Statistika Data Penduduk Desa";
             // 
-            // panel5
+            // tbxcari
             // 
-            panel5.Controls.Add(label6);
-            panel5.Controls.Add(dgvWilayah);
-            panel5.Dock = DockStyle.Left;
-            panel5.Location = new Point(0, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(487, 460);
-            panel5.TabIndex = 0;
+            tbxcari.Location = new Point(766, 49);
+            tbxcari.Name = "tbxcari";
+            tbxcari.Size = new Size(253, 31);
+            tbxcari.TabIndex = 5;
             // 
-            // label6
+            // btncari
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold);
-            label6.Location = new Point(131, 43);
-            label6.Name = "label6";
-            label6.Size = new Size(255, 36);
-            label6.TabIndex = 1;
-            label6.Text = "Statistik Per Wilayah";
-            // 
-            // panel6
-            // 
-            panel6.Controls.Add(label7);
-            panel6.Controls.Add(dgvUmur);
-            panel6.Dock = DockStyle.Right;
-            panel6.Location = new Point(487, 0);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(490, 460);
-            panel6.TabIndex = 1;
-            // 
-            // dgvUmur
-            // 
-            dgvUmur.BackgroundColor = Color.LightGray;
-            dgvUmur.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUmur.Location = new Point(36, 114);
-            dgvUmur.Name = "dgvUmur";
-            dgvUmur.RowHeadersWidth = 62;
-            dgvUmur.Size = new Size(424, 314);
-            dgvUmur.TabIndex = 2;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold);
-            label7.Location = new Point(130, 43);
-            label7.Name = "label7";
-            label7.Size = new Size(310, 36);
-            label7.TabIndex = 2;
-            label7.Text = "Statistik Kelompok Umur";
-            label7.Click += label7_Click;
+            btncari.Location = new Point(1050, 47);
+            btncari.Name = "btncari";
+            btncari.Size = new Size(82, 34);
+            btncari.TabIndex = 6;
+            btncari.Text = "Cari";
+            btncari.UseVisualStyleBackColor = true;
             // 
             // FormStatistik
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(977, 580);
+            ClientSize = new Size(1174, 783);
             Controls.Add(panel4);
             Controls.Add(statistika);
             Name = "FormStatistik";
             Text = "FormStatistik";
             statistika.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            statistika.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvWilayah).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvUmur).EndInit();
             ResumeLayout(false);
         }
 
@@ -265,11 +219,8 @@
         private Label label2;
         private Label label3;
         private Panel panel4;
-        private DataGridView dgvWilayah;
-        private Panel panel5;
-        private Panel panel6;
-        private Label label7;
-        private DataGridView dgvUmur;
-        private Label label6;
+        private Label label8;
+        private Button btncari;
+        private TextBox tbxcari;
     }
 }
