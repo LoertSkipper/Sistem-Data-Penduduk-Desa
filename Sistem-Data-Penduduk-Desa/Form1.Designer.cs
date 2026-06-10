@@ -37,6 +37,8 @@
             keluar_btn = new Button();
             login_panel = new Panel();
             pictureBox1 = new PictureBox();
+            panel1 = new Panel();
+            panel2 = new Panel();
             login_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -77,22 +79,26 @@
             // 
             // login_btn
             // 
+            login_btn.BackColor = SystemColors.ActiveCaption;
+            login_btn.ForeColor = SystemColors.Control;
             login_btn.Location = new Point(520, 391);
             login_btn.Name = "login_btn";
             login_btn.Size = new Size(112, 34);
             login_btn.TabIndex = 4;
             login_btn.Text = "Login";
-            login_btn.UseVisualStyleBackColor = true;
+            login_btn.UseVisualStyleBackColor = false;
             login_btn.Click += login_btn_Click;
             // 
             // keluar_btn
             // 
-            keluar_btn.Location = new Point(348, 391);
+            keluar_btn.BackColor = SystemColors.ActiveCaption;
+            keluar_btn.ForeColor = SystemColors.Control;
+            keluar_btn.Location = new Point(379, 391);
             keluar_btn.Name = "keluar_btn";
             keluar_btn.Size = new Size(112, 34);
             keluar_btn.TabIndex = 5;
             keluar_btn.Text = "Keluar";
-            keluar_btn.UseVisualStyleBackColor = true;
+            keluar_btn.UseVisualStyleBackColor = false;
             keluar_btn.Click += keluar_btn_Click;
             // 
             // login_panel
@@ -119,11 +125,31 @@
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1258, 64);
+            panel1.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 600);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1258, 64);
+            panel2.TabIndex = 8;
+            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1258, 664);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(login_panel);
             Name = "FormLogin";
             Text = "Form Login";
@@ -145,5 +171,7 @@
         private Button keluar_btn;
         private Panel login_panel;
         private PictureBox pictureBox1;
+        private Panel panel1;
+        private Panel panel2;
     }
 }
