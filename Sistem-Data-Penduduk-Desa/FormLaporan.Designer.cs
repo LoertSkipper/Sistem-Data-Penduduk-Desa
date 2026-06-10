@@ -28,12 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormLaporan";
+            label1 = new Label();
+            laporan = new Panel();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(131, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(696, 54);
+            label1.TabIndex = 0;
+            label1.Text = "LAPORAN DATA KEPENDUDUDKAN";
+            label1.Click += label1_Click;
+            // 
+            // laporan
+            // 
+            laporan.Location = new Point(58, 145);
+            laporan.Name = "laporan";
+            laporan.Size = new Size(300, 150);
+            laporan.TabIndex = 1;
+            // 
+            // FormLaporan
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(972, 587);
+            Controls.Add(laporan);
+            Controls.Add(label1);
+            Name = "FormLaporan";
+            Text = "FormLaporan";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private Panel laporan;
     }
 }

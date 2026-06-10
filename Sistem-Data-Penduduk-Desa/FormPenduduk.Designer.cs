@@ -173,7 +173,7 @@
             nik_txt.Name = "nik_txt";
             nik_txt.Size = new Size(1004, 31);
             nik_txt.TabIndex = 11;
-            nik_txt.TextChanged += nik_txt_TextChanged;
+            //nik_txt.TextChanged += nik_txt_TextChanged;
             // 
             // lk_ck
             // 
@@ -237,7 +237,7 @@
             edit_btn.TabIndex = 19;
             edit_btn.Text = "Edit";
             edit_btn.UseVisualStyleBackColor = false;
-            edit_btn.Click += edit_btn_Click;
+            //edit_btn.Click += edit_btn_Click;
             // 
             // reset_btn
             // 

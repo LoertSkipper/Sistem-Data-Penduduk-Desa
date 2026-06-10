@@ -14,5 +14,10 @@ namespace Sistem_Data_Penduduk_Desa
         {
             InitializeComponent();
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
