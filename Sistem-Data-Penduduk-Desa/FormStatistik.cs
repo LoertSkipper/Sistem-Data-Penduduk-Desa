@@ -24,5 +24,10 @@ namespace Sistem_Data_Penduduk_Desa
         {
 
         }
+
+        private void chart3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

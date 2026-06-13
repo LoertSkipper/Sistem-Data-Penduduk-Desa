@@ -30,13 +30,14 @@
         {
             label1 = new Label();
             laporan = new Panel();
+            laporan.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(131, 41);
+            label1.Location = new Point(131, 28);
             label1.Name = "label1";
             label1.Size = new Size(696, 54);
             label1.TabIndex = 0;
@@ -45,9 +46,11 @@
             // 
             // laporan
             // 
-            laporan.Location = new Point(58, 145);
+            laporan.Controls.Add(label1);
+            laporan.Dock = DockStyle.Top;
+            laporan.Location = new Point(0, 0);
             laporan.Name = "laporan";
-            laporan.Size = new Size(300, 150);
+            laporan.Size = new Size(972, 122);
             laporan.TabIndex = 1;
             // 
             // FormLaporan
@@ -56,11 +59,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(972, 587);
             Controls.Add(laporan);
-            Controls.Add(label1);
             Name = "FormLaporan";
             Text = "FormLaporan";
+            laporan.ResumeLayout(false);
+            laporan.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
