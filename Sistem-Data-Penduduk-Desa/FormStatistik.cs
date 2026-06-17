@@ -19,5 +19,15 @@ namespace Sistem_Data_Penduduk_Desa
         {
 
         }
+
+        private void dgvWilayah_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void chart3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
