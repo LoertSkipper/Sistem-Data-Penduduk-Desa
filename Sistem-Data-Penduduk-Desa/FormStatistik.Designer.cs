@@ -41,6 +41,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             statistika = new Panel();
+            comboBox1 = new ComboBox();
             label6 = new Label();
             label8 = new Label();
             panel3 = new Panel();
@@ -57,7 +58,6 @@
             chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            comboBox1 = new ComboBox();
             statistika.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -80,6 +80,14 @@
             statistika.Name = "statistika";
             statistika.Size = new Size(1235, 130);
             statistika.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(955, 46);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(168, 33);
+            comboBox1.TabIndex = 7;
             // 
             // label6
             // 
@@ -204,6 +212,7 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(1235, 920);
             panel4.TabIndex = 2;
+            panel4.Paint += panel4_Paint;
             // 
             // chart4
             // 
@@ -272,14 +281,6 @@
             chart1.Size = new Size(649, 275);
             chart1.TabIndex = 4;
             chart1.Text = "chart1";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(955, 46);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(168, 33);
-            comboBox1.TabIndex = 7;
             // 
             // FormStatistik
             // 

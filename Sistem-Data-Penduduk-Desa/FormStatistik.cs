@@ -29,5 +29,10 @@ namespace Sistem_Data_Penduduk_Desa
         {
 
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
