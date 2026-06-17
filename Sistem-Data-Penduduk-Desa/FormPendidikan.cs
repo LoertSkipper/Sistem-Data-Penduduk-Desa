@@ -91,28 +91,48 @@ namespace Sistem_Data_Penduduk_Desa
         {
             if (id_pendidikan_txt.Text == "")
             {
-                MessageBox.Show("Pilih data yang akan diedit!");
+                MessageBox.Show("Pilih data yang akan diedit terlebih dahulu!");
                 return;
             }
 
-            string query =
-                "UPDATE pendidikan SET " +
-                "jenjang='" + jenjang_txt.Text + "' " +
-                "WHERE id_pendidikan='" +
-                id_pendidikan_txt.Text + "'";
-
-            int hasil = Koneksi.eksekusiNonQuery(query);
-
-            if (hasil > 0)
+            if (jenjang_txt.Text.Trim() == "")
             {
-                MessageBox.Show("Data berhasil diubah");
+                MessageBox.Show("Jenjang pendidikan tidak boleh kosong!");
+                jenjang_txt.Focus();
+                return;
+            }
 
-                TampilData();
-                ResetForm();
+            DialogResult konfirmasi = MessageBox.Show(
+                "Apakah Anda yakin ingin mengubah data ini?",
+                "Konfirmasi Edit",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (konfirmasi == DialogResult.Yes)
+            {
+                string query =
+                    "UPDATE pendidikan SET " +
+                    "jenjang='" + jenjang_txt.Text + "' " +
+                    "WHERE id_pendidikan='" +
+                    id_pendidikan_txt.Text + "'";
+
+                int hasil = Koneksi.eksekusiNonQuery(query);
+
+                if (hasil > 0)
+                {
+                    MessageBox.Show("Data berhasil diubah");
+
+                    TampilData();
+                    ResetForm();
+                }
+                else
+                {
+                    MessageBox.Show("Data gagal diubah");
+                }
             }
             else
             {
-                MessageBox.Show("Data gagal diubah");
+                MessageBox.Show("Perubahan data dibatalkan");
             }
         }
 
