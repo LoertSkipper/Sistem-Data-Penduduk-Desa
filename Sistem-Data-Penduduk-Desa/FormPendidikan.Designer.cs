@@ -90,6 +90,7 @@
             id_pendidikan_txt.Name = "id_pendidikan_txt";
             id_pendidikan_txt.Size = new Size(583, 31);
             id_pendidikan_txt.TabIndex = 4;
+            id_pendidikan_txt.TextChanged += id_pendidikan_txt_TextChanged;
             // 
             // jenjang_txt
             // 
@@ -109,6 +110,7 @@
             tambah_btn.TabIndex = 6;
             tambah_btn.Text = "+ Tambah";
             tambah_btn.UseVisualStyleBackColor = false;
+            tambah_btn.Click += tambah_btn_Click;
             // 
             // hapus_btn
             // 
@@ -119,6 +121,7 @@
             hapus_btn.TabIndex = 7;
             hapus_btn.Text = "Hapus";
             hapus_btn.UseVisualStyleBackColor = false;
+            hapus_btn.Click += hapus_btn_Click;
             // 
             // edit_btn
             // 
@@ -140,6 +143,7 @@
             reset_btn.TabIndex = 9;
             reset_btn.Text = "Reset";
             reset_btn.UseVisualStyleBackColor = false;
+            reset_btn.Click += reset_btn_Click;
             // 
             // dataGridView1
             // 
@@ -150,6 +154,8 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(758, 177);
             dataGridView1.TabIndex = 10;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // id_pendidikan
             // 
@@ -173,6 +179,7 @@
             cari_txt.Size = new Size(150, 31);
             cari_txt.TabIndex = 11;
             cari_txt.Text = "Cari";
+            cari_txt.TextChanged += cari_txt_TextChanged;
             // 
             // FormPendidikan
             // 
@@ -192,6 +199,7 @@
             Controls.Add(panel1);
             Name = "FormPendidikan";
             Text = "FormPendidikan";
+            Load += FormPendidikan_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
