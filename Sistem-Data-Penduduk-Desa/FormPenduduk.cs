@@ -159,6 +159,12 @@ namespace Sistem_Data_Penduduk_Desa
         // =========================
         private void edit_btn_Click(object sender, EventArgs e)
         {
+            if (id_penduduk_txt.Text == "")
+            {
+                MessageBox.Show("Pilih data yang akan diedit terlebih dahulu!");
+                return;
+            }
+
             string jk = "";
 
             if (lk_ck.Checked)
@@ -167,28 +173,41 @@ namespace Sistem_Data_Penduduk_Desa
             if (pr_ck.Checked)
                 jk = "P";
 
-            string query =
-                "UPDATE penduduk SET " +
-                "nik='" + nik_txt.Text + "'," +
-                "nama='" + nama_txt.Text + "'," +
-                "jk='" + jk + "'," +
-                "tgl_lahir='" + tgl_lahir.Value.ToString("yyyy-MM-dd") + "'," +
-                "id_kk='" + id_keluarga_txt.Text + "'," +
-                "id_pekerjaan='" + id_pekerjaan_cbx.SelectedValue + "'," +
-                "id_pendidikan='" + id_pendidikan_cb.SelectedValue + "' " +
-                "WHERE id_penduduk='" + id_penduduk_txt.Text + "'";
+            DialogResult hasilKonfirmasi = MessageBox.Show(
+                "Apakah Anda yakin ingin mengubah data ini?",
+                "Konfirmasi Edit",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
-            int hasil = Koneksi.eksekusiNonQuery(query);
-
-            if (hasil > 0)
+            if (hasilKonfirmasi == DialogResult.Yes)
             {
-                MessageBox.Show("Data berhasil diubah");
-                TampilData();
-                ResetForm();
+                string query =
+                    "UPDATE penduduk SET " +
+                    "nik='" + nik_txt.Text + "'," +
+                    "nama='" + nama_txt.Text + "'," +
+                    "jk='" + jk + "'," +
+                    "tgl_lahir='" + tgl_lahir.Value.ToString("yyyy-MM-dd") + "'," +
+                    "id_kk='" + id_keluarga_txt.Text + "'," +
+                    "id_pekerjaan='" + id_pekerjaan_cbx.SelectedValue + "'," +
+                    "id_pendidikan='" + id_pendidikan_cb.SelectedValue + "' " +
+                    "WHERE id_penduduk='" + id_penduduk_txt.Text + "'";
+
+                int hasil = Koneksi.eksekusiNonQuery(query);
+
+                if (hasil > 0)
+                {
+                    MessageBox.Show("Data berhasil diubah");
+                    TampilData();
+                    ResetForm();
+                }
+                else
+                {
+                    MessageBox.Show("Data gagal diubah");
+                }
             }
             else
             {
-                MessageBox.Show("Data gagal diubah");
+                MessageBox.Show("Perubahan data dibatalkan");
             }
         }
 
@@ -197,21 +216,40 @@ namespace Sistem_Data_Penduduk_Desa
         // =========================
         private void Hapus_btn_Click(object sender, EventArgs e)
         {
-            string query =
-                "DELETE FROM penduduk WHERE id_penduduk='" +
-                id_penduduk_txt.Text + "'";
-
-            int hasil = Koneksi.eksekusiNonQuery(query);
-
-            if (hasil > 0)
+            if (id_penduduk_txt.Text == "")
             {
-                MessageBox.Show("Data berhasil dihapus");
-                TampilData();
-                ResetForm();
+                MessageBox.Show("Pilih data yang akan dihapus terlebih dahulu!");
+                return;
+            }
+
+            DialogResult hasilKonfirmasi = MessageBox.Show(
+                "Apakah Anda yakin ingin menghapus data ini?",
+                "Konfirmasi Hapus",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (hasilKonfirmasi == DialogResult.Yes)
+            {
+                string query =
+                    "DELETE FROM penduduk WHERE id_penduduk='" +
+                    id_penduduk_txt.Text + "'";
+
+                int hasil = Koneksi.eksekusiNonQuery(query);
+
+                if (hasil > 0)
+                {
+                    MessageBox.Show("Data berhasil dihapus");
+                    TampilData();
+                    ResetForm();
+                }
+                else
+                {
+                    MessageBox.Show("Data gagal dihapus");
+                }
             }
             else
             {
-                MessageBox.Show("Data gagal dihapus");
+                MessageBox.Show("Penghapusan data dibatalkan");
             }
         }
 
@@ -338,6 +376,11 @@ namespace Sistem_Data_Penduduk_Desa
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

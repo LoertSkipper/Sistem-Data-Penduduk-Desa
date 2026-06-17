@@ -48,14 +48,6 @@
             edit_btn = new Button();
             reset_btn = new Button();
             dataGridView1 = new DataGridView();
-            cari_txt = new TextBox();
-            panel1 = new Panel();
-            label10 = new Label();
-            mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            id_pekerjaan_cbx = new ComboBox();
-            id_pendidikan_cb = new ComboBox();
-            tgl_lahir = new DateTimePicker();
-            label11 = new Label();
             id_penduduk = new DataGridViewTextBoxColumn();
             nik = new DataGridViewTextBoxColumn();
             nama = new DataGridViewTextBoxColumn();
@@ -64,6 +56,14 @@
             id_kk = new DataGridViewTextBoxColumn();
             id_pekerjaan = new DataGridViewTextBoxColumn();
             id_pendidikan = new DataGridViewTextBoxColumn();
+            cari_txt = new TextBox();
+            panel1 = new Panel();
+            label10 = new Label();
+            mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            id_pekerjaan_cbx = new ComboBox();
+            id_pendidikan_cb = new ComboBox();
+            tgl_lahir = new DateTimePicker();
+            label11 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -173,7 +173,6 @@
             nik_txt.Name = "nik_txt";
             nik_txt.Size = new Size(1004, 31);
             nik_txt.TabIndex = 11;
-            //nik_txt.TextChanged += nik_txt_TextChanged;
             // 
             // lk_ck
             // 
@@ -237,7 +236,7 @@
             edit_btn.TabIndex = 19;
             edit_btn.Text = "Edit";
             edit_btn.UseVisualStyleBackColor = false;
-            //edit_btn.Click += edit_btn_Click;
+            edit_btn.Click += edit_btn_Click;
             // 
             // reset_btn
             // 
@@ -261,78 +260,6 @@
             dataGridView1.TabIndex = 21;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // cari_txt
-            // 
-            cari_txt.BackColor = SystemColors.ControlLight;
-            cari_txt.Location = new Point(53, 648);
-            cari_txt.Name = "cari_txt";
-            cari_txt.Size = new Size(252, 31);
-            cari_txt.TabIndex = 22;
-            cari_txt.Text = "Cari";
-            cari_txt.TextChanged += cari_txt_TextChanged;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(53, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1268, 112);
-            panel1.TabIndex = 23;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(53, 169);
-            label10.Name = "label10";
-            label10.Size = new Size(40, 25);
-            label10.TabIndex = 24;
-            label10.Text = "NIK";
-            // 
-            // mySqlCommand1
-            // 
-            mySqlCommand1.CacheAge = 0;
-            mySqlCommand1.Connection = null;
-            mySqlCommand1.EnableCaching = false;
-            mySqlCommand1.Transaction = null;
-            // 
-            // id_pekerjaan_cbx
-            // 
-            id_pekerjaan_cbx.BackColor = SystemColors.ControlLight;
-            id_pekerjaan_cbx.FormattingEnabled = true;
-            id_pekerjaan_cbx.Location = new Point(317, 453);
-            id_pekerjaan_cbx.Name = "id_pekerjaan_cbx";
-            id_pekerjaan_cbx.Size = new Size(1004, 33);
-            id_pekerjaan_cbx.TabIndex = 25;
-            id_pekerjaan_cbx.SelectedIndexChanged += id_pekerjaan_cbx_SelectedIndexChanged;
-            // 
-            // id_pendidikan_cb
-            // 
-            id_pendidikan_cb.BackColor = SystemColors.ControlLight;
-            id_pendidikan_cb.FormattingEnabled = true;
-            id_pendidikan_cb.Location = new Point(317, 502);
-            id_pendidikan_cb.Name = "id_pendidikan_cb";
-            id_pendidikan_cb.Size = new Size(1004, 33);
-            id_pendidikan_cb.TabIndex = 26;
-            id_pendidikan_cb.SelectedIndexChanged += id_pendidikan_cb_SelectedIndexChanged;
-            // 
-            // tgl_lahir
-            // 
-            tgl_lahir.Location = new Point(317, 361);
-            tgl_lahir.Name = "tgl_lahir";
-            tgl_lahir.Size = new Size(300, 31);
-            tgl_lahir.TabIndex = 27;
-            tgl_lahir.ValueChanged += tgl_lahir_ValueChanged;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(53, 361);
-            label11.Name = "label11";
-            label11.Size = new Size(152, 25);
-            label11.TabIndex = 28;
-            label11.Text = "ID Kartu keluarga:";
             // 
             // id_penduduk
             // 
@@ -389,6 +316,79 @@
             id_pendidikan.MinimumWidth = 8;
             id_pendidikan.Name = "id_pendidikan";
             id_pendidikan.Width = 150;
+            // 
+            // cari_txt
+            // 
+            cari_txt.BackColor = SystemColors.ControlLight;
+            cari_txt.Location = new Point(53, 648);
+            cari_txt.Name = "cari_txt";
+            cari_txt.Size = new Size(252, 31);
+            cari_txt.TabIndex = 22;
+            cari_txt.Text = "Cari";
+            cari_txt.TextChanged += cari_txt_TextChanged;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(53, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1268, 112);
+            panel1.TabIndex = 23;
+            panel1.Paint += panel1_Paint;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(53, 169);
+            label10.Name = "label10";
+            label10.Size = new Size(40, 25);
+            label10.TabIndex = 24;
+            label10.Text = "NIK";
+            // 
+            // mySqlCommand1
+            // 
+            mySqlCommand1.CacheAge = 0;
+            mySqlCommand1.Connection = null;
+            mySqlCommand1.EnableCaching = false;
+            mySqlCommand1.Transaction = null;
+            // 
+            // id_pekerjaan_cbx
+            // 
+            id_pekerjaan_cbx.BackColor = SystemColors.ControlLight;
+            id_pekerjaan_cbx.FormattingEnabled = true;
+            id_pekerjaan_cbx.Location = new Point(317, 453);
+            id_pekerjaan_cbx.Name = "id_pekerjaan_cbx";
+            id_pekerjaan_cbx.Size = new Size(1004, 33);
+            id_pekerjaan_cbx.TabIndex = 25;
+            id_pekerjaan_cbx.SelectedIndexChanged += id_pekerjaan_cbx_SelectedIndexChanged;
+            // 
+            // id_pendidikan_cb
+            // 
+            id_pendidikan_cb.BackColor = SystemColors.ControlLight;
+            id_pendidikan_cb.FormattingEnabled = true;
+            id_pendidikan_cb.Location = new Point(317, 502);
+            id_pendidikan_cb.Name = "id_pendidikan_cb";
+            id_pendidikan_cb.Size = new Size(1004, 33);
+            id_pendidikan_cb.TabIndex = 26;
+            id_pendidikan_cb.SelectedIndexChanged += id_pendidikan_cb_SelectedIndexChanged;
+            // 
+            // tgl_lahir
+            // 
+            tgl_lahir.Location = new Point(317, 361);
+            tgl_lahir.Name = "tgl_lahir";
+            tgl_lahir.Size = new Size(300, 31);
+            tgl_lahir.TabIndex = 27;
+            tgl_lahir.ValueChanged += tgl_lahir_ValueChanged;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(53, 361);
+            label11.Name = "label11";
+            label11.Size = new Size(152, 25);
+            label11.TabIndex = 28;
+            label11.Text = "ID Kartu keluarga:";
             // 
             // FormPenduduk
             // 
