@@ -87,10 +87,10 @@
             label3.AutoSize = true;
             label3.Location = new Point(53, 172);
             label3.Name = "label3";
-            label3.Size = new Size(44, 25);
+            label3.Size = new Size(0, 25);
             label3.TabIndex = 2;
             label3.Text = "NIK:";
-            label3.Click += label3_Click;
+            //label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -154,7 +154,7 @@
             id_penduduk_txt.Name = "id_penduduk_txt";
             id_penduduk_txt.Size = new Size(1004, 31);
             id_penduduk_txt.TabIndex = 9;
-            id_penduduk_txt.TextChanged += id_penduduk_txt_TextChanged;
+            //id_penduduk_txt.TextChanged += id_penduduk_txt_TextChanged;
             // 
             // nama_txt
             // 

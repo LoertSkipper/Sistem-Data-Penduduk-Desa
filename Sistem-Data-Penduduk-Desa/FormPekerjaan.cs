@@ -24,5 +24,20 @@ namespace Sistem_Data_Penduduk_Desa
         {
 
         }
+
+        private void lblJudul_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPendidikan_terakhir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
