@@ -41,8 +41,10 @@
             dashboard_btn = new Button();
             pictureBox1 = new PictureBox();
             panelContent = new Panel();
+            lbl_welcome = new Label();
             panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelContent.SuspendLayout();
             SuspendLayout();
             // 
             // panelSidebar
@@ -206,6 +208,7 @@
             dashboard_btn.TabIndex = 0;
             dashboard_btn.Text = "Dashboard";
             dashboard_btn.UseVisualStyleBackColor = false;
+            dashboard_btn.Click += dashboard_btn_Click;
             // 
             // pictureBox1
             // 
@@ -222,11 +225,21 @@
             // panelContent
             // 
             panelContent.BackColor = SystemColors.Control;
+            panelContent.Controls.Add(lbl_welcome);
             panelContent.Dock = DockStyle.Fill;
             panelContent.Location = new Point(250, 0);
             panelContent.Name = "panelContent";
             panelContent.Size = new Size(1008, 664);
             panelContent.TabIndex = 1;
+            // 
+            // lbl_welcome
+            // 
+            lbl_welcome.AutoSize = true;
+            lbl_welcome.Font = new Font("Verdana", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_welcome.Location = new Point(26, 82);
+            lbl_welcome.Name = "lbl_welcome";
+            lbl_welcome.Size = new Size(0, 38);
+            lbl_welcome.TabIndex = 0;
             // 
             // FormDashboard
             // 
@@ -241,6 +254,8 @@
             Load += FormDashboard_Load;
             panelSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelContent.ResumeLayout(false);
+            panelContent.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -258,5 +273,6 @@
         private Button laporan_btn;
         private Button statistik_btn;
         private PictureBox pictureBox1;
+        private Label lbl_welcome;
     }
 }
