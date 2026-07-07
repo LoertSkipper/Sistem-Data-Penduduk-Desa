@@ -44,26 +44,6 @@ namespace Sistem_Data_Penduduk_Desa
             dateTimePicker1 = new DateTimePicker();
             paneloutput_pekerjaan = new Panel();
             dgvDataKK = new DataGridView();
-            btnReset = new Button();
-            btnHapus = new Button();
-            btnUbah = new Button();
-            panelinput_pekerjaan = new Panel();
-            txtJumlah_tanggungan = new TextBox();
-            txtKabupaten_kota = new TextBox();
-            txtDesa_kelurahan = new TextBox();
-            txtKecamatan = new TextBox();
-            btnTambah = new Button();
-            txtRT = new TextBox();
-            txtNama_kepala_keluarga = new TextBox();
-            txtNik = new TextBox();
-            lblJumlah_tanggungan = new Label();
-            lblPendapatan = new Label();
-            lblPekerjaan = new Label();
-            lblPendidikan_terakhir = new Label();
-            lblStatus = new Label();
-            lblTTL = new Label();
-            lblGender = new Label();
-            lblNama_lengkap = new Label();
             colId_pekerja = new DataGridViewTextBoxColumn();
             colNama_Lengkap = new DataGridViewTextBoxColumn();
             colTTL = new DataGridViewTextBoxColumn();
@@ -73,8 +53,12 @@ namespace Sistem_Data_Penduduk_Desa
             colPendapatan = new DataGridViewTextBoxColumn();
             colJumlah_tanggungan = new DataGridViewTextBoxColumn();
             colnik = new DataGridViewTextBoxColumn();
-            comboBox1 = new ComboBox();
+            btnReset = new Button();
+            btnHapus = new Button();
+            btnUbah = new Button();
+            panelinput_pekerjaan = new Panel();
             panel1 = new Panel();
+            cmbGender = new ComboBox();
             cmbStatus = new ComboBox();
             cmbJumlah_Tanggungann = new TextBox();
             txtPendapatann = new TextBox();
@@ -93,7 +77,23 @@ namespace Sistem_Data_Penduduk_Desa
             label7 = new Label();
             label8 = new Label();
             lblNo_nik = new Label();
-            cmbGender = new ComboBox();
+            comboBox1 = new ComboBox();
+            txtJumlah_tanggungan = new TextBox();
+            txtKabupaten_kota = new TextBox();
+            txtDesa_kelurahan = new TextBox();
+            txtKecamatan = new TextBox();
+            btnTambah = new Button();
+            txtRT = new TextBox();
+            txtNama_kepala_keluarga = new TextBox();
+            txtNik = new TextBox();
+            lblJumlah_tanggungan = new Label();
+            lblPendapatan = new Label();
+            lblPekerjaan = new Label();
+            lblPendidikan_terakhir = new Label();
+            lblStatus = new Label();
+            lblTTL = new Label();
+            lblGender = new Label();
+            lblNama_lengkap = new Label();
             panelstatistikringkas_pekerjaan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureTotalKK).BeginInit();
@@ -240,191 +240,6 @@ namespace Sistem_Data_Penduduk_Desa
             dgvDataKK.Size = new Size(1303, 319);
             dgvDataKK.TabIndex = 21;
             // 
-            // btnReset
-            // 
-            btnReset.Location = new Point(1216, 440);
-            btnReset.Name = "btnReset";
-            btnReset.Size = new Size(112, 34);
-            btnReset.TabIndex = 20;
-            btnReset.Text = "Reset";
-            btnReset.UseVisualStyleBackColor = true;
-            // 
-            // btnHapus
-            // 
-            btnHapus.Location = new Point(1088, 440);
-            btnHapus.Name = "btnHapus";
-            btnHapus.Size = new Size(112, 34);
-            btnHapus.TabIndex = 19;
-            btnHapus.Text = "Hapus";
-            btnHapus.UseVisualStyleBackColor = true;
-            // 
-            // btnUbah
-            // 
-            btnUbah.Location = new Point(961, 440);
-            btnUbah.Name = "btnUbah";
-            btnUbah.Size = new Size(112, 34);
-            btnUbah.TabIndex = 18;
-            btnUbah.Text = "Ubah";
-            btnUbah.UseVisualStyleBackColor = true;
-            // 
-            // panelinput_pekerjaan
-            // 
-            panelinput_pekerjaan.BorderStyle = BorderStyle.FixedSingle;
-            panelinput_pekerjaan.Controls.Add(panel1);
-            panelinput_pekerjaan.Controls.Add(comboBox1);
-            panelinput_pekerjaan.Controls.Add(txtJumlah_tanggungan);
-            panelinput_pekerjaan.Controls.Add(txtKabupaten_kota);
-            panelinput_pekerjaan.Controls.Add(txtDesa_kelurahan);
-            panelinput_pekerjaan.Controls.Add(txtKecamatan);
-            panelinput_pekerjaan.Controls.Add(btnTambah);
-            panelinput_pekerjaan.Controls.Add(txtRT);
-            panelinput_pekerjaan.Controls.Add(txtNama_kepala_keluarga);
-            panelinput_pekerjaan.Controls.Add(txtNik);
-            panelinput_pekerjaan.Controls.Add(lblJumlah_tanggungan);
-            panelinput_pekerjaan.Controls.Add(lblPendapatan);
-            panelinput_pekerjaan.Controls.Add(lblPekerjaan);
-            panelinput_pekerjaan.Controls.Add(lblPendidikan_terakhir);
-            panelinput_pekerjaan.Controls.Add(lblStatus);
-            panelinput_pekerjaan.Controls.Add(lblTTL);
-            panelinput_pekerjaan.Controls.Add(lblGender);
-            panelinput_pekerjaan.Controls.Add(lblNama_lengkap);
-            panelinput_pekerjaan.Controls.Add(lblNik);
-            panelinput_pekerjaan.Location = new Point(21, 92);
-            panelinput_pekerjaan.Name = "panelinput_pekerjaan";
-            panelinput_pekerjaan.Size = new Size(908, 355);
-            panelinput_pekerjaan.TabIndex = 4;
-            // 
-            // txtJumlah_tanggungan
-            // 
-            txtJumlah_tanggungan.Location = new Point(634, 189);
-            txtJumlah_tanggungan.Name = "txtJumlah_tanggungan";
-            txtJumlah_tanggungan.Size = new Size(239, 31);
-            txtJumlah_tanggungan.TabIndex = 17;
-            // 
-            // txtKabupaten_kota
-            // 
-            txtKabupaten_kota.Location = new Point(634, 134);
-            txtKabupaten_kota.Name = "txtKabupaten_kota";
-            txtKabupaten_kota.Size = new Size(239, 31);
-            txtKabupaten_kota.TabIndex = 16;
-            // 
-            // txtDesa_kelurahan
-            // 
-            txtDesa_kelurahan.Location = new Point(634, 84);
-            txtDesa_kelurahan.Name = "txtDesa_kelurahan";
-            txtDesa_kelurahan.Size = new Size(239, 31);
-            txtDesa_kelurahan.TabIndex = 15;
-            // 
-            // txtKecamatan
-            // 
-            txtKecamatan.Location = new Point(634, 28);
-            txtKecamatan.Name = "txtKecamatan";
-            txtKecamatan.Size = new Size(239, 31);
-            txtKecamatan.TabIndex = 14;
-            // 
-            // btnTambah
-            // 
-            btnTambah.Location = new Point(761, 292);
-            btnTambah.Name = "btnTambah";
-            btnTambah.Size = new Size(112, 34);
-            btnTambah.TabIndex = 2;
-            btnTambah.Text = "tambah";
-            btnTambah.UseVisualStyleBackColor = true;
-            // 
-            // txtRT
-            // 
-            txtRT.Location = new Point(189, 181);
-            txtRT.Name = "txtRT";
-            txtRT.Size = new Size(239, 31);
-            txtRT.TabIndex = 12;
-            // 
-            // txtNama_kepala_keluarga
-            // 
-            txtNama_kepala_keluarga.Location = new Point(189, 78);
-            txtNama_kepala_keluarga.Name = "txtNama_kepala_keluarga";
-            txtNama_kepala_keluarga.Size = new Size(239, 31);
-            txtNama_kepala_keluarga.TabIndex = 10;
-            // 
-            // txtNik
-            // 
-            txtNik.Location = new Point(189, 28);
-            txtNik.Name = "txtNik";
-            txtNik.Size = new Size(239, 31);
-            txtNik.TabIndex = 9;
-            // 
-            // lblJumlah_tanggungan
-            // 
-            lblJumlah_tanggungan.AutoSize = true;
-            lblJumlah_tanggungan.Location = new Point(456, 189);
-            lblJumlah_tanggungan.Name = "lblJumlah_tanggungan";
-            lblJumlah_tanggungan.Size = new Size(169, 25);
-            lblJumlah_tanggungan.TabIndex = 8;
-            lblJumlah_tanggungan.Text = "Jumlah tanggungan";
-            // 
-            // lblPendapatan
-            // 
-            lblPendapatan.AutoSize = true;
-            lblPendapatan.Location = new Point(456, 134);
-            lblPendapatan.Name = "lblPendapatan";
-            lblPendapatan.Size = new Size(105, 25);
-            lblPendapatan.TabIndex = 7;
-            lblPendapatan.Text = "Pendapatan";
-            // 
-            // lblPekerjaan
-            // 
-            lblPekerjaan.AutoSize = true;
-            lblPekerjaan.Location = new Point(456, 84);
-            lblPekerjaan.Name = "lblPekerjaan";
-            lblPekerjaan.Size = new Size(86, 25);
-            lblPekerjaan.TabIndex = 6;
-            lblPekerjaan.Text = "Pekerjaan";
-            // 
-            // lblPendidikan_terakhir
-            // 
-            lblPendidikan_terakhir.AutoSize = true;
-            lblPendidikan_terakhir.Location = new Point(456, 28);
-            lblPendidikan_terakhir.Name = "lblPendidikan_terakhir";
-            lblPendidikan_terakhir.Size = new Size(163, 25);
-            lblPendidikan_terakhir.TabIndex = 5;
-            lblPendidikan_terakhir.Text = "Pendidikan Terakhir";
-            lblPendidikan_terakhir.Click += lblPendidikan_terakhir_Click;
-            // 
-            // lblStatus
-            // 
-            lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(25, 240);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(60, 25);
-            lblStatus.TabIndex = 4;
-            lblStatus.Text = "Status";
-            // 
-            // lblTTL
-            // 
-            lblTTL.AutoSize = true;
-            lblTTL.Location = new Point(25, 181);
-            lblTTL.Name = "lblTTL";
-            lblTTL.Size = new Size(38, 25);
-            lblTTL.TabIndex = 3;
-            lblTTL.Text = "TTL";
-            // 
-            // lblGender
-            // 
-            lblGender.AutoSize = true;
-            lblGender.Location = new Point(25, 131);
-            lblGender.Name = "lblGender";
-            lblGender.Size = new Size(69, 25);
-            lblGender.TabIndex = 2;
-            lblGender.Text = "Gender";
-            // 
-            // lblNama_lengkap
-            // 
-            lblNama_lengkap.AutoSize = true;
-            lblNama_lengkap.Location = new Point(25, 78);
-            lblNama_lengkap.Name = "lblNama_lengkap";
-            lblNama_lengkap.Size = new Size(131, 25);
-            lblNama_lengkap.TabIndex = 1;
-            lblNama_lengkap.Text = "Nama Lengkap";
-            // 
             // colId_pekerja
             // 
             colId_pekerja.HeaderText = "ID Pekerja";
@@ -488,13 +303,60 @@ namespace Sistem_Data_Penduduk_Desa
             colnik.Name = "colnik";
             colnik.Width = 150;
             // 
-            // comboBox1
+            // btnReset
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(189, 240);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(239, 33);
-            comboBox1.TabIndex = 18;
+            btnReset.Location = new Point(1216, 440);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(112, 34);
+            btnReset.TabIndex = 20;
+            btnReset.Text = "Reset";
+            btnReset.UseVisualStyleBackColor = true;
+            // 
+            // btnHapus
+            // 
+            btnHapus.Location = new Point(1088, 440);
+            btnHapus.Name = "btnHapus";
+            btnHapus.Size = new Size(112, 34);
+            btnHapus.TabIndex = 19;
+            btnHapus.Text = "Hapus";
+            btnHapus.UseVisualStyleBackColor = true;
+            // 
+            // btnUbah
+            // 
+            btnUbah.Location = new Point(961, 440);
+            btnUbah.Name = "btnUbah";
+            btnUbah.Size = new Size(112, 34);
+            btnUbah.TabIndex = 18;
+            btnUbah.Text = "Ubah";
+            btnUbah.UseVisualStyleBackColor = true;
+            btnUbah.Click += btnUbah_Click;
+            // 
+            // panelinput_pekerjaan
+            // 
+            panelinput_pekerjaan.BorderStyle = BorderStyle.FixedSingle;
+            panelinput_pekerjaan.Controls.Add(panel1);
+            panelinput_pekerjaan.Controls.Add(comboBox1);
+            panelinput_pekerjaan.Controls.Add(txtJumlah_tanggungan);
+            panelinput_pekerjaan.Controls.Add(txtKabupaten_kota);
+            panelinput_pekerjaan.Controls.Add(txtDesa_kelurahan);
+            panelinput_pekerjaan.Controls.Add(txtKecamatan);
+            panelinput_pekerjaan.Controls.Add(btnTambah);
+            panelinput_pekerjaan.Controls.Add(txtRT);
+            panelinput_pekerjaan.Controls.Add(txtNama_kepala_keluarga);
+            panelinput_pekerjaan.Controls.Add(txtNik);
+            panelinput_pekerjaan.Controls.Add(lblJumlah_tanggungan);
+            panelinput_pekerjaan.Controls.Add(lblPendapatan);
+            panelinput_pekerjaan.Controls.Add(lblPekerjaan);
+            panelinput_pekerjaan.Controls.Add(lblPendidikan_terakhir);
+            panelinput_pekerjaan.Controls.Add(lblStatus);
+            panelinput_pekerjaan.Controls.Add(lblTTL);
+            panelinput_pekerjaan.Controls.Add(lblGender);
+            panelinput_pekerjaan.Controls.Add(lblNama_lengkap);
+            panelinput_pekerjaan.Controls.Add(lblNik);
+            panelinput_pekerjaan.Location = new Point(21, 92);
+            panelinput_pekerjaan.Name = "panelinput_pekerjaan";
+            panelinput_pekerjaan.Size = new Size(908, 355);
+            panelinput_pekerjaan.TabIndex = 4;
             // 
             // panel1
             // 
@@ -522,6 +384,15 @@ namespace Sistem_Data_Penduduk_Desa
             panel1.Name = "panel1";
             panel1.Size = new Size(908, 355);
             panel1.TabIndex = 19;
+            // 
+            // cmbGender
+            // 
+            cmbGender.FormattingEnabled = true;
+            cmbGender.Location = new Point(189, 131);
+            cmbGender.Name = "cmbGender";
+            cmbGender.Size = new Size(239, 33);
+            cmbGender.TabIndex = 19;
+            cmbGender.SelectedIndexChanged += cmbGender_SelectedIndexChanged;
             // 
             // cmbStatus
             // 
@@ -670,13 +541,144 @@ namespace Sistem_Data_Penduduk_Desa
             lblNo_nik.TabIndex = 0;
             lblNo_nik.Text = "NIK";
             // 
-            // cmbGender
+            // comboBox1
             // 
-            cmbGender.FormattingEnabled = true;
-            cmbGender.Location = new Point(189, 131);
-            cmbGender.Name = "cmbGender";
-            cmbGender.Size = new Size(239, 33);
-            cmbGender.TabIndex = 19;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(189, 240);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(239, 33);
+            comboBox1.TabIndex = 18;
+            // 
+            // txtJumlah_tanggungan
+            // 
+            txtJumlah_tanggungan.Location = new Point(634, 189);
+            txtJumlah_tanggungan.Name = "txtJumlah_tanggungan";
+            txtJumlah_tanggungan.Size = new Size(239, 31);
+            txtJumlah_tanggungan.TabIndex = 17;
+            // 
+            // txtKabupaten_kota
+            // 
+            txtKabupaten_kota.Location = new Point(634, 134);
+            txtKabupaten_kota.Name = "txtKabupaten_kota";
+            txtKabupaten_kota.Size = new Size(239, 31);
+            txtKabupaten_kota.TabIndex = 16;
+            // 
+            // txtDesa_kelurahan
+            // 
+            txtDesa_kelurahan.Location = new Point(634, 84);
+            txtDesa_kelurahan.Name = "txtDesa_kelurahan";
+            txtDesa_kelurahan.Size = new Size(239, 31);
+            txtDesa_kelurahan.TabIndex = 15;
+            // 
+            // txtKecamatan
+            // 
+            txtKecamatan.Location = new Point(634, 28);
+            txtKecamatan.Name = "txtKecamatan";
+            txtKecamatan.Size = new Size(239, 31);
+            txtKecamatan.TabIndex = 14;
+            // 
+            // btnTambah
+            // 
+            btnTambah.Location = new Point(761, 292);
+            btnTambah.Name = "btnTambah";
+            btnTambah.Size = new Size(112, 34);
+            btnTambah.TabIndex = 2;
+            btnTambah.Text = "tambah";
+            btnTambah.UseVisualStyleBackColor = true;
+            // 
+            // txtRT
+            // 
+            txtRT.Location = new Point(189, 181);
+            txtRT.Name = "txtRT";
+            txtRT.Size = new Size(239, 31);
+            txtRT.TabIndex = 12;
+            // 
+            // txtNama_kepala_keluarga
+            // 
+            txtNama_kepala_keluarga.Location = new Point(189, 78);
+            txtNama_kepala_keluarga.Name = "txtNama_kepala_keluarga";
+            txtNama_kepala_keluarga.Size = new Size(239, 31);
+            txtNama_kepala_keluarga.TabIndex = 10;
+            // 
+            // txtNik
+            // 
+            txtNik.Location = new Point(189, 28);
+            txtNik.Name = "txtNik";
+            txtNik.Size = new Size(239, 31);
+            txtNik.TabIndex = 9;
+            // 
+            // lblJumlah_tanggungan
+            // 
+            lblJumlah_tanggungan.AutoSize = true;
+            lblJumlah_tanggungan.Location = new Point(456, 189);
+            lblJumlah_tanggungan.Name = "lblJumlah_tanggungan";
+            lblJumlah_tanggungan.Size = new Size(169, 25);
+            lblJumlah_tanggungan.TabIndex = 8;
+            lblJumlah_tanggungan.Text = "Jumlah tanggungan";
+            // 
+            // lblPendapatan
+            // 
+            lblPendapatan.AutoSize = true;
+            lblPendapatan.Location = new Point(456, 134);
+            lblPendapatan.Name = "lblPendapatan";
+            lblPendapatan.Size = new Size(105, 25);
+            lblPendapatan.TabIndex = 7;
+            lblPendapatan.Text = "Pendapatan";
+            // 
+            // lblPekerjaan
+            // 
+            lblPekerjaan.AutoSize = true;
+            lblPekerjaan.Location = new Point(456, 84);
+            lblPekerjaan.Name = "lblPekerjaan";
+            lblPekerjaan.Size = new Size(86, 25);
+            lblPekerjaan.TabIndex = 6;
+            lblPekerjaan.Text = "Pekerjaan";
+            // 
+            // lblPendidikan_terakhir
+            // 
+            lblPendidikan_terakhir.AutoSize = true;
+            lblPendidikan_terakhir.Location = new Point(456, 28);
+            lblPendidikan_terakhir.Name = "lblPendidikan_terakhir";
+            lblPendidikan_terakhir.Size = new Size(163, 25);
+            lblPendidikan_terakhir.TabIndex = 5;
+            lblPendidikan_terakhir.Text = "Pendidikan Terakhir";
+            lblPendidikan_terakhir.Click += lblPendidikan_terakhir_Click;
+            // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Location = new Point(25, 240);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(60, 25);
+            lblStatus.TabIndex = 4;
+            lblStatus.Text = "Status";
+            // 
+            // lblTTL
+            // 
+            lblTTL.AutoSize = true;
+            lblTTL.Location = new Point(25, 181);
+            lblTTL.Name = "lblTTL";
+            lblTTL.Size = new Size(38, 25);
+            lblTTL.TabIndex = 3;
+            lblTTL.Text = "TTL";
+            // 
+            // lblGender
+            // 
+            lblGender.AutoSize = true;
+            lblGender.Location = new Point(25, 131);
+            lblGender.Name = "lblGender";
+            lblGender.Size = new Size(69, 25);
+            lblGender.TabIndex = 2;
+            lblGender.Text = "Gender";
+            // 
+            // lblNama_lengkap
+            // 
+            lblNama_lengkap.AutoSize = true;
+            lblNama_lengkap.Location = new Point(25, 78);
+            lblNama_lengkap.Name = "lblNama_lengkap";
+            lblNama_lengkap.Size = new Size(131, 25);
+            lblNama_lengkap.TabIndex = 1;
+            lblNama_lengkap.Text = "Nama Lengkap";
             // 
             // FormPekerjaan
             // 

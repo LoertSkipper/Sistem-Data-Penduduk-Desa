@@ -50,40 +50,32 @@
             lblNama_kepala_keluarga = new Label();
             lblNik = new Label();
             paneloutput_kk = new Panel();
-            dateTimePicker1 = new DateTimePicker();
+            txtCari = new TextBox();
             dgvDataKK = new DataGridView();
             btnReset = new Button();
             btnHapus = new Button();
             btnUbah = new Button();
             lblJuduul = new Label();
             panelstatistikringkas_kk = new Panel();
-            pictureTotalKK = new PictureBox();
-            angkatotal = new Label();
-            TotalKK = new Label();
-            statistik_ringkas = new Label();
-            data_baru = new Label();
-            angkadata = new Label();
             pictureDataBaru = new PictureBox();
-            colId_kk = new DataGridViewTextBoxColumn();
-            colNo_kk = new DataGridViewTextBoxColumn();
-            colNama_kepala_keluarga = new DataGridViewTextBoxColumn();
-            colAlamat = new DataGridViewTextBoxColumn();
-            colRT = new DataGridViewTextBoxColumn();
-            colRW = new DataGridViewTextBoxColumn();
-            colKecamatan = new DataGridViewTextBoxColumn();
-            colDesa_kelurahan = new DataGridViewTextBoxColumn();
-            colKabupaten = new DataGridViewTextBoxColumn();
-            colProvinsi = new DataGridViewTextBoxColumn();
+            pictureTotalKK = new PictureBox();
+            angkadata = new Label();
+            angkatotal = new Label();
+            lbldata_baru = new Label();
+            lblTotalKK = new Label();
+            statistik_ringkas = new Label();
+            lblCari = new Label();
             panelinput_kk.SuspendLayout();
             paneloutput_kk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDataKK).BeginInit();
             panelstatistikringkas_kk.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureTotalKK).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureDataBaru).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureTotalKK).BeginInit();
             SuspendLayout();
             // 
             // panelinput_kk
             // 
+            panelinput_kk.BackColor = SystemColors.GradientInactiveCaption;
             panelinput_kk.BorderStyle = BorderStyle.FixedSingle;
             panelinput_kk.Controls.Add(txtProvinsi);
             panelinput_kk.Controls.Add(txtKabupaten_kota);
@@ -104,11 +96,10 @@
             panelinput_kk.Controls.Add(lblAlamat);
             panelinput_kk.Controls.Add(lblNama_kepala_keluarga);
             panelinput_kk.Controls.Add(lblNik);
-            panelinput_kk.Location = new Point(13, 91);
+            panelinput_kk.Location = new Point(109, 136);
             panelinput_kk.Name = "panelinput_kk";
             panelinput_kk.Size = new Size(938, 355);
             panelinput_kk.TabIndex = 0;
-            panelinput_kk.Paint += panel1_Paint;
             // 
             // txtProvinsi
             // 
@@ -140,13 +131,15 @@
             // 
             // btnTambah
             // 
+            btnTambah.BackColor = SystemColors.GradientActiveCaption;
+            btnTambah.ForeColor = SystemColors.Desktop;
             btnTambah.Location = new Point(784, 292);
             btnTambah.Name = "btnTambah";
             btnTambah.Size = new Size(112, 34);
             btnTambah.TabIndex = 2;
             btnTambah.Text = "Tambah";
-            btnTambah.UseVisualStyleBackColor = true;
-            btnTambah.Click += button1_Click;
+            btnTambah.UseVisualStyleBackColor = false;
+            btnTambah.Click += btnTambah_Click;
             // 
             // txtRW
             // 
@@ -236,7 +229,6 @@
             lblRT.Size = new Size(31, 25);
             lblRT.TabIndex = 3;
             lblRT.Text = "RT";
-            lblRT.Click += label2_Click_1;
             // 
             // lblAlamat
             // 
@@ -267,151 +259,96 @@
             // 
             // paneloutput_kk
             // 
-            paneloutput_kk.BorderStyle = BorderStyle.FixedSingle;
-            paneloutput_kk.Controls.Add(dateTimePicker1);
+            paneloutput_kk.Controls.Add(lblCari);
+            paneloutput_kk.Controls.Add(txtCari);
             paneloutput_kk.Controls.Add(dgvDataKK);
-            paneloutput_kk.Controls.Add(btnReset);
-            paneloutput_kk.Controls.Add(btnHapus);
-            paneloutput_kk.Controls.Add(btnUbah);
-            paneloutput_kk.Location = new Point(12, 484);
+            paneloutput_kk.Location = new Point(45, 555);
             paneloutput_kk.Name = "paneloutput_kk";
-            paneloutput_kk.Size = new Size(1354, 544);
+            paneloutput_kk.Size = new Size(1517, 373);
             paneloutput_kk.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // txtCari
             // 
-            dateTimePicker1.Location = new Point(1015, 34);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(300, 31);
-            dateTimePicker1.TabIndex = 2;
+            txtCari.BackColor = SystemColors.GradientActiveCaption;
+            txtCari.ForeColor = SystemColors.ActiveCaptionText;
+            txtCari.Location = new Point(64, 18);
+            txtCari.Name = "txtCari";
+            txtCari.PlaceholderText = "-----Masukkan Nik atau Nama-----";
+            txtCari.Size = new Size(280, 31);
+            txtCari.TabIndex = 22;
+            txtCari.TextChanged += txtCari_TextChanged;
             // 
             // dgvDataKK
             // 
+            dgvDataKK.BackgroundColor = SystemColors.ButtonHighlight;
             dgvDataKK.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDataKK.Columns.AddRange(new DataGridViewColumn[] { colId_kk, colNo_kk, colNama_kepala_keluarga, colAlamat, colRT, colRW, colKecamatan, colDesa_kelurahan, colKabupaten, colProvinsi });
-            dgvDataKK.Location = new Point(38, 97);
+            dgvDataKK.Location = new Point(0, 60);
             dgvDataKK.Name = "dgvDataKK";
             dgvDataKK.RowHeadersWidth = 62;
-            dgvDataKK.Size = new Size(1277, 363);
+            dgvDataKK.Size = new Size(1517, 312);
             dgvDataKK.TabIndex = 21;
-            dgvDataKK.CellContentClick += dgvDataKK_CellContentClick;
+            dgvDataKK.CellContentClick += dgvDataKK_CellClick;
             // 
             // btnReset
             // 
-            btnReset.Location = new Point(1199, 487);
+            btnReset.BackColor = SystemColors.GradientActiveCaption;
+            btnReset.Location = new Point(1410, 967);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(112, 34);
             btnReset.TabIndex = 20;
             btnReset.Text = "Reset";
-            btnReset.UseVisualStyleBackColor = true;
+            btnReset.UseVisualStyleBackColor = false;
+            btnReset.Click += btnReset_Click;
             // 
             // btnHapus
             // 
-            btnHapus.Location = new Point(1071, 487);
+            btnHapus.BackColor = SystemColors.GradientActiveCaption;
+            btnHapus.Location = new Point(1282, 967);
             btnHapus.Name = "btnHapus";
             btnHapus.Size = new Size(112, 34);
             btnHapus.TabIndex = 19;
             btnHapus.Text = "Hapus";
-            btnHapus.UseVisualStyleBackColor = true;
+            btnHapus.UseVisualStyleBackColor = false;
+            btnHapus.Click += btnHapus_Click;
             // 
             // btnUbah
             // 
-            btnUbah.Location = new Point(944, 487);
+            btnUbah.BackColor = SystemColors.GradientActiveCaption;
+            btnUbah.Location = new Point(1155, 967);
             btnUbah.Name = "btnUbah";
             btnUbah.Size = new Size(112, 34);
             btnUbah.TabIndex = 18;
             btnUbah.Text = "Ubah";
-            btnUbah.UseVisualStyleBackColor = true;
+            btnUbah.UseVisualStyleBackColor = false;
+            btnUbah.Click += btnUbah_Click;
             // 
             // lblJuduul
             // 
             lblJuduul.AutoSize = true;
             lblJuduul.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            lblJuduul.Location = new Point(464, 22);
+            lblJuduul.Location = new Point(589, 47);
             lblJuduul.Name = "lblJuduul";
             lblJuduul.Size = new Size(458, 48);
             lblJuduul.TabIndex = 0;
             lblJuduul.Text = "Pendataan Kartu Keluarga";
-            lblJuduul.Click += label1_Click;
+            lblJuduul.Click += lblJuduul_Click;
             // 
             // panelstatistikringkas_kk
             // 
+            panelstatistikringkas_kk.BackColor = SystemColors.GradientActiveCaption;
+            panelstatistikringkas_kk.BackgroundImageLayout = ImageLayout.None;
             panelstatistikringkas_kk.Controls.Add(pictureDataBaru);
             panelstatistikringkas_kk.Controls.Add(pictureTotalKK);
             panelstatistikringkas_kk.Controls.Add(angkadata);
             panelstatistikringkas_kk.Controls.Add(angkatotal);
-            panelstatistikringkas_kk.Controls.Add(data_baru);
-            panelstatistikringkas_kk.Controls.Add(TotalKK);
+            panelstatistikringkas_kk.Controls.Add(lbldata_baru);
+            panelstatistikringkas_kk.Controls.Add(lblTotalKK);
             panelstatistikringkas_kk.Controls.Add(statistik_ringkas);
-            panelstatistikringkas_kk.Location = new Point(977, 91);
+            panelstatistikringkas_kk.Location = new Point(1087, 134);
             panelstatistikringkas_kk.Name = "panelstatistikringkas_kk";
             panelstatistikringkas_kk.Size = new Size(389, 355);
             panelstatistikringkas_kk.TabIndex = 2;
-            panelstatistikringkas_kk.Paint += panel1_Paint_1;
-            // 
-            // pictureTotalKK
-            // 
-            pictureTotalKK.Image = (Image)resources.GetObject("pictureTotalKK.Image");
-            pictureTotalKK.Location = new Point(65, 84);
-            pictureTotalKK.Name = "pictureTotalKK";
-            pictureTotalKK.Size = new Size(100, 100);
-            pictureTotalKK.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureTotalKK.TabIndex = 5;
-            pictureTotalKK.TabStop = false;
-            pictureTotalKK.Click += pictureBox1_Click;
-            // 
-            // angkatotal
-            // 
-            angkatotal.AutoSize = true;
-            angkatotal.Font = new Font("Segoe UI", 20F);
-            angkatotal.Location = new Point(91, 252);
-            angkatotal.Name = "angkatotal";
-            angkatotal.Size = new Size(45, 54);
-            angkatotal.TabIndex = 3;
-            angkatotal.Text = "0";
-            angkatotal.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // TotalKK
-            // 
-            TotalKK.AutoSize = true;
-            TotalKK.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
-            TotalKK.Location = new Point(73, 204);
-            TotalKK.Name = "TotalKK";
-            TotalKK.Size = new Size(86, 25);
-            TotalKK.TabIndex = 1;
-            TotalKK.Text = "TOTAL KK";
-            // 
-            // statistik_ringkas
-            // 
-            statistik_ringkas.AutoSize = true;
-            statistik_ringkas.Font = new Font("Segoe UI", 12F, FontStyle.Italic);
-            statistik_ringkas.Location = new Point(113, 26);
-            statistik_ringkas.Name = "statistik_ringkas";
-            statistik_ringkas.Size = new Size(175, 32);
-            statistik_ringkas.TabIndex = 0;
-            statistik_ringkas.Text = "statistik ringkas";
-            // 
-            // data_baru
-            // 
-            data_baru.AutoSize = true;
-            data_baru.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
-            data_baru.Location = new Point(231, 204);
-            data_baru.Name = "data_baru";
-            data_baru.Size = new Size(106, 25);
-            data_baru.TabIndex = 2;
-            data_baru.Text = "DATA BARU";
-            // 
-            // angkadata
-            // 
-            angkadata.AutoSize = true;
-            angkadata.Font = new Font("Segoe UI", 20F);
-            angkadata.Location = new Point(258, 252);
-            angkadata.Name = "angkadata";
-            angkadata.Size = new Size(45, 54);
-            angkadata.TabIndex = 4;
-            angkadata.Text = "0";
-            angkadata.TextAlign = ContentAlignment.BottomCenter;
-            angkadata.Click += label3_Click_1;
+            panelstatistikringkas_kk.Paint += panelstatistikringkas_kk_Paint;
             // 
             // pictureDataBaru
             // 
@@ -423,84 +360,93 @@
             pictureDataBaru.TabIndex = 6;
             pictureDataBaru.TabStop = false;
             // 
-            // colId_kk
+            // pictureTotalKK
             // 
-            colId_kk.HeaderText = "ID KK";
-            colId_kk.MinimumWidth = 12;
-            colId_kk.Name = "colId_kk";
-            colId_kk.Width = 150;
+            pictureTotalKK.Image = (Image)resources.GetObject("pictureTotalKK.Image");
+            pictureTotalKK.Location = new Point(65, 84);
+            pictureTotalKK.Name = "pictureTotalKK";
+            pictureTotalKK.Size = new Size(100, 100);
+            pictureTotalKK.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureTotalKK.TabIndex = 5;
+            pictureTotalKK.TabStop = false;
             // 
-            // colNo_kk
+            // angkadata
             // 
-            colNo_kk.HeaderText = "NIK";
-            colNo_kk.MinimumWidth = 8;
-            colNo_kk.Name = "colNo_kk";
-            colNo_kk.Width = 150;
+            angkadata.AutoSize = true;
+            angkadata.Font = new Font("Segoe UI", 20F);
+            angkadata.Location = new Point(259, 252);
+            angkadata.Name = "angkadata";
+            angkadata.Size = new Size(45, 54);
+            angkadata.TabIndex = 4;
+            angkadata.Text = "0";
+            angkadata.TextAlign = ContentAlignment.BottomCenter;
+            angkadata.Click += angkadata_Click;
             // 
-            // colNama_kepala_keluarga
+            // angkatotal
             // 
-            colNama_kepala_keluarga.HeaderText = "Nama Kepala Keluarga";
-            colNama_kepala_keluarga.MinimumWidth = 8;
-            colNama_kepala_keluarga.Name = "colNama_kepala_keluarga";
-            colNama_kepala_keluarga.Width = 250;
+            angkatotal.AutoSize = true;
+            angkatotal.Font = new Font("Segoe UI", 20F);
+            angkatotal.Location = new Point(91, 252);
+            angkatotal.Name = "angkatotal";
+            angkatotal.Size = new Size(45, 54);
+            angkatotal.TabIndex = 3;
+            angkatotal.Text = "0";
+            angkatotal.TextAlign = ContentAlignment.TopCenter;
+            angkatotal.Click += angkatotal_Click;
             // 
-            // colAlamat
+            // lbldata_baru
             // 
-            colAlamat.HeaderText = "Alamat";
-            colAlamat.MinimumWidth = 8;
-            colAlamat.Name = "colAlamat";
-            colAlamat.Width = 200;
+            lbldata_baru.AutoSize = true;
+            lbldata_baru.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            lbldata_baru.Location = new Point(232, 204);
+            lbldata_baru.Name = "lbldata_baru";
+            lbldata_baru.Size = new Size(106, 25);
+            lbldata_baru.TabIndex = 2;
+            lbldata_baru.Text = "DATA BARU";
             // 
-            // colRT
+            // lblTotalKK
             // 
-            colRT.HeaderText = "RT";
-            colRT.MinimumWidth = 8;
-            colRT.Name = "colRT";
-            colRT.Width = 80;
+            lblTotalKK.AutoSize = true;
+            lblTotalKK.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
+            lblTotalKK.Location = new Point(73, 204);
+            lblTotalKK.Name = "lblTotalKK";
+            lblTotalKK.Size = new Size(86, 25);
+            lblTotalKK.TabIndex = 1;
+            lblTotalKK.Text = "TOTAL KK";
             // 
-            // colRW
+            // statistik_ringkas
             // 
-            colRW.HeaderText = "RW";
-            colRW.MinimumWidth = 8;
-            colRW.Name = "colRW";
-            colRW.Width = 80;
+            statistik_ringkas.AutoSize = true;
+            statistik_ringkas.Font = new Font("Segoe UI", 12F, FontStyle.Italic);
+            statistik_ringkas.Location = new Point(113, 26);
+            statistik_ringkas.Name = "statistik_ringkas";
+            statistik_ringkas.Size = new Size(175, 32);
+            statistik_ringkas.TabIndex = 0;
+            statistik_ringkas.Text = "statistik ringkas";
             // 
-            // colKecamatan
+            // lblCari
             // 
-            colKecamatan.HeaderText = "Kecamatan";
-            colKecamatan.MinimumWidth = 8;
-            colKecamatan.Name = "colKecamatan";
-            colKecamatan.Width = 200;
-            // 
-            // colDesa_kelurahan
-            // 
-            colDesa_kelurahan.HeaderText = "Desa/Kelurahan";
-            colDesa_kelurahan.MinimumWidth = 8;
-            colDesa_kelurahan.Name = "colDesa_kelurahan";
-            colDesa_kelurahan.Width = 200;
-            // 
-            // colKabupaten
-            // 
-            colKabupaten.HeaderText = "Kabupaten/kota";
-            colKabupaten.MinimumWidth = 8;
-            colKabupaten.Name = "colKabupaten";
-            colKabupaten.Width = 200;
-            // 
-            // colProvinsi
-            // 
-            colProvinsi.HeaderText = "Provinsi";
-            colProvinsi.MinimumWidth = 8;
-            colProvinsi.Name = "colProvinsi";
-            colProvinsi.Width = 200;
+            lblCari.AutoSize = true;
+            lblCari.Location = new Point(10, 22);
+            lblCari.Name = "lblCari";
+            lblCari.Size = new Size(51, 25);
+            lblCari.TabIndex = 23;
+            lblCari.Text = "CARI";
+            lblCari.TextAlign = ContentAlignment.TopCenter;
             // 
             // FormKK
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1390, 1050);
+            AutoScroll = true;
+            BackColor = SystemColors.InactiveBorder;
+            ClientSize = new Size(1565, 1050);
             Controls.Add(panelstatistikringkas_kk);
             Controls.Add(lblJuduul);
+            Controls.Add(btnReset);
             Controls.Add(paneloutput_kk);
+            Controls.Add(btnHapus);
+            Controls.Add(btnUbah);
             Controls.Add(panelinput_kk);
             Name = "FormKK";
             Text = "FormKK";
@@ -508,11 +454,12 @@
             panelinput_kk.ResumeLayout(false);
             panelinput_kk.PerformLayout();
             paneloutput_kk.ResumeLayout(false);
+            paneloutput_kk.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDataKK).EndInit();
             panelstatistikringkas_kk.ResumeLayout(false);
             panelstatistikringkas_kk.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureTotalKK).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureDataBaru).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureTotalKK).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -545,15 +492,14 @@
         private Button btnHapus;
         private Button btnUbah;
         private DataGridView dgvDataKK;
-        private DateTimePicker dateTimePicker1;
         private Panel panelstatistikringkas_kk;
         private Label statistik_ringkas;
-        private Label TotalKK;
+        private Label lblTotalKK;
         private Label angkatotal;
         private PictureBox pictureTotalKK;
         private PictureBox pictureDataBaru;
         private Label angkadata;
-        private Label data_baru;
+        private Label lbldata_baru;
         private DataGridViewTextBoxColumn colId_kk;
         private DataGridViewTextBoxColumn colNo_kk;
         private DataGridViewTextBoxColumn colNama_kepala_keluarga;
@@ -564,5 +510,7 @@
         private DataGridViewTextBoxColumn colDesa_kelurahan;
         private DataGridViewTextBoxColumn colKabupaten;
         private DataGridViewTextBoxColumn colProvinsi;
+        private TextBox txtCari;
+        private Label lblCari;
     }
 }
