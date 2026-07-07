@@ -500,16 +500,16 @@
         private PictureBox pictureDataBaru;
         private Label angkadata;
         private Label lbldata_baru;
-        private DataGridViewTextBoxColumn colId_kk;
-        private DataGridViewTextBoxColumn colNo_kk;
-        private DataGridViewTextBoxColumn colNama_kepala_keluarga;
-        private DataGridViewTextBoxColumn colAlamat;
-        private DataGridViewTextBoxColumn colRT;
-        private DataGridViewTextBoxColumn colRW;
-        private DataGridViewTextBoxColumn colKecamatan;
-        private DataGridViewTextBoxColumn colDesa_kelurahan;
-        private DataGridViewTextBoxColumn colKabupaten;
-        private DataGridViewTextBoxColumn colProvinsi;
+        //private DataGridViewTextBoxColumn colId_kk;
+        //private DataGridViewTextBoxColumn colNo_kk;
+        //private DataGridViewTextBoxColumn colNama_kepala_keluarga;
+        //private DataGridViewTextBoxColumn colAlamat;
+        //private DataGridViewTextBoxColumn colRT;
+        //private DataGridViewTextBoxColumn colRW;
+        //private DataGridViewTextBoxColumn colKecamatan;
+        //private DataGridViewTextBoxColumn colDesa_kelurahan;
+        //private DataGridViewTextBoxColumn colKabupaten;
+        //private DataGridViewTextBoxColumn colProvinsi;
         private TextBox txtCari;
         private Label lblCari;
     }
