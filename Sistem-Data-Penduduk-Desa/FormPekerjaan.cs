@@ -39,5 +39,15 @@ namespace Sistem_Data_Penduduk_Desa
         {
 
         }
+
+        private void panelstatistikringkas_pekerjaan_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

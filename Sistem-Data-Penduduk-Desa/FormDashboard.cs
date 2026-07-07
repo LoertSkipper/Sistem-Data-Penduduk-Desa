@@ -38,6 +38,7 @@ namespace Sistem_Data_Penduduk_Desa
                 laporan_btn.Visible = true;
                 statistik_btn.Visible = true;
             }
+            openForm(new FormWelcome());
         }
         private Form activeForm = null;
 
@@ -100,11 +101,16 @@ namespace Sistem_Data_Penduduk_Desa
         {
             openForm(new FormLaporan());
         }
+        private void dashboard_btn_Click(object sender, EventArgs e)
+        {
+            openForm(new FormWelcome());
+        }
 
         private void FormDashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.ExitThread();
             Environment.Exit(0);
         }
+
     }
 }
