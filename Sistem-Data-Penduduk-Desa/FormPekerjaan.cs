@@ -7,32 +7,32 @@ namespace Sistem_Data_Penduduk_Desa
 {
     public partial class FormPekerjaan : Form
     {
-        // Pengaturan koneksi ke database MySQL (Server, User, DB)
+        // Variabel koneksi database
         string connString = "server=localhost;user=root;password=;database=sdpd";
         MySqlConnection conn;
 
         public FormPekerjaan()
         {
             InitializeComponent();
-            conn = new MySqlConnection(connString); // Inisialisasi koneksi
-            LoadData(); // Panggil data saat form pertama kali dibuka
+            conn = new MySqlConnection(connString);
+            LoadData();
         }
 
-        // --- 1. MENAMPILKAN DATA KE TABEL (DATA GRID VIEW) ---
+        // 1. FUNGSI UNTUK MENAMPILKAN DATA DARI DATABASE KE TABEL (DATA GRID VIEW)
         private void LoadData()
         {
             try
             {
-                if (conn.State != ConnectionState.Closed) conn.Close(); // Tutup koneksi jika masih terbuka
-                conn.Open(); // Buka koneksi ke database
+                if (conn.State != ConnectionState.Closed) conn.Close();
+                conn.Open();
 
-                string query = "SELECT * FROM pekerjaan"; // Query ambil semua data
+                string query = "SELECT * FROM pekerjaan";
                 MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
-                da.Fill(dt); // Masukkan data hasil query ke dalam DataTable
+                da.Fill(dt);
 
-                dgvDataPekerjaan.DataSource = dt; // Tampilkan isi DataTable ke DataGridView
-                lblAngkatotal.Text = dt.Rows.Count.ToString(); // Hitung total baris data untuk label info
+                dgvDataPekerjaan.DataSource = dt;
+                lblAngkatotal.Text = dt.Rows.Count.ToString();
             }
             catch (Exception ex)
             {
@@ -40,11 +40,11 @@ namespace Sistem_Data_Penduduk_Desa
             }
             finally
             {
-                conn.Close(); // Pastikan koneksi selalu ditutup setelah selesai
+                conn.Close();
             }
         }
 
-        // --- 2. JEMBATAN UTAMA UNTUK EKSEKUSI DATA (CRUD) ---
+        // 2. FUNGSI UTAMA KONEKSI CRUD (CREATE, UPDATE, DELETE)
         private void ExecuteQuery(string query, string pesan, bool pakaiId, bool pakaiInput)
         {
             try
@@ -52,14 +52,13 @@ namespace Sistem_Data_Penduduk_Desa
                 if (conn.State != ConnectionState.Closed) conn.Close();
                 conn.Open();
 
-                MySqlCommand cmd = new MySqlCommand(query, conn); // Siapkan perintah SQL
+                MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                // Jika query butuh ID (Untuk Proses Ubah & Hapus)
+                // Jika query butuh ID (Ubah & Hapus)
                 if (pakaiId)
                 {
                     if (dgvDataPekerjaan.CurrentRow != null)
                     {
-                        // Ambil ID dari baris tabel yang sedang dipilih user
                         cmd.Parameters.AddWithValue("@id", dgvDataPekerjaan.CurrentRow.Cells["id_pekerjaan"].Value);
                     }
                     else
@@ -69,13 +68,13 @@ namespace Sistem_Data_Penduduk_Desa
                     }
                 }
 
-                // Jika query butuh teks input (Untuk Proses Tambah & Ubah)
+                // Jika query butuh input dari TextBox (Tambah & Ubah)
                 if (pakaiInput)
                 {
-                    cmd.Parameters.AddWithValue("@nama", txtNama_pekerjaan.Text); // Ambil teks dari TextBox
+                    cmd.Parameters.AddWithValue("@nama", txtNama_pekerjaan.Text);
                 }
 
-                cmd.ExecuteNonQuery(); // Eksekusi perintah SQL ke database
+                cmd.ExecuteNonQuery();
                 MessageBox.Show(pesan, "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -85,76 +84,76 @@ namespace Sistem_Data_Penduduk_Desa
             finally
             {
                 conn.Close();
-                LoadData(); // Refresh tabel agar data terbaru langsung muncul
-                btnReset_Click(null, EventArgs.Empty); // Kosongkan form input otomatis
+                LoadData(); // Refresh tabel otomatis setelah query selesai
+                btnReset_Click(null, EventArgs.Empty); // Form otomatis kosong setelah input/ubah/hapus
             }
         }
 
-        // --- 3. TOMBOL TAMBAH DATA ---
+        // 3. BUTTON TAMBAH DATA
         private void btnTambahh_Click(object sender, EventArgs e)
         {
-            // Validasi: Cegah simpan jika TextBox kosong
             if (string.IsNullOrEmpty(txtNama_pekerjaan.Text.Trim()))
             {
                 MessageBox.Show("Nama pekerjaan tidak boleh kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string query = "INSERT INTO pekerjaan (nama_pekerjaan) VALUES (@nama)"; // Query tambah data
-            ExecuteQuery(query, "Data berhasil ditambah.", false, true); // Eksekusi
+            string query = "INSERT INTO pekerjaan (nama_pekerjaan) VALUES (@nama)";
+            ExecuteQuery(query, "Data berhasil ditambah.", false, true);
         }
 
-        // --- 4. TOMBOL UBAH DATA ---
+        // 4. BUTTON UBAH DATA
         private void btnUbah_Click(object sender, EventArgs e)
         {
-            // Validasi: Harus pilih data di tabel dulu
             if (dgvDataPekerjaan.CurrentRow == null)
             {
                 MessageBox.Show("Pilih data yang ingin diubah pada tabel!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // Validasi: Nama baru tidak boleh kosong
             if (string.IsNullOrEmpty(txtNama_pekerjaan.Text.Trim()))
             {
                 MessageBox.Show("Nama pekerjaan baru tidak boleh kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string query = "UPDATE pekerjaan SET nama_pekerjaan=@nama WHERE id_pekerjaan=@id"; // Query ubah data
-            ExecuteQuery(query, "Data berhasil diubah.", true, true); // Eksekusi
+            string query = "UPDATE pekerjaan SET nama_pekerjaan=@nama WHERE id_pekerjaan=@id";
+            ExecuteQuery(query, "Data berhasil diubah.", true, true);
         }
 
-        // --- 5. TOMBOL HAPUS DATA ---
+        // 5. BUTTON HAPUS DATA
         private void btnHapus_Click(object sender, EventArgs e)
         {
-            // Validasi: Harus pilih data di tabel dulu
             if (dgvDataPekerjaan.CurrentRow == null)
             {
                 MessageBox.Show("Pilih data yang ingin dihapus pada tabel!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // Munculkan kotak konfirmasi (Yes/No) sebelum benar-benar menghapus
             if (MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                string query = "DELETE FROM pekerjaan WHERE id_pekerjaan=@id"; // Query hapus data
-                ExecuteQuery(query, "Data berhasil dihapus.", true, false); // Eksekusi
+                string query = "DELETE FROM pekerjaan WHERE id_pekerjaan=@id";
+                ExecuteQuery(query, "Data berhasil dihapus.", true, false);
             }
         }
 
-        // --- 6. TOMBOL RESET (BERSIHKAN FORM) ---
+        // 6. BUTTON RESET (Mengosongkan form inputan)
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtNama_pekerjaan.Clear(); // Kosongkan TextBox nama pekerjaan
-            // txtCari.Clear(); // Hilangkan tanda komentar jika kamu punya fitur TextBox pencarian
+            txtNama_pekerjaan.Clear();
+            txtCari.Clear(); // Menghapus kolom pencarian juga jika ada
         }
 
-        // --- 7. EVENT KLIK BARIS TABEL (PINDAH DATA KE TEXTBOX) ---
+        // 7. EVENT KLIK TABEL
         private void dgvDataPekerjaan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Memastikan yang diklik baris data, bukan header/judul kolom
+            // 1. Memastikan user mengklik baris data yang valid (bukan judul kolom)
+            if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dgvDataPekerjaan.Rows[e.RowIndex]; // Ambil baris aktif
+                // 2. Mengambil data dari baris yang sedang diklik
+                DataGridViewRow row = dgvDataPekerjaan.Rows[e.RowIndex];
+
+                // 3. Memeriksa apakah kolom "nama_pekerjaan" ada isinya
                 if (row.Cells["nama_pekerjaan"].Value != null)
                 {
-                    txtNama_pekerjaan.Text = row.Cells["nama_pekerjaan"].Value.ToString(); // Lempar string ke TextBox
+                    // 4. Memindahkan teks dari tabel ke dalam TextBox
+                    txtNama_pekerjaan.Text = row.Cells["nama_pekerjaan"].Value.ToString();
                 }
             }
         }
