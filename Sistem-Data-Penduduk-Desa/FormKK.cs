@@ -5,165 +5,158 @@ using MySql.Data.MySqlClient;
 
 namespace Sistem_Data_Penduduk_Desa
 {
-    public partial class FormKK : Form
+    public partial class FormPekerjaan : Form
     {
+        // Pengaturan koneksi ke database MySQL (Server, User, DB)
         string connString = "server=localhost;user=root;password=;database=sdpd";
         MySqlConnection conn;
 
-        public FormKK()
+        public FormPekerjaan()
         {
             InitializeComponent();
-            conn = new MySqlConnection(connString);
-            LoadData();
+            conn = new MySqlConnection(connString); // Inisialisasi koneksi
+            LoadData(); // Panggil data saat form pertama kali dibuka
         }
 
+        // --- 1. MENAMPILKAN DATA KE TABEL (DATA GRID VIEW) ---
         private void LoadData()
         {
             try
             {
-                if (conn.State == ConnectionState.Open) conn.Close();
-                conn.Open();
+                if (conn.State != ConnectionState.Closed) conn.Close(); // Tutup koneksi jika masih terbuka
+                conn.Open(); // Buka koneksi ke database
 
-                string query = "SELECT * FROM kartu_keluarga";
+                string query = "SELECT * FROM pekerjaan"; // Query ambil semua data
                 MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
-                dgvDataKK.DataSource = dt;
+                da.Fill(dt); // Masukkan data hasil query ke dalam DataTable
 
-                // Memperbarui nilai pada Label yang Anda inginkan
-                angkatotal.Text = dt.Rows.Count.ToString();
-
-                string queryBaru = "SELECT COUNT(*) FROM kartu_keluarga";
-                MySqlCommand cmdBaru = new MySqlCommand(queryBaru, conn);
-                object result = cmdBaru.ExecuteScalar();
-                angkadata.Text = (result != null) ? result.ToString() : "0";
+                dgvDataPekerjaan.DataSource = dt; // Tampilkan isi DataTable ke DataGridView
+                lblAngkatotal.Text = dt.Rows.Count.ToString(); // Hitung total baris data untuk label info
             }
-            catch (Exception ex) { MessageBox.Show("Error Load: " + ex.Message); }
-            finally { conn.Close(); }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal memuat data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close(); // Pastikan koneksi selalu ditutup setelah selesai
+            }
         }
 
-        private void ExecuteQuery(string query, string message, bool useId)
+        // --- 2. JEMBATAN UTAMA UNTUK EKSEKUSI DATA (CRUD) ---
+        private void ExecuteQuery(string query, string pesan, bool pakaiId, bool pakaiInput)
         {
             try
             {
+                if (conn.State != ConnectionState.Closed) conn.Close();
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                if (useId && dgvDataKK.CurrentRow != null)
-                    cmd.Parameters.AddWithValue("@id", dgvDataKK.CurrentRow.Cells["id_kk"].Value);
+                MySqlCommand cmd = new MySqlCommand(query, conn); // Siapkan perintah SQL
 
-                cmd.Parameters.AddWithValue("@nokk", txtNoKK.Text);
-                cmd.Parameters.AddWithValue("@nama", txtNama_kepala_keluarga.Text);
-                cmd.Parameters.AddWithValue("@alamat", txtAlamat.Text);
-                cmd.Parameters.AddWithValue("@rt", txtRT.Text);
-                cmd.Parameters.AddWithValue("@rw", txtRW.Text);
-                cmd.Parameters.AddWithValue("@kec", txtKecamatan.Text);
-                cmd.Parameters.AddWithValue("@desa", txtDesa_kelurahan.Text);
-                cmd.Parameters.AddWithValue("@kab", txtKabupaten_kota.Text);
-                cmd.Parameters.AddWithValue("@prov", txtProvinsi.Text);
+                // Jika query butuh ID (Untuk Proses Ubah & Hapus)
+                if (pakaiId)
+                {
+                    if (dgvDataPekerjaan.CurrentRow != null)
+                    {
+                        // Ambil ID dari baris tabel yang sedang dipilih user
+                        cmd.Parameters.AddWithValue("@id", dgvDataPekerjaan.CurrentRow.Cells["id_pekerjaan"].Value);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Pilih data pada tabel terlebih dahulu!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
 
-                cmd.ExecuteNonQuery();
-                MessageBox.Show(message);
+                // Jika query butuh teks input (Untuk Proses Tambah & Ubah)
+                if (pakaiInput)
+                {
+                    cmd.Parameters.AddWithValue("@nama", txtNama_pekerjaan.Text); // Ambil teks dari TextBox
+                }
+
+                cmd.ExecuteNonQuery(); // Eksekusi perintah SQL ke database
+                MessageBox.Show(pesan, "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
-            finally { conn.Close(); LoadData(); btnReset_Click(null, null); }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saat eksekusi data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+                LoadData(); // Refresh tabel agar data terbaru langsung muncul
+                btnReset_Click(null, EventArgs.Empty); // Kosongkan form input otomatis
+            }
         }
 
-        private void btnTambah_Click(object sender, EventArgs e)
+        // --- 3. TOMBOL TAMBAH DATA ---
+        private void btnTambahh_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO kartu_keluarga (no_kk, nama_kepala_keluarga, alamat, rt, rw, kecamatan, desa_kelurahan, kabupaten_kota, provinsi) VALUES (@nokk, @nama, @alamat, @rt, @rw, @kec, @desa, @kab, @prov)";
-            ExecuteQuery(query, "Data berhasil ditambah!", false);
+            // Validasi: Cegah simpan jika TextBox kosong
+            if (string.IsNullOrEmpty(txtNama_pekerjaan.Text.Trim()))
+            {
+                MessageBox.Show("Nama pekerjaan tidak boleh kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string query = "INSERT INTO pekerjaan (nama_pekerjaan) VALUES (@nama)"; // Query tambah data
+            ExecuteQuery(query, "Data berhasil ditambah.", false, true); // Eksekusi
         }
 
+        // --- 4. TOMBOL UBAH DATA ---
         private void btnUbah_Click(object sender, EventArgs e)
         {
-            if (dgvDataKK.CurrentRow == null) return;
-            string query = "UPDATE kartu_keluarga SET no_kk=@nokk, nama_kepala_keluarga=@nama, alamat=@alamat, rt=@rt, rw=@rw, kecamatan=@kec, desa_kelurahan=@desa, kabupaten_kota=@kab, provinsi=@prov WHERE id_kk=@id";
-            ExecuteQuery(query, "Data berhasil diubah!", true);
+            // Validasi: Harus pilih data di tabel dulu
+            if (dgvDataPekerjaan.CurrentRow == null)
+            {
+                MessageBox.Show("Pilih data yang ingin diubah pada tabel!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            // Validasi: Nama baru tidak boleh kosong
+            if (string.IsNullOrEmpty(txtNama_pekerjaan.Text.Trim()))
+            {
+                MessageBox.Show("Nama pekerjaan baru tidak boleh kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string query = "UPDATE pekerjaan SET nama_pekerjaan=@nama WHERE id_pekerjaan=@id"; // Query ubah data
+            ExecuteQuery(query, "Data berhasil diubah.", true, true); // Eksekusi
         }
 
+        // --- 5. TOMBOL HAPUS DATA ---
         private void btnHapus_Click(object sender, EventArgs e)
         {
-            if (dgvDataKK.CurrentRow == null) return;
-            string query = "DELETE FROM kartu_keluarga WHERE id_kk=@id";
-            ExecuteQuery(query, "Data berhasil dihapus!", true);
-        }
-
-        private void txtCari_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtCari.Text)) { LoadData(); return; }
-            try
+            // Validasi: Harus pilih data di tabel dulu
+            if (dgvDataPekerjaan.CurrentRow == null)
             {
-                if (conn.State == ConnectionState.Open) conn.Close();
-                conn.Open();
-                string query = "SELECT * FROM kartu_keluarga WHERE no_kk LIKE @key OR nama_kepala_keluarga LIKE @key";
-                MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
-                da.SelectCommand.Parameters.AddWithValue("@key", "%" + txtCari.Text + "%");
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dgvDataKK.DataSource = dt;
+                MessageBox.Show("Pilih data yang ingin dihapus pada tabel!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            catch (Exception ex) { MessageBox.Show("Error Cari: " + ex.Message); }
-            finally { conn.Close(); }
+            // Munculkan kotak konfirmasi (Yes/No) sebelum benar-benar menghapus
+            if (MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string query = "DELETE FROM pekerjaan WHERE id_pekerjaan=@id"; // Query hapus data
+                ExecuteQuery(query, "Data berhasil dihapus.", true, false); // Eksekusi
+            }
         }
 
+        // --- 6. TOMBOL RESET (BERSIHKAN FORM) ---
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtNoKK.Clear(); txtNama_kepala_keluarga.Clear(); txtAlamat.Clear();
-            txtRT.Clear(); txtRW.Clear(); txtKecamatan.Clear();
-            txtDesa_kelurahan.Clear(); txtKabupaten_kota.Clear(); txtProvinsi.Clear();
-            txtCari.Clear();
+            txtNama_pekerjaan.Clear(); // Kosongkan TextBox nama pekerjaan
+            // txtCari.Clear(); // Hilangkan tanda komentar jika kamu punya fitur TextBox pencarian
         }
 
-        private void dgvDataKK_CellClick(object sender, DataGridViewCellEventArgs e)
+        // --- 7. EVENT KLIK BARIS TABEL (PINDAH DATA KE TEXTBOX) ---
+        private void dgvDataPekerjaan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvDataKK.Rows.Count)
+            if (e.RowIndex >= 0) // Memastikan yang diklik baris data, bukan header/judul kolom
             {
-                DataGridViewRow row = dgvDataKK.Rows[e.RowIndex];
-                txtNoKK.Text = row.Cells["no_kk"]?.Value?.ToString() ?? "";
-                txtNama_kepala_keluarga.Text = row.Cells["nama_kepala_keluarga"]?.Value?.ToString() ?? "";
-                txtAlamat.Text = row.Cells["alamat"]?.Value?.ToString() ?? "";
-                txtRT.Text = row.Cells["rt"]?.Value?.ToString() ?? "";
-                txtRW.Text = row.Cells["rw"]?.Value?.ToString() ?? "";
-                txtKecamatan.Text = row.Cells["kecamatan"]?.Value?.ToString() ?? "";
-                txtDesa_kelurahan.Text = row.Cells["desa_kelurahan"]?.Value?.ToString() ?? "";
-                txtKabupaten_kota.Text = row.Cells["kabupaten_kota"]?.Value?.ToString() ?? "";
-                txtProvinsi.Text = row.Cells["provinsi"]?.Value?.ToString() ?? "";
+                DataGridViewRow row = dgvDataPekerjaan.Rows[e.RowIndex]; // Ambil baris aktif
+                if (row.Cells["nama_pekerjaan"].Value != null)
+                {
+                    txtNama_pekerjaan.Text = row.Cells["nama_pekerjaan"].Value.ToString(); // Lempar string ke TextBox
+                }
             }
-        }
-
-        // Event yang Anda minta
-        private void angkatotal_Click(object sender, EventArgs e) { }
-        private void angkadata_Click(object sender, EventArgs e) { }
-
-        private void panelstatistikringkas_kk_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FormKK_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblJuduul_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelinput_kk_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblNo_kk_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNo_kk_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
