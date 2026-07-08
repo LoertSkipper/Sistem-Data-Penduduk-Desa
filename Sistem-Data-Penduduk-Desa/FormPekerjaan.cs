@@ -143,11 +143,16 @@ namespace Sistem_Data_Penduduk_Desa
         // 7. EVENT KLIK TABEL
         private void dgvDataPekerjaan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // 1. Memastikan user mengklik baris data yang valid (bukan judul kolom)
             if (e.RowIndex >= 0)
             {
+                // 2. Mengambil data dari baris yang sedang diklik
                 DataGridViewRow row = dgvDataPekerjaan.Rows[e.RowIndex];
+
+                // 3. Memeriksa apakah kolom "nama_pekerjaan" ada isinya
                 if (row.Cells["nama_pekerjaan"].Value != null)
                 {
+                    // 4. Memindahkan teks dari tabel ke dalam TextBox
                     txtNama_pekerjaan.Text = row.Cells["nama_pekerjaan"].Value.ToString();
                 }
             }

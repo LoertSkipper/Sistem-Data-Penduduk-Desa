@@ -155,6 +155,7 @@ namespace Sistem_Data_Penduduk_Desa
             dgvDataPekerjaan.RowHeadersWidth = 62;
             dgvDataPekerjaan.Size = new Size(1081, 212);
             dgvDataPekerjaan.TabIndex = 21;
+            dgvDataPekerjaan.CellClick += dgvDataPekerjaan_CellClick;
             // 
             // btnHapus
             // 
@@ -164,6 +165,7 @@ namespace Sistem_Data_Penduduk_Desa
             btnHapus.TabIndex = 19;
             btnHapus.Text = "Hapus";
             btnHapus.UseVisualStyleBackColor = true;
+            btnHapus.Click += btnHapus_Click;
             // 
             // btnUbah
             // 
