@@ -32,31 +32,23 @@ namespace Sistem_Data_Penduduk_Desa
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPekerjaan));
             panelstatistikringkas_pekerjaan = new Panel();
-            pictureBox1 = new PictureBox();
-            angkaRata2 = new Label();
-            lblRata2_pendapatan = new Label();
             pictureTotalKK = new PictureBox();
             lblAngkatotal = new Label();
             lblTotal_pekerja = new Label();
             lblStatistik_ringkas = new Label();
             paneloutput_pekerjaan = new Panel();
+            btnReset = new Button();
             txtCari = new TextBox();
             lblCari = new Label();
             dgvDataPekerjaan = new DataGridView();
-            btnReset = new Button();
             btnHapus = new Button();
             btnUbah = new Button();
             lblJudulPendataanPekerjaan = new Label();
             panelinput = new Panel();
-            txtJumlah_Tanggungann = new TextBox();
-            txtPendapatan = new TextBox();
-            btnTambahh = new Button();
+            btnTambah = new Button();
             txtNama_pekerjaan = new TextBox();
-            lblJumlah_Tanggungann = new Label();
-            lblPendapatan = new Label();
             lblNama_pekerjaan = new Label();
             panelstatistikringkas_pekerjaan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureTotalKK).BeginInit();
             paneloutput_pekerjaan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDataPekerjaan).BeginInit();
@@ -66,9 +58,6 @@ namespace Sistem_Data_Penduduk_Desa
             // panelstatistikringkas_pekerjaan
             // 
             panelstatistikringkas_pekerjaan.BackColor = Color.White;
-            panelstatistikringkas_pekerjaan.Controls.Add(pictureBox1);
-            panelstatistikringkas_pekerjaan.Controls.Add(angkaRata2);
-            panelstatistikringkas_pekerjaan.Controls.Add(lblRata2_pendapatan);
             panelstatistikringkas_pekerjaan.Controls.Add(pictureTotalKK);
             panelstatistikringkas_pekerjaan.Controls.Add(lblAngkatotal);
             panelstatistikringkas_pekerjaan.Controls.Add(lblTotal_pekerja);
@@ -78,41 +67,10 @@ namespace Sistem_Data_Penduduk_Desa
             panelstatistikringkas_pekerjaan.Size = new Size(606, 355);
             panelstatistikringkas_pekerjaan.TabIndex = 6;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(401, 107);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 100);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
-            // 
-            // angkaRata2
-            // 
-            angkaRata2.AutoSize = true;
-            angkaRata2.Font = new Font("Segoe UI", 20F);
-            angkaRata2.Location = new Point(431, 275);
-            angkaRata2.Name = "angkaRata2";
-            angkaRata2.Size = new Size(45, 54);
-            angkaRata2.TabIndex = 7;
-            angkaRata2.Text = "0";
-            angkaRata2.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // lblRata2_pendapatan
-            // 
-            lblRata2_pendapatan.AutoSize = true;
-            lblRata2_pendapatan.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
-            lblRata2_pendapatan.Location = new Point(365, 227);
-            lblRata2_pendapatan.Name = "lblRata2_pendapatan";
-            lblRata2_pendapatan.Size = new Size(176, 25);
-            lblRata2_pendapatan.TabIndex = 6;
-            lblRata2_pendapatan.Text = "RATA\" PENDAPATAN";
-            // 
             // pictureTotalKK
             // 
             pictureTotalKK.Image = (Image)resources.GetObject("pictureTotalKK.Image");
-            pictureTotalKK.Location = new Point(83, 107);
+            pictureTotalKK.Location = new Point(253, 100);
             pictureTotalKK.Name = "pictureTotalKK";
             pictureTotalKK.Size = new Size(100, 100);
             pictureTotalKK.SizeMode = PictureBoxSizeMode.Zoom;
@@ -123,7 +81,7 @@ namespace Sistem_Data_Penduduk_Desa
             // 
             lblAngkatotal.AutoSize = true;
             lblAngkatotal.Font = new Font("Segoe UI", 20F);
-            lblAngkatotal.Location = new Point(113, 275);
+            lblAngkatotal.Location = new Point(283, 268);
             lblAngkatotal.Name = "lblAngkatotal";
             lblAngkatotal.Size = new Size(45, 54);
             lblAngkatotal.TabIndex = 3;
@@ -134,11 +92,11 @@ namespace Sistem_Data_Penduduk_Desa
             // 
             lblTotal_pekerja.AutoSize = true;
             lblTotal_pekerja.Font = new Font("Segoe UI", 9F, FontStyle.Underline);
-            lblTotal_pekerja.Location = new Point(69, 227);
+            lblTotal_pekerja.Location = new Point(239, 220);
             lblTotal_pekerja.Name = "lblTotal_pekerja";
-            lblTotal_pekerja.Size = new Size(134, 25);
+            lblTotal_pekerja.Size = new Size(159, 25);
             lblTotal_pekerja.TabIndex = 1;
-            lblTotal_pekerja.Text = "TOTAL PEKERJA";
+            lblTotal_pekerja.Text = "TOTAL PEKERJAAN";
             // 
             // lblStatistik_ringkas
             // 
@@ -153,6 +111,7 @@ namespace Sistem_Data_Penduduk_Desa
             // paneloutput_pekerjaan
             // 
             paneloutput_pekerjaan.BorderStyle = BorderStyle.FixedSingle;
+            paneloutput_pekerjaan.Controls.Add(btnReset);
             paneloutput_pekerjaan.Controls.Add(txtCari);
             paneloutput_pekerjaan.Controls.Add(lblCari);
             paneloutput_pekerjaan.Controls.Add(dgvDataPekerjaan);
@@ -161,13 +120,22 @@ namespace Sistem_Data_Penduduk_Desa
             paneloutput_pekerjaan.Size = new Size(1283, 341);
             paneloutput_pekerjaan.TabIndex = 5;
             // 
+            // btnReset
+            // 
+            btnReset.Location = new Point(1063, 16);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(112, 34);
+            btnReset.TabIndex = 20;
+            btnReset.Text = "Reset";
+            btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click;
+            // 
             // txtCari
             // 
             txtCari.Location = new Point(94, 22);
             txtCari.Name = "txtCari";
             txtCari.Size = new Size(239, 31);
             txtCari.TabIndex = 23;
-            txtCari.TextChanged += txtCari_TextChanged;
             // 
             // lblCari
             // 
@@ -188,29 +156,18 @@ namespace Sistem_Data_Penduduk_Desa
             dgvDataPekerjaan.Size = new Size(1081, 212);
             dgvDataPekerjaan.TabIndex = 21;
             // 
-            // btnReset
-            // 
-            btnReset.Location = new Point(1188, 866);
-            btnReset.Name = "btnReset";
-            btnReset.Size = new Size(112, 34);
-            btnReset.TabIndex = 20;
-            btnReset.Text = "Reset";
-            btnReset.UseVisualStyleBackColor = true;
-            btnReset.Click += btnReset_Click;
-            // 
             // btnHapus
             // 
-            btnHapus.Location = new Point(1060, 866);
+            btnHapus.Location = new Point(216, 274);
             btnHapus.Name = "btnHapus";
             btnHapus.Size = new Size(112, 34);
             btnHapus.TabIndex = 19;
             btnHapus.Text = "Hapus";
             btnHapus.UseVisualStyleBackColor = true;
-            btnHapus.Click += btnHapus_Click;
             // 
             // btnUbah
             // 
-            btnUbah.Location = new Point(933, 866);
+            btnUbah.Location = new Point(89, 274);
             btnUbah.Name = "btnUbah";
             btnUbah.Size = new Size(112, 34);
             btnUbah.TabIndex = 18;
@@ -231,72 +188,38 @@ namespace Sistem_Data_Penduduk_Desa
             // panelinput
             // 
             panelinput.BorderStyle = BorderStyle.FixedSingle;
-            panelinput.Controls.Add(txtJumlah_Tanggungann);
-            panelinput.Controls.Add(txtPendapatan);
-            panelinput.Controls.Add(btnTambahh);
+            panelinput.Controls.Add(btnTambah);
             panelinput.Controls.Add(txtNama_pekerjaan);
-            panelinput.Controls.Add(lblJumlah_Tanggungann);
-            panelinput.Controls.Add(lblPendapatan);
             panelinput.Controls.Add(lblNama_pekerjaan);
+            panelinput.Controls.Add(btnUbah);
+            panelinput.Controls.Add(btnHapus);
             panelinput.Location = new Point(93, 91);
             panelinput.Name = "panelinput";
             panelinput.Size = new Size(497, 355);
             panelinput.TabIndex = 21;
             // 
-            // txtJumlah_Tanggungann
+            // btnTambah
             // 
-            txtJumlah_Tanggungann.Location = new Point(211, 151);
-            txtJumlah_Tanggungann.Name = "txtJumlah_Tanggungann";
-            txtJumlah_Tanggungann.Size = new Size(239, 31);
-            txtJumlah_Tanggungann.TabIndex = 17;
-            txtJumlah_Tanggungann.TextChanged += txtJumlah_Tanggungann_TextChanged;
-            // 
-            // txtPendapatan
-            // 
-            txtPendapatan.Location = new Point(211, 96);
-            txtPendapatan.Name = "txtPendapatan";
-            txtPendapatan.Size = new Size(239, 31);
-            txtPendapatan.TabIndex = 16;
-            txtPendapatan.TextAlign = HorizontalAlignment.Right;
-            // 
-            // btnTambahh
-            // 
-            btnTambahh.Location = new Point(338, 274);
-            btnTambahh.Name = "btnTambahh";
-            btnTambahh.Size = new Size(112, 34);
-            btnTambahh.TabIndex = 2;
-            btnTambahh.Text = "Tambah";
-            btnTambahh.UseVisualStyleBackColor = true;
+            btnTambah.BackgroundImageLayout = ImageLayout.Center;
+            btnTambah.Location = new Point(338, 274);
+            btnTambah.Name = "btnTambah";
+            btnTambah.Size = new Size(112, 34);
+            btnTambah.TabIndex = 2;
+            btnTambah.Text = "Tambah";
+            btnTambah.UseVisualStyleBackColor = true;
+            btnTambah.Click += btnTambahh_Click;
             // 
             // txtNama_pekerjaan
             // 
-            txtNama_pekerjaan.Location = new Point(211, 40);
+            txtNama_pekerjaan.Location = new Point(211, 99);
             txtNama_pekerjaan.Name = "txtNama_pekerjaan";
             txtNama_pekerjaan.Size = new Size(239, 31);
             txtNama_pekerjaan.TabIndex = 9;
             // 
-            // lblJumlah_Tanggungann
-            // 
-            lblJumlah_Tanggungann.AutoSize = true;
-            lblJumlah_Tanggungann.Location = new Point(33, 151);
-            lblJumlah_Tanggungann.Name = "lblJumlah_Tanggungann";
-            lblJumlah_Tanggungann.Size = new Size(170, 25);
-            lblJumlah_Tanggungann.TabIndex = 8;
-            lblJumlah_Tanggungann.Text = "Jumlah Tanggungan";
-            // 
-            // lblPendapatan
-            // 
-            lblPendapatan.AutoSize = true;
-            lblPendapatan.Location = new Point(33, 96);
-            lblPendapatan.Name = "lblPendapatan";
-            lblPendapatan.Size = new Size(105, 25);
-            lblPendapatan.TabIndex = 7;
-            lblPendapatan.Text = "Pendapatan";
-            // 
             // lblNama_pekerjaan
             // 
             lblNama_pekerjaan.AutoSize = true;
-            lblNama_pekerjaan.Location = new Point(33, 40);
+            lblNama_pekerjaan.Location = new Point(33, 99);
             lblNama_pekerjaan.Name = "lblNama_pekerjaan";
             lblNama_pekerjaan.Size = new Size(138, 25);
             lblNama_pekerjaan.TabIndex = 0;
@@ -312,14 +235,10 @@ namespace Sistem_Data_Penduduk_Desa
             Controls.Add(panelstatistikringkas_pekerjaan);
             Controls.Add(lblJudulPendataanPekerjaan);
             Controls.Add(paneloutput_pekerjaan);
-            Controls.Add(btnReset);
-            Controls.Add(btnHapus);
-            Controls.Add(btnUbah);
             Name = "FormPekerjaan";
             Text = "FormPekerjaan";
             panelstatistikringkas_pekerjaan.ResumeLayout(false);
             panelstatistikringkas_pekerjaan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureTotalKK).EndInit();
             paneloutput_pekerjaan.ResumeLayout(false);
             paneloutput_pekerjaan.PerformLayout();
@@ -341,22 +260,19 @@ namespace Sistem_Data_Penduduk_Desa
         private Label lblStatistik_ringkas;
         private Panel paneloutput_pekerjaan;
         private DataGridView dgvDataPekerjaan;
-        private Button btnReset;
         private Button btnHapus;
         private Button btnUbah;
-        private PictureBox pictureBox1;
-        private Label angkaRata2;
-        private Label lblRata2_pendapatan;
         private TextBox txtCari;
         private Label lblCari;
         private Label lblJudulPendataanPekerjaan;
         private Panel panelinput;
         private TextBox txtJumlah_Tanggungann;
         private TextBox txtPendapatan;
-        private Button btnTambahh;
+        private Button btnTambah;
         private TextBox txtNama_pekerjaan;
-        private Label lblJumlah_Tanggungann;
+        private Label lblJumlah_Tanggungan;
         private Label lblPendapatan;
         private Label lblNama_pekerjaan;
+        private Button btnReset;
     }
 }
