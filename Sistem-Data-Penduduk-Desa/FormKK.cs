@@ -52,7 +52,7 @@ namespace Sistem_Data_Penduduk_Desa
                 if (useId && dgvDataKK.CurrentRow != null)
                     cmd.Parameters.AddWithValue("@id", dgvDataKK.CurrentRow.Cells["id_kk"].Value);
 
-                cmd.Parameters.AddWithValue("@nik", txtNIK.Text);
+                cmd.Parameters.AddWithValue("@nokk", txtNoKK.Text);
                 cmd.Parameters.AddWithValue("@nama", txtNama_kepala_keluarga.Text);
                 cmd.Parameters.AddWithValue("@alamat", txtAlamat.Text);
                 cmd.Parameters.AddWithValue("@rt", txtRT.Text);
@@ -71,14 +71,14 @@ namespace Sistem_Data_Penduduk_Desa
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO kartu_keluarga (nik, nama_kepala_keluarga, alamat, rt, rw, kecamatan, desa_kelurahan, kabupaten_kota, provinsi) VALUES (@nik, @nama, @alamat, @rt, @rw, @kec, @desa, @kab, @prov)";
+            string query = "INSERT INTO kartu_keluarga (no_kk, nama_kepala_keluarga, alamat, rt, rw, kecamatan, desa_kelurahan, kabupaten_kota, provinsi) VALUES (@nokk, @nama, @alamat, @rt, @rw, @kec, @desa, @kab, @prov)";
             ExecuteQuery(query, "Data berhasil ditambah!", false);
         }
 
         private void btnUbah_Click(object sender, EventArgs e)
         {
             if (dgvDataKK.CurrentRow == null) return;
-            string query = "UPDATE kartu_keluarga SET nik=@nik, nama_kepala_keluarga=@nama, alamat=@alamat, rt=@rt, rw=@rw, kecamatan=@kec, desa_kelurahan=@desa, kabupaten_kota=@kab, provinsi=@prov WHERE id_kk=@id";
+            string query = "UPDATE kartu_keluarga SET no_kk=@nokk, nama_kepala_keluarga=@nama, alamat=@alamat, rt=@rt, rw=@rw, kecamatan=@kec, desa_kelurahan=@desa, kabupaten_kota=@kab, provinsi=@prov WHERE id_kk=@id";
             ExecuteQuery(query, "Data berhasil diubah!", true);
         }
 
@@ -96,7 +96,7 @@ namespace Sistem_Data_Penduduk_Desa
             {
                 if (conn.State == ConnectionState.Open) conn.Close();
                 conn.Open();
-                string query = "SELECT * FROM kartu_keluarga WHERE nik LIKE @key OR nama_kepala_keluarga LIKE @key";
+                string query = "SELECT * FROM kartu_keluarga WHERE no_kk LIKE @key OR nama_kepala_keluarga LIKE @key";
                 MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
                 da.SelectCommand.Parameters.AddWithValue("@key", "%" + txtCari.Text + "%");
                 DataTable dt = new DataTable();
@@ -109,7 +109,7 @@ namespace Sistem_Data_Penduduk_Desa
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtNIK.Clear(); txtNama_kepala_keluarga.Clear(); txtAlamat.Clear();
+            txtNoKK.Clear(); txtNama_kepala_keluarga.Clear(); txtAlamat.Clear();
             txtRT.Clear(); txtRW.Clear(); txtKecamatan.Clear();
             txtDesa_kelurahan.Clear(); txtKabupaten_kota.Clear(); txtProvinsi.Clear();
             txtCari.Clear();
@@ -120,7 +120,7 @@ namespace Sistem_Data_Penduduk_Desa
             if (e.RowIndex >= 0 && e.RowIndex < dgvDataKK.Rows.Count)
             {
                 DataGridViewRow row = dgvDataKK.Rows[e.RowIndex];
-                txtNIK.Text = row.Cells["nik"]?.Value?.ToString() ?? "";
+                txtNoKK.Text = row.Cells["no_kk"]?.Value?.ToString() ?? "";
                 txtNama_kepala_keluarga.Text = row.Cells["nama_kepala_keluarga"]?.Value?.ToString() ?? "";
                 txtAlamat.Text = row.Cells["alamat"]?.Value?.ToString() ?? "";
                 txtRT.Text = row.Cells["rt"]?.Value?.ToString() ?? "";

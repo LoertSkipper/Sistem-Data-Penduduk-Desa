@@ -39,7 +39,7 @@
             txtRT = new TextBox();
             txtAlamat = new TextBox();
             txtNama_kepala_keluarga = new TextBox();
-            txtNIK = new TextBox();
+            txtNoKK = new TextBox();
             lblProvinsi = new Label();
             lblKabupaten_kota = new Label();
             lblDesa_kelurahan = new Label();
@@ -86,7 +86,7 @@
             panelinput_kk.Controls.Add(txtRT);
             panelinput_kk.Controls.Add(txtAlamat);
             panelinput_kk.Controls.Add(txtNama_kepala_keluarga);
-            panelinput_kk.Controls.Add(txtNIK);
+            panelinput_kk.Controls.Add(txtNoKK);
             panelinput_kk.Controls.Add(lblProvinsi);
             panelinput_kk.Controls.Add(lblKabupaten_kota);
             panelinput_kk.Controls.Add(lblDesa_kelurahan);
@@ -170,12 +170,12 @@
             txtNama_kepala_keluarga.Size = new Size(239, 31);
             txtNama_kepala_keluarga.TabIndex = 10;
             // 
-            // txtNIK
+            // txtNoKK
             // 
-            txtNIK.Location = new Point(237, 28);
-            txtNIK.Name = "txtNIK";
-            txtNIK.Size = new Size(239, 31);
-            txtNIK.TabIndex = 9;
+            txtNoKK.Location = new Point(237, 28);
+            txtNoKK.Name = "txtNoKK";
+            txtNoKK.Size = new Size(239, 31);
+            txtNoKK.TabIndex = 9;
             // 
             // lblProvinsi
             // 
@@ -484,7 +484,7 @@
         private TextBox txtRT;
         private TextBox txtAlamat;
         private TextBox txtNama_kepala_keluarga;
-        private TextBox txtNIK;
+        private TextBox txtNoKK;
         private TextBox txtProvinsi;
         private TextBox txtKabupaten_kota;
         private TextBox txtDesa_kelurahan;
