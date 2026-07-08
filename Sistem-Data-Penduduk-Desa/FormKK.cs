@@ -155,5 +155,15 @@ namespace Sistem_Data_Penduduk_Desa
         {
 
         }
+
+        private void lblNo_kk_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNo_kk_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -48,7 +48,7 @@
             lblRT = new Label();
             lblAlamat = new Label();
             lblNama_kepala_keluarga = new Label();
-            lblNik = new Label();
+            lblNo_kk = new Label();
             paneloutput_kk = new Panel();
             lblCari = new Label();
             txtCari = new TextBox();
@@ -95,7 +95,7 @@
             panelinput_kk.Controls.Add(lblRT);
             panelinput_kk.Controls.Add(lblAlamat);
             panelinput_kk.Controls.Add(lblNama_kepala_keluarga);
-            panelinput_kk.Controls.Add(lblNik);
+            panelinput_kk.Controls.Add(lblNo_kk);
             panelinput_kk.Location = new Point(109, 136);
             panelinput_kk.Name = "panelinput_kk";
             panelinput_kk.Size = new Size(938, 355);
@@ -249,14 +249,15 @@
             lblNama_kepala_keluarga.TabIndex = 1;
             lblNama_kepala_keluarga.Text = "Nama Kepala Keluarga";
             // 
-            // lblNik
+            // lblNo_kk
             // 
-            lblNik.AutoSize = true;
-            lblNik.Location = new Point(35, 28);
-            lblNik.Name = "lblNik";
-            lblNik.Size = new Size(40, 25);
-            lblNik.TabIndex = 0;
-            lblNik.Text = "NIK";
+            lblNo_kk.AutoSize = true;
+            lblNo_kk.Location = new Point(35, 28);
+            lblNo_kk.Name = "lblNo_kk";
+            lblNo_kk.Size = new Size(40, 25);
+            lblNo_kk.TabIndex = 0;
+            lblNo_kk.Text = "NIK";
+            lblNo_kk.Click += lblNo_kk_Click;
             // 
             // paneloutput_kk
             // 
@@ -471,7 +472,7 @@
         private Panel paneloutput_kk;
         private Label lblJuduul;
         private Label lblNama_kepala_keluarga;
-        private Label lblNik;
+        private Label lblNo_kk;
         private Label lblRT;
         private Label lblAlamat;
         private Label lblKabupaten_kota;
