@@ -50,6 +50,7 @@
             lblNama_kepala_keluarga = new Label();
             lblNik = new Label();
             paneloutput_kk = new Panel();
+            lblCari = new Label();
             txtCari = new TextBox();
             dgvDataKK = new DataGridView();
             btnReset = new Button();
@@ -64,7 +65,6 @@
             lbldata_baru = new Label();
             lblTotalKK = new Label();
             statistik_ringkas = new Label();
-            lblCari = new Label();
             panelinput_kk.SuspendLayout();
             paneloutput_kk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDataKK).BeginInit();
@@ -100,6 +100,7 @@
             panelinput_kk.Name = "panelinput_kk";
             panelinput_kk.Size = new Size(938, 355);
             panelinput_kk.TabIndex = 0;
+            panelinput_kk.Paint += panelinput_kk_Paint;
             // 
             // txtProvinsi
             // 
@@ -267,6 +268,16 @@
             paneloutput_kk.Size = new Size(1517, 373);
             paneloutput_kk.TabIndex = 1;
             // 
+            // lblCari
+            // 
+            lblCari.AutoSize = true;
+            lblCari.Location = new Point(10, 22);
+            lblCari.Name = "lblCari";
+            lblCari.Size = new Size(51, 25);
+            lblCari.TabIndex = 23;
+            lblCari.Text = "CARI";
+            lblCari.TextAlign = ContentAlignment.TopCenter;
+            // 
             // txtCari
             // 
             txtCari.BackColor = SystemColors.GradientActiveCaption;
@@ -423,16 +434,6 @@
             statistik_ringkas.Size = new Size(175, 32);
             statistik_ringkas.TabIndex = 0;
             statistik_ringkas.Text = "statistik ringkas";
-            // 
-            // lblCari
-            // 
-            lblCari.AutoSize = true;
-            lblCari.Location = new Point(10, 22);
-            lblCari.Name = "lblCari";
-            lblCari.Size = new Size(51, 25);
-            lblCari.TabIndex = 23;
-            lblCari.Text = "CARI";
-            lblCari.TextAlign = ContentAlignment.TopCenter;
             // 
             // FormKK
             // 

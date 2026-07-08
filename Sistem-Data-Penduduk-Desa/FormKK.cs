@@ -150,5 +150,10 @@ namespace Sistem_Data_Penduduk_Desa
         {
 
         }
+
+        private void panelinput_kk_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
