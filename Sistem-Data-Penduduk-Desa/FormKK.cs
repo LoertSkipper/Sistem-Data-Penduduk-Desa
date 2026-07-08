@@ -52,7 +52,7 @@ namespace Sistem_Data_Penduduk_Desa
                 if (useId && dgvDataKK.CurrentRow != null)
                     cmd.Parameters.AddWithValue("@id", dgvDataKK.CurrentRow.Cells["id_kk"].Value);
 
-                cmd.Parameters.AddWithValue("@nik", txtNIK.Text);
+                cmd.Parameters.AddWithValue("@nik", txtNo_kk.Text);
                 cmd.Parameters.AddWithValue("@nama", txtNama_kepala_keluarga.Text);
                 cmd.Parameters.AddWithValue("@alamat", txtAlamat.Text);
                 cmd.Parameters.AddWithValue("@rt", txtRT.Text);
@@ -109,7 +109,7 @@ namespace Sistem_Data_Penduduk_Desa
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtNIK.Clear(); txtNama_kepala_keluarga.Clear(); txtAlamat.Clear();
+            txtNo_kk.Clear(); txtNama_kepala_keluarga.Clear(); txtAlamat.Clear();
             txtRT.Clear(); txtRW.Clear(); txtKecamatan.Clear();
             txtDesa_kelurahan.Clear(); txtKabupaten_kota.Clear(); txtProvinsi.Clear();
             txtCari.Clear();
@@ -120,7 +120,7 @@ namespace Sistem_Data_Penduduk_Desa
             if (e.RowIndex >= 0 && e.RowIndex < dgvDataKK.Rows.Count)
             {
                 DataGridViewRow row = dgvDataKK.Rows[e.RowIndex];
-                txtNIK.Text = row.Cells["nik"]?.Value?.ToString() ?? "";
+                txtNo_kk.Text = row.Cells["nik"]?.Value?.ToString() ?? "";
                 txtNama_kepala_keluarga.Text = row.Cells["nama_kepala_keluarga"]?.Value?.ToString() ?? "";
                 txtAlamat.Text = row.Cells["alamat"]?.Value?.ToString() ?? "";
                 txtRT.Text = row.Cells["rt"]?.Value?.ToString() ?? "";
@@ -152,6 +152,16 @@ namespace Sistem_Data_Penduduk_Desa
         }
 
         private void panelinput_kk_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblNo_kk_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNo_kk_TextChanged(object sender, EventArgs e)
         {
 
         }
