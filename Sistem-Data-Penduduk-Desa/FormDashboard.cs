@@ -34,6 +34,7 @@ namespace Sistem_Data_Penduduk_Desa
                 kk_btn.Visible = false;
                 pekerjaan_btn.Visible = false;
                 pendidikan_btn.Visible = false;
+                user_btn.Visible = false;
 
                 laporan_btn.Visible = true;
                 statistik_btn.Visible = true;

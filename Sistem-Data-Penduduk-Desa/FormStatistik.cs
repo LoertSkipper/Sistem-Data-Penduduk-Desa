@@ -231,18 +231,18 @@ namespace Sistem_Data_Penduduk_Desa
             // Title
             chart1.Titles.Add(MakeTitle("Kepadatan Penduduk per RW"));
 
-            // Series
+            // Series — dibuat sekali, di luar loop
             var series = new Series("RW");
-            series.ChartType              = SeriesChartType.Column;
-            series.ChartArea              = "CA";
-            series.Color                  = Color.FromArgb(70, 130, 180);
-            series.BorderColor            = Color.FromArgb(45, 95, 140);
-            series.BorderWidth            = 1;
-            series.IsValueShownAsLabel    = true;
-            series.LabelForeColor         = TitleColor;
-            series.Font                   = LabelFont;
-            series["PointWidth"]          = "0.55";
-            series["LabelStyle"]          = "Top";
+            series.ChartType           = SeriesChartType.Column;
+            series.ChartArea           = "CA";
+            series.Color               = Color.FromArgb(70, 130, 180);
+            series.BorderColor         = Color.FromArgb(45, 95, 140);
+            series.BorderWidth         = 1;
+            series.IsValueShownAsLabel = true;
+            series.LabelForeColor      = TitleColor;
+            series.Font                = LabelFont;
+            series["PointWidth"]       = "0.55";
+            series["LabelStyle"]       = "Top";
             chart1.Series.Add(series);
 
             // Query: SELALU ambil SEMUA rw dari database
@@ -262,15 +262,21 @@ namespace Sistem_Data_Penduduk_Desa
                 return;
             }
 
-            bool isFiltered = (rwFilter != "Semua" && rwFilter != "Semua RW" && !string.IsNullOrEmpty(rwFilter));
+            bool isFiltered = (rwFilter != "Semua" && rwFilter != "Semua RW"
+                               && !string.IsNullOrEmpty(rwFilter));
 
+            // Clear sekali sebelum loop — jangan panggil di dalam loop
+            chart1.Series["RW"].Points.Clear();
+
+            // Satu titik per baris DataRow
             foreach (DataRow row in dt.Rows)
             {
                 string rw     = row["rw"]?.ToString() ?? "";
                 int    jumlah = SafeInt(row["jumlah"]);
+
                 int idx = chart1.Series["RW"].Points.AddXY("RW " + rw, jumlah);
 
-                // Highlight the selected RW; grey out others
+                // Highlight RW yang dipilih; redup-kan yang lain
                 if (isFiltered)
                 {
                     if (rw == rwFilter)
@@ -299,7 +305,7 @@ namespace Sistem_Data_Penduduk_Desa
             var ca = new ChartArea("CA");
             ca.BackColor   = ChartBg;
             ca.BorderColor = Color.Transparent;
-            // Pie area: start 2% from left, top 10%, width 58%, height 80%
+            // Pie area: mulai 2% dari kiri, atas 10%, lebar 58%, tinggi 80%
             ca.InnerPlotPosition = new ElementPosition(2, 10, 58, 80);
             chart3.ChartAreas.Add(ca);
 
@@ -308,27 +314,26 @@ namespace Sistem_Data_Penduduk_Desa
 
             // Legend di kanan
             var legend = new Legend("LG");
-            legend.Docking       = Docking.Right;
-            legend.Alignment     = StringAlignment.Center;
-            legend.Font          = new Font("Segoe UI", 8F);
-            legend.BackColor     = Color.Transparent;
-            legend.BorderColor   = Color.Transparent;
-            legend.LegendStyle   = LegendStyle.Column;
+            legend.Docking     = Docking.Right;
+            legend.Alignment   = StringAlignment.Center;
+            legend.Font        = new Font("Segoe UI", 8F);
+            legend.BackColor   = Color.Transparent;
+            legend.BorderColor = Color.Transparent;
+            legend.LegendStyle = LegendStyle.Column;
             chart3.Legends.Add(legend);
 
-            // Series
+            // Series — dibuat sekali, di luar loop
             var series = new Series("Pendidikan");
-            series.ChartType           = SeriesChartType.Pie;
-            series.ChartArea           = "CA";
-            series.Legend              = "LG";
-            // Tampilkan persentase DALAM irisan saja
-            series.Label               = "#PERCENT{P0}";
-            series["PieLabelStyle"]    = "Inside";
-            series["PieStartAngle"]    = "270";
-            series["CollectedThreshold"] = "0";   // jangan collapse irisan kecil
+            series.ChartType            = SeriesChartType.Pie;
+            series.ChartArea            = "CA";
+            series.Legend               = "LG";
+            series.Label                = "#PERCENT{P0}";
+            series["PieLabelStyle"]     = "Inside";
+            series["PieStartAngle"]     = "270";
+            series["CollectedThreshold"] = "0";
             series.IsValueShownAsLabel  = true;
-            series.Font                = new Font("Segoe UI", 8F, FontStyle.Bold);
-            series.LabelForeColor      = Color.White;
+            series.Font                 = new Font("Segoe UI", 8F, FontStyle.Bold);
+            series.LabelForeColor       = Color.White;
             chart3.Series.Add(series);
 
             // Query
@@ -347,20 +352,23 @@ namespace Sistem_Data_Penduduk_Desa
 
             if (dt == null || dt.Rows.Count == 0)
             {
-                var pt = chart3.Series["Pendidikan"].Points;
-                int i = pt.AddXY("Tidak Ada Data", 1);
-                pt[i].Color      = Color.LightGray;
-                pt[i].LegendText = "Tidak Ada Data";
+                int i = chart3.Series["Pendidikan"].Points.AddXY("Tidak Ada Data", 1);
+                chart3.Series["Pendidikan"].Points[i].Color      = Color.LightGray;
+                chart3.Series["Pendidikan"].Points[i].LegendText = "Tidak Ada Data";
                 return;
             }
 
+            // Clear sekali sebelum loop — jangan panggil di dalam loop
+            chart3.Series["Pendidikan"].Points.Clear();
+
+            // Satu titik per baris DataRow
             int colorIdx = 0;
             foreach (DataRow row in dt.Rows)
             {
+                string jenjang = row["jenjang"]?.ToString() ?? "";
                 int    jumlah  = SafeInt(row["jumlah"]);
                 if (jumlah <= 0) continue;
 
-                string jenjang = row["jenjang"]?.ToString() ?? "";
                 int idx = chart3.Series["Pendidikan"].Points.AddXY(jenjang, jumlah);
                 chart3.Series["Pendidikan"].Points[idx].LegendText = jenjang;
                 chart3.Series["Pendidikan"].Points[idx].Color      = PieColors[colorIdx % PieColors.Length];
@@ -378,14 +386,14 @@ namespace Sistem_Data_Penduduk_Desa
 
             // Chart area — beri ruang kiri untuk label nama pekerjaan
             var ca = MakeStandardArea("", "Jumlah Penduduk", 25, 3, 70, 94);
-            ca.AxisX.Title = "";   // Pada bar chart, X = kategori vertikal
+            ca.AxisX.Title           = "";   // Pada bar chart, X = kategori vertikal
             ca.AxisX.LabelStyle.Font = TickFont;
             chart4.ChartAreas.Add(ca);
 
             // Title
             chart4.Titles.Add(MakeTitle("Distribusi Pekerjaan"));
 
-            // Series
+            // Series — dibuat sekali, di luar loop
             var series = new Series("Pekerjaan");
             series.ChartType           = SeriesChartType.Bar;
             series.ChartArea           = "CA";
@@ -420,14 +428,20 @@ namespace Sistem_Data_Penduduk_Desa
                 return;
             }
 
+            // Clear sekali sebelum loop — jangan panggil di dalam loop
+            chart4.Series["Pekerjaan"].Points.Clear();
+
             // Warna gradasi biru untuk setiap bar
             int total = dt.Rows.Count;
             int idx2  = 0;
+
+            // Satu titik per baris DataRow
             foreach (DataRow row in dt.Rows)
             {
                 string pekerjaan = row["nama_pekerjaan"]?.ToString() ?? "";
                 int    jumlah    = SafeInt(row["jumlah"]);
-                int    pt        = chart4.Series["Pekerjaan"].Points.AddXY(pekerjaan, jumlah);
+
+                int pt = chart4.Series["Pekerjaan"].Points.AddXY(pekerjaan, jumlah);
 
                 // Gradasi warna: makin besar nilainya, makin gelap birunya
                 float ratio = total > 1 ? (float)idx2 / (total - 1) : 1f;
@@ -460,7 +474,7 @@ namespace Sistem_Data_Penduduk_Desa
             // Title
             chart2.Titles.Add(MakeTitle("Kelompok Umur"));
 
-            // Series
+            // Series — dibuat sekali, di luar loop
             var series = new Series("Umur");
             series.ChartType           = SeriesChartType.Column;
             series.ChartArea           = "CA";
@@ -474,7 +488,18 @@ namespace Sistem_Data_Penduduk_Desa
             series["LabelStyle"]       = "Top";
             chart2.Series.Add(series);
 
-            // Query — satu query, 5 kolom agregasi, COALESCE agar NULL=0
+            // Definisi 5 kelompok umur
+            string[] labels    = { "0 - 5", "6 - 17", "18 - 35", "36 - 60", "> 60" };
+            string[] keys      = { "usia_0_5", "usia_6_17", "usia_18_35", "usia_36_60", "usia_gt60" };
+            Color[]  ageColors = {
+                Color.FromArgb(255, 200,  87),   // 0-5   kuning
+                Color.FromArgb(112, 173,  71),   // 6-17  hijau
+                Color.FromArgb( 70, 130, 180),   // 18-35 biru
+                Color.FromArgb(255, 127,  39),   // 36-60 oranye
+                Color.FromArgb(192,  80,  77),   // >60   merah
+            };
+
+            // Query — satu baris hasil dengan 5 kolom agregasi, COALESCE agar NULL=0
             string whereRw = BuildRwWhere(rwFilter);
 
             string query =
@@ -490,23 +515,13 @@ namespace Sistem_Data_Penduduk_Desa
 
             DataTable dt = Koneksi.eksekusiQuery(query);
 
+            // Clear sekali sebelum mengisi titik — jangan panggil di dalam loop
+            chart2.Series["Umur"].Points.Clear();
+
             if (dt != null && dt.Rows.Count > 0)
             {
+                // Hasil adalah 1 baris pivot; iterasi 5 kolom untuk 5 titik
                 DataRow row = dt.Rows[0];
-
-                // Warna per kelompok umur
-                Color[] ageColors = new Color[]
-                {
-                    Color.FromArgb(255, 200,  87),   // 0-5   kuning
-                    Color.FromArgb(112, 173,  71),   // 6-17  hijau
-                    Color.FromArgb( 70, 130, 180),   // 18-35 biru
-                    Color.FromArgb(255, 127,  39),   // 36-60 oranye
-                    Color.FromArgb(192,  80,  77),   // >60   merah
-                };
-
-                string[] labels = { "0 - 5", "6 - 17", "18 - 35", "36 - 60", "> 60" };
-                string[] keys   = { "usia_0_5", "usia_6_17", "usia_18_35", "usia_36_60", "usia_gt60" };
-
                 for (int i = 0; i < labels.Length; i++)
                 {
                     int val = SafeInt(row[keys[i]]);
@@ -518,7 +533,6 @@ namespace Sistem_Data_Penduduk_Desa
             else
             {
                 // Tidak ada data — tampilkan 5 kolom dengan nilai 0
-                string[] labels = { "0 - 5", "6 - 17", "18 - 35", "36 - 60", "> 60" };
                 foreach (string lbl in labels)
                     chart2.Series["Umur"].Points.AddXY(lbl, 0);
             }
