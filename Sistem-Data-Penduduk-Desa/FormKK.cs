@@ -109,7 +109,7 @@ namespace Sistem_Data_Penduduk_Desa
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtNIK.Clear(); txtNama_kepala_keluarga.Clear(); txtAlamat.Clear();
+            txtNoKK.Clear(); txtNama_kepala_keluarga.Clear(); txtAlamat.Clear();
             txtRT.Clear(); txtRW.Clear(); txtKecamatan.Clear();
             txtDesa_kelurahan.Clear(); txtKabupaten_kota.Clear(); txtProvinsi.Clear();
             txtCari.Clear();
@@ -120,7 +120,7 @@ namespace Sistem_Data_Penduduk_Desa
             if (e.RowIndex >= 0 && e.RowIndex < dgvDataKK.Rows.Count)
             {
                 DataGridViewRow row = dgvDataKK.Rows[e.RowIndex];
-                txtNIK.Text = row.Cells["nik"]?.Value?.ToString() ?? "";
+                txtNoKK.Text = row.Cells["no_kk"]?.Value?.ToString() ?? "";
                 txtNama_kepala_keluarga.Text = row.Cells["nama_kepala_keluarga"]?.Value?.ToString() ?? "";
                 txtAlamat.Text = row.Cells["alamat"]?.Value?.ToString() ?? "";
                 txtRT.Text = row.Cells["rt"]?.Value?.ToString() ?? "";
