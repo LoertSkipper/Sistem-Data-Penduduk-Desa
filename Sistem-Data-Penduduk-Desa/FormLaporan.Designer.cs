@@ -1,4 +1,4 @@
-﻿namespace Sistem_Data_Penduduk_Desa
+namespace Sistem_Data_Penduduk_Desa
 {
     partial class FormLaporan
     {
@@ -29,10 +29,17 @@
         private void InitializeComponent()
         {
             panel3 = new Panel();
+            panel1 = new Panel();
+            btnpdf = new Button();
+            btnexcel = new Button();
+            label6 = new Label();
+            label5 = new Label();
             dataGridView1 = new DataGridView();
             NIK = new DataGridViewTextBoxColumn();
             Nama = new DataGridViewTextBoxColumn();
             jns_kelamin = new DataGridViewTextBoxColumn();
+            no_kk_col = new DataGridViewTextBoxColumn();
+            rw_col = new DataGridViewTextBoxColumn();
             pekerjaan = new DataGridViewTextBoxColumn();
             pendidikan = new DataGridViewTextBoxColumn();
             btnReset = new Button();
@@ -45,15 +52,10 @@
             label2 = new Label();
             label1 = new Label();
             laporan = new Panel();
-            panel1 = new Panel();
-            label5 = new Label();
-            label6 = new Label();
-            btnexcel = new Button();
-            btnpdf = new Button();
             panel3.SuspendLayout();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             laporan.SuspendLayout();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel3
@@ -74,14 +76,75 @@
             panel3.Size = new Size(973, 597);
             panel3.TabIndex = 2;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(btnpdf);
+            panel1.Controls.Add(btnexcel);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 472);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(973, 125);
+            panel1.TabIndex = 10;
+            // 
+            // btnpdf
+            // 
+            btnpdf.BackColor = Color.FromArgb(217, 83, 79);
+            btnpdf.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnpdf.ForeColor = Color.White;
+            btnpdf.Location = new Point(604, 36);
+            btnpdf.Name = "btnpdf";
+            btnpdf.Size = new Size(140, 34);
+            btnpdf.TabIndex = 3;
+            btnpdf.Text = "Cetak PDF";
+            btnpdf.UseVisualStyleBackColor = false;
+            btnpdf.Click += btnpdf_Click;
+            // 
+            // btnexcel
+            // 
+            btnexcel.BackColor = Color.FromArgb(92, 184, 92);
+            btnexcel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnexcel.ForeColor = Color.White;
+            btnexcel.Location = new Point(774, 36);
+            btnexcel.Name = "btnexcel";
+            btnexcel.Size = new Size(141, 34);
+            btnexcel.TabIndex = 2;
+            btnexcel.Text = "Export Excel";
+            btnexcel.UseVisualStyleBackColor = false;
+            btnexcel.Click += btnexcel_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(140, 36);
+            label6.Name = "label6";
+            label6.Size = new Size(22, 25);
+            label6.TabIndex = 1;
+            label6.Text = "0";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(34, 36);
+            label5.Name = "label5";
+            label5.Size = new Size(104, 25);
+            label5.TabIndex = 0;
+            label5.Text = "Total Data :";
+            // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { NIK, Nama, jns_kelamin, pekerjaan, pendidikan });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { NIK, Nama, jns_kelamin, no_kk_col, rw_col, pekerjaan, pendidikan });
             dataGridView1.Location = new Point(64, 152);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(815, 295);
+            dataGridView1.Size = new Size(874, 295);
             dataGridView1.TabIndex = 9;
             // 
             // NIK
@@ -89,13 +152,15 @@
             NIK.HeaderText = "NIK";
             NIK.MinimumWidth = 8;
             NIK.Name = "NIK";
-            NIK.Width = 150;
+            NIK.ReadOnly = true;
+            NIK.Width = 130;
             // 
             // Nama
             // 
             Nama.HeaderText = "Nama Lengkap";
             Nama.MinimumWidth = 8;
             Nama.Name = "Nama";
+            Nama.ReadOnly = true;
             Nama.Width = 150;
             // 
             // jns_kelamin
@@ -103,21 +168,39 @@
             jns_kelamin.HeaderText = "Jenis Kelamin";
             jns_kelamin.MinimumWidth = 8;
             jns_kelamin.Name = "jns_kelamin";
-            jns_kelamin.Width = 150;
+            jns_kelamin.ReadOnly = true;
+            jns_kelamin.Width = 110;
+            // 
+            // no_kk_col
+            // 
+            no_kk_col.HeaderText = "No KK";
+            no_kk_col.MinimumWidth = 8;
+            no_kk_col.Name = "no_kk_col";
+            no_kk_col.ReadOnly = true;
+            no_kk_col.Width = 130;
+            // 
+            // rw_col
+            // 
+            rw_col.HeaderText = "RW";
+            rw_col.MinimumWidth = 8;
+            rw_col.Name = "rw_col";
+            rw_col.ReadOnly = true;
+            rw_col.Width = 60;
             // 
             // pekerjaan
             // 
             pekerjaan.HeaderText = "Pekerjaan";
             pekerjaan.MinimumWidth = 8;
             pekerjaan.Name = "pekerjaan";
-            pekerjaan.Width = 150;
+            pekerjaan.ReadOnly = true;
+            pekerjaan.Width = 130;
             // 
             // pendidikan
             // 
             pendidikan.HeaderText = "Pendidikan";
             pendidikan.MinimumWidth = 8;
             pendidikan.Name = "pendidikan";
-            pendidikan.Width = 150;
+            pendidikan.ReadOnly = true;
             // 
             // btnReset
             // 
@@ -128,6 +211,7 @@
             btnReset.TabIndex = 8;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = false;
+            btnReset.Click += btnReset_Click;
             // 
             // btnFilter
             // 
@@ -138,6 +222,7 @@
             btnFilter.TabIndex = 7;
             btnFilter.Text = "Filter";
             btnFilter.UseVisualStyleBackColor = false;
+            btnFilter.Click += btnFilter_Click;
             // 
             // tbxnama
             // 
@@ -215,56 +300,6 @@
             laporan.Size = new Size(973, 79);
             laporan.TabIndex = 1;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(btnpdf);
-            panel1.Controls.Add(btnexcel);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label5);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 472);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(973, 125);
-            panel1.TabIndex = 10;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(34, 36);
-            label5.Name = "label5";
-            label5.Size = new Size(100, 25);
-            label5.TabIndex = 0;
-            label5.Text = "Total Data :";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(140, 36);
-            label6.Name = "label6";
-            label6.Size = new Size(22, 25);
-            label6.TabIndex = 1;
-            label6.Text = "0";
-            // 
-            // btnexcel
-            // 
-            btnexcel.BackColor = SystemColors.ActiveCaption;
-            btnexcel.Location = new Point(774, 36);
-            btnexcel.Name = "btnexcel";
-            btnexcel.Size = new Size(141, 34);
-            btnexcel.TabIndex = 2;
-            btnexcel.Text = "Export Excel";
-            btnexcel.UseVisualStyleBackColor = false;
-            // 
-            // btnpdf
-            // 
-            btnpdf.BackColor = SystemColors.ActiveCaption;
-            btnpdf.Location = new Point(604, 36);
-            btnpdf.Name = "btnpdf";
-            btnpdf.Size = new Size(112, 34);
-            btnpdf.TabIndex = 3;
-            btnpdf.Text = "Cetak PDF";
-            btnpdf.UseVisualStyleBackColor = false;
-            // 
             // FormLaporan
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -274,13 +309,14 @@
             Controls.Add(laporan);
             Name = "FormLaporan";
             Text = "FormLaporan";
+            Load += FormLaporan_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             laporan.ResumeLayout(false);
             laporan.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -299,6 +335,8 @@
         private DataGridViewTextBoxColumn NIK;
         private DataGridViewTextBoxColumn Nama;
         private DataGridViewTextBoxColumn jns_kelamin;
+        private DataGridViewTextBoxColumn no_kk_col;
+        private DataGridViewTextBoxColumn rw_col;
         private DataGridViewTextBoxColumn pekerjaan;
         private DataGridViewTextBoxColumn pendidikan;
         private Button btnReset;
