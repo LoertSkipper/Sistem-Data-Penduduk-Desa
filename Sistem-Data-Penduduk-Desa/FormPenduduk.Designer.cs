@@ -134,18 +134,18 @@
             label8.AutoSize = true;
             label8.Location = new Point(53, 461);
             label8.Name = "label8";
-            label8.Size = new Size(113, 25);
+            label8.Size = new Size(90, 25);
             label8.TabIndex = 7;
-            label8.Text = "ID Pekerjaan:";
+            label8.Text = "Pekerjaan:";
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Location = new Point(53, 510);
             label9.Name = "label9";
-            label9.Size = new Size(125, 25);
+            label9.Size = new Size(102, 25);
             label9.TabIndex = 8;
-            label9.Text = "ID Pendidikan:";
+            label9.Text = "Pendidikan:";
             // 
             // id_penduduk_txt
             // 
@@ -386,9 +386,9 @@
             label11.AutoSize = true;
             label11.Location = new Point(53, 361);
             label11.Name = "label11";
-            label11.Size = new Size(152, 25);
+            label11.Size = new Size(115, 25);
             label11.TabIndex = 28;
-            label11.Text = "ID Kartu keluarga:";
+            label11.Text = "Tanggal Lahir";
             // 
             // FormPenduduk
             // 
