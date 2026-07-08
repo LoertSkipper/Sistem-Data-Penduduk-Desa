@@ -115,9 +115,9 @@ namespace Sistem_Data_Penduduk_Desa
             paneloutput_pekerjaan.Controls.Add(txtCari);
             paneloutput_pekerjaan.Controls.Add(lblCari);
             paneloutput_pekerjaan.Controls.Add(dgvDataPekerjaan);
-            paneloutput_pekerjaan.Location = new Point(20, 492);
+            paneloutput_pekerjaan.Location = new Point(246, 492);
             paneloutput_pekerjaan.Name = "paneloutput_pekerjaan";
-            paneloutput_pekerjaan.Size = new Size(1283, 341);
+            paneloutput_pekerjaan.Size = new Size(765, 341);
             paneloutput_pekerjaan.TabIndex = 5;
             // 
             // btnReset
@@ -153,7 +153,7 @@ namespace Sistem_Data_Penduduk_Desa
             dgvDataPekerjaan.Location = new Point(94, 76);
             dgvDataPekerjaan.Name = "dgvDataPekerjaan";
             dgvDataPekerjaan.RowHeadersWidth = 62;
-            dgvDataPekerjaan.Size = new Size(1081, 212);
+            dgvDataPekerjaan.Size = new Size(571, 212);
             dgvDataPekerjaan.TabIndex = 21;
             dgvDataPekerjaan.CellClick += dgvDataPekerjaan_CellClick;
             // 

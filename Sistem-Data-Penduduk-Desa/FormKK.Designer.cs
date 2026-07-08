@@ -299,7 +299,7 @@
             dgvDataKK.RowHeadersWidth = 62;
             dgvDataKK.Size = new Size(1517, 312);
             dgvDataKK.TabIndex = 21;
-            dgvDataKK.CellContentClick += dgvDataKK_CellClick;
+            dgvDataKK.CellClick += dgvDataKK_CellClick;
             // 
             // btnReset
             // 
